@@ -11,5 +11,8 @@ public:
   void setMatriCode(int);
   void setGrades(int);
   void setModules(std::string);
+  int getMatriCode() const;
+  string getGrades() const;
+  string getModules() const;
   void showStudent();
 };

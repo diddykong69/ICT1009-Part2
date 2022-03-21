@@ -7,33 +7,47 @@ void Student::setMatriCode(int Code) {
   if (Code < 0) {
     cout << "Invalid entry";
   } else {
-    MatriCode = Code;
+    this->MatriCode = Code;
   }
+}
+
+int Student::getMatriCode() const{
+  return MatriCode;
 }
 
 void Student::setGrades(int Grade) {
   if (Grade >= 90 && Grade <= 100) {
-    StudentGrade = "A*";
+    this->StudentGrade = "A*";
   } else if (Grade >= 80 && Grade < 90) {
-    StudentGrade = "A";
+    this->StudentGrade = "A";
   } else if (Grade >= 70 && Grade < 80) {
-    StudentGrade = "B";
+    this->StudentGrade = "B";
   } else if (Grade >= 60 && Grade < 70) {
-    StudentGrade = "C";
+    this->StudentGrade = "C";
   } else if (Grade >= 50 && Grade < 60) {
-    StudentGrade = "D";
+    this->StudentGrade = "D";
   } else if (Grade >= 0 && Grade < 50) {
-    StudentGrade = "F";
+    this->StudentGrade = "F";
   } else {
-    cout << "Invalid";
+    this->StudentGrade = "Invalid";
   }
 }
 
-void Student::setModules(string Mod) {
-  Module = Mod;
+string Student::getGrades() const{
+  return StudentGrade;
 }
 
-void Student::showStudent() {
+void Student::setModules(string Mod) {
+  this->Module = Mod;
+}
+
+string Student::getModules() const{
+  return Module;
+}
+
+//Below is kinda like testing code for me to see if it works, but if u want to implement something out of it then go ahead
+
+void Student::showStudent(){
   cout << "Matri Code:";
   cout << MatriCode;
   cout << "\nGrades:";
