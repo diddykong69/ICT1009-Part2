@@ -1,6 +1,7 @@
 #include <iostream>
+#include "Person.h"
 
-class Student {
+class Student: public Person {
 protected:
   int MatriCode;
   const char *StudentGrade;
