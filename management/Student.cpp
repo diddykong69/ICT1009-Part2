@@ -1,7 +1,16 @@
 #include "Student.h"
+#include "Person.h"
 #include <iostream>
 
 using namespace std;
+
+Student::Student(string username, string password, string first_name, string last_name, string contact, string email, int matriCode, string grades, string module)
+  : Person(username, password, first_name, last_name, contact, email)
+{
+  this->MatriCode = matriCode;
+  this->StudentGrade = grades;
+
+}
 
 void Student::setMatriCode(int Code) {
   if (Code < 0) {
@@ -49,10 +58,10 @@ string Student::getModules() const{
 
 void Student::showStudent(){
   cout << "Matri Code:";
-  cout << MatriCode;
+  cout << getMatriCode();
   cout << "\nGrades:";
-  cout << StudentGrade;
+  cout << getGrades();
   cout << "\nModule:";
-  cout << Module;
+  cout << getModules();
   cout << "\n";
 }
