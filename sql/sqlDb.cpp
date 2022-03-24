@@ -1,4 +1,4 @@
-//you need to compile with -l sqlite3.... example: g++ sqlDb.cpp -l
+//you need to compile with -l sqlite3.... example: g++ sqlDb.cpp -l sqlite3
 
 #include <iostream>
 #include <sqlite3.h>
@@ -11,22 +11,24 @@ char* CHAR_DATABASE_NAME = &DATABASE_NAME[0];
 map<int,map<string,string>> mapping;
 int ITERATION = 0;
 
-class SqlDb{
+class sqlDB{
     sqlite3* db;
     int exit = 0;
     static int callback(void* data, int argc, char** argv, char** azColName);
     
    public: 
-    SqlDb();
-    int select(string sql);
-    void print();
-    map<int,map<string,string>> response = mapping;
+    sqlDB();
+    map<int,map<string,string>> response;
     map<int,map<string,string>>::iterator outside_ptr;
     map<string,string>::iterator inside_ptr;
+    int select(string sql);
+    void update();
+    void print();
+    
     
 };
 
-SqlDb::SqlDb(){
+sqlDB::sqlDB(){
     
     exit = sqlite3_open(CHAR_DATABASE_NAME, &db);
     if (exit)
@@ -37,7 +39,7 @@ SqlDb::SqlDb(){
     }
 };
 
-int SqlDb::select(string sql){
+int sqlDB::select(string sql){
     string data("CALLBACK FUNCTION");
     int rc = sqlite3_exec(db, sql.c_str(), callback, (void*)data.c_str(), NULL);
   
@@ -50,7 +52,8 @@ int SqlDb::select(string sql){
     return (0);
 }
 
-void SqlDb::print(){
+void sqlDB::print(){
+    update();
     for(outside_ptr = response.begin(); outside_ptr!=response.end();outside_ptr++){
         for(inside_ptr = outside_ptr->second.begin(); inside_ptr != outside_ptr->second.end();inside_ptr++){
             cout << "First Key is "<<outside_ptr->first
@@ -61,7 +64,11 @@ void SqlDb::print(){
     }
 };
 
-int SqlDb::callback(void* data, int argc, char** argv, char** azColName)
+void sqlDB::update(){
+    response = mapping;
+};
+
+int sqlDB::callback(void* data, int argc, char** argv, char** azColName)
 {
     int i;
   
@@ -77,7 +84,7 @@ int SqlDb::callback(void* data, int argc, char** argv, char** azColName)
 
 int main(int argc, char** argv)
 {
-    SqlDb test;
+    sqlDB test;
     test.select("SELECT * FROM PERSON;");
     test.print();
 
