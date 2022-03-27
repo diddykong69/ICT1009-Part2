@@ -1,32 +1,8 @@
 //you need to compile with -l sqlite3.... example: g++ sqlDb.cpp -l sqlite3
+#include "sqlDB.h"
 
-#include <iostream>
-#include <sqlite3.h>
-#include <string>
-#include <map>
 
-using namespace std;
-string DATABASE_NAME = "example.db";
-char* CHAR_DATABASE_NAME = &DATABASE_NAME[0];
-map<int,map<string,string>> mapping;
-int ITERATION = 0;
 
-class sqlDB{
-    sqlite3* db;
-    int exit = 0;
-    static int callback(void* data, int argc, char** argv, char** azColName);
-    
-   public: 
-    sqlDB();
-    map<int,map<string,string>> response;
-    map<int,map<string,string>>::iterator outside_ptr;
-    map<string,string>::iterator inside_ptr;
-    int select(string sql);
-    void update();
-    void print();
-    
-    
-};
 
 sqlDB::sqlDB(){
     
@@ -88,4 +64,4 @@ int main(int argc, char** argv)
     test.select("SELECT * FROM PERSON;");
     test.print();
 
-}
+} 
