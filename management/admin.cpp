@@ -1,41 +1,33 @@
-#include <iostream> // cout and cin
-#include <string> // npos
-#include "Person.h"
-#include "../sql/sqlDB.cpp"
-#include <algorithm> // For unique and sort
-
-using namespace std;
-
-class Admin{
-    private:
-        sqlDB test;
-        int sql_query;
-    public:
-    Admin();
-    
-    void add_user(string user, string pass, string role);
-    void remove_user(string user);
-    void remove_user(int id);
-    int view_users(string user);
-
-};
+#include "admin.h"
 
 Admin::Admin(){
     
 };
 
-void Admin::add_user(string user, string pass, string role){
+int Admin::add_user(string user, string pass, string role){
     
-test.query("INSERT INTO users (username,password,Roles) VALUES ('"+user+"','"+pass+"','"+role+"');");
+sql_query = test.query("INSERT INTO users (username,password,Roles) VALUES ('"+user+"','"+pass+"','"+role+"');");
+if(sql_query){
+    return 1;
+};
+return 0;
 };
 
-void Admin::remove_user(string user){
-    test.query("DELETE FROM users WHERE username = '"+user+"'" );
+int Admin::remove_user(string user){
+    sql_query = test.query("DELETE FROM users WHERE username = '"+user+"'" );
+    if(sql_query){
+    return 1;
+};
+return 0;
 };
 
-void Admin::remove_user(int id){
+int Admin::remove_user(int id){
     string id_str = to_string(id);
-    test.query("DELETE FROM users WHERE ID = '"+id_str+"'" );
+    sql_query = test.query("DELETE FROM users WHERE ID = '"+id_str+"'" );
+    if(sql_query){
+    return 1;
+};
+return 0;
 };
 
 int Admin::view_users(string user="%"){
@@ -47,14 +39,14 @@ int Admin::view_users(string user="%"){
     return (0);
 };
 
-int main(int argc, char** argv)
+/* int main(int argc, char** argv)
 {
     Admin admin;
     admin.view_users();
     //admin.view_users();
-    //admin.add_user("testing","pass","STUDENT");
+    cout << admin.add_user("testing","pass","STUDENT");
     //admin.remove_user("test");
-    //admin.remove_user(6);
+    cout << admin.remove_user(7);
     admin.view_users("card");
 
-}  
+}    */
