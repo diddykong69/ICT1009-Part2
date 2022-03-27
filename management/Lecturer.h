@@ -6,25 +6,26 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
+// header files
 #include "Person.h"
+#include "Classes.h"
 
 using namespace std;
 
 class Lecturer : public Person{
     private:
-        static const string type; // Either lecturer, admin or student
-
-        // School related info
-        vector<string> modules;
-
+        static const string type;
+        string username;
+        string password;
+        vector <Classes> classes;
     public:
-        Lecturer(string username, string password, string first_name, string last_name, string contact, string email, vector<string> &modules);
-        const string getType() const;
-        void showModules();
-        void addModule(string modules);
-        void deleteModule(string modules);
-        void DisplayDetails();
-
+        Lecturer(string username, string password, string fname, string lname, string email, string contact);
+        void getClasses();
+        void deleteClass(Classes&);
+        void addClass(Classes&);
+        void getClassList(Classes&);
+        void displayDetails();
 };
 
 #endif

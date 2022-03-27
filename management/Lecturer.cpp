@@ -1,87 +1,71 @@
 #ifndef LECTURER_CPP
 #define LECTURER_CPP
-#include <iostream> // cout and cin
-#include <string> // npos
-#include "Lecturer.h"
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm> // for std::find_if
+
+// header files
 #include "Person.h"
-#include <algorithm> // For unique and sort
+#include "Classes.h"
+#include "Lecturer.h"
 
 using namespace std;
 
-vector<string> split (string s, string delimiter) {
-    size_t pos_start = 0, pos_end, delim_len = delimiter.length();
-    string token;
-    vector<string> res;
-
-    while ((pos_end = s.find_first_of(delimiter, pos_start)) != string::npos) {
-        if(pos_end > pos_start){
-            res.push_back(s.substr(pos_start, pos_end-pos_start));
-        }
-        pos_start = pos_end+1;
-    }
-    if(pos_start < s.length()){
-        res.push_back(s.substr(pos_start, string::npos));
-    }
-    return res;
-}
-
-const string Lecturer::type = "Lecturer";
-Lecturer::Lecturer(string username, string password, string first_name, string last_name, string contact, string email, vector<string>&modules)
-    : Person(username, password, first_name, last_name, contact, email)
+Lecturer::Lecturer(string username, string password, string fname, string lname, string email, string contact)
+    : Person(fname, lname, email, contact)
 {
-    vector <string> res;
-    for(int i = 0; i < modules.size(); ++i){
-        this->modules.push_back(modules[i]);
-    }
-    
+    this->username = username;
+	this->password = password;
 }
 
-void Lecturer::addModule(string m){
-    vector <string> newModules;
-    newModules = split(m, ", ");
-    for(auto module : newModules){
-        modules.push_back(module);
-    }
-    sort(modules.begin(), modules.end());
-    modules.erase(unique(modules.begin(), modules.end()), modules.end());
-
-}
-
-void Lecturer::deleteModule(string m){
-    vector <string> removeModules;
-    removeModules = split(m, ", ");
-    for(auto module : removeModules){
-        modules.erase(remove(modules.begin(), modules.end(), module), modules.end());
-    }
-    
-}
-
-const string Lecturer::getType() const{
-    return type;
-}
-
-
-
-void Lecturer::showModules(){
-    sort(modules.begin(), modules.end());
-    for (int i = 0; i < modules.size(); i++){
-        if(i != 0){
-            cout << ", " << modules.at(i);
-        }else{
-            cout << modules.at(i);
+void Lecturer::addClass(Classes &new_class){
+    if(!classes.empty()){
+        auto exists = false;
+        // Checks if the same class has been added previously
+        for (auto room : classes){
+            if(room.getName() == new_class.getName()){
+                cout << "Lecturer is already teaching this class!" << endl;
+                exists = true;
+                break;
+            }
         }
+        if(!exists){
+            classes.push_back(new_class);
+        }
+    }else{
+        classes.push_back(new_class);
+    }
+    
+}
+
+void Lecturer::deleteClass(Classes &deleted_class){
+    if(!classes.empty()){
+        auto iter = find_if(classes.begin(), classes.end(), [&] (Classes &c){return c.getName() == deleted_class.getName();}); // returns true if class is in the list of classes and returns the index
+        if (iter != classes.end()){
+            classes.erase(iter);
+            cout << deleted_class.getName() << " has been removed" << endl;
+        }
+    }else{
+        cout << "Lecturer is not teaching any classes!" << endl;
     }
 }
 
-void Lecturer::DisplayDetails(){
-    cout << "==============================" << endl;
-    cout << "Name: " << getFirst() << " " << getLast() << endl;
-    cout << "Contact: " << getContact() << endl;
-    cout << "Email: " << getEmail() << endl;
-    cout << "Module teaching: ";
-    showModules();
-    cout << endl;
+void Lecturer::getClasses(){
+    for (auto c : classes){
+        cout << c.getName() << endl;
+    }
 }
 
+void Lecturer::getClassList(Classes &c){
+    c.getStudentList();
+}
+
+void Lecturer::displayDetails(){
+    Person::displayDetails();
+    cout << "Classes teaching:" << endl;
+    getClasses();
+}
 
 #endif
