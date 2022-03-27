@@ -13,11 +13,10 @@
 
 using namespace std;
 
-Lecturer::Lecturer(string username, string password, string fname, string lname, string email, string contact)
+Lecturer::Lecturer(string fname, string lname, string email, string contact)
     : Person(fname, lname, email, contact)
 {
-    this->username = username;
-	this->password = password;
+
 }
 
 void Lecturer::addClass(Classes &new_class){
