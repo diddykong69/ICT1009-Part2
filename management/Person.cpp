@@ -64,6 +64,10 @@ string Person::getEmail() const{
     return email;
 }
 
-
+void Person::displayDetails(){
+    cout << "Name: " << getFirst() << " " << getLast() << endl;
+    cout << "Email: " << getEmail() << endl;
+    cout << "Contact: " << getContact() << endl;
+}
 
 #endif

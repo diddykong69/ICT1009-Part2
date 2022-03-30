@@ -38,5 +38,10 @@ void Classes::getStudentList(){
     }
 }
 
+Student Classes::getStudent(int index){
+    Student &ret = students[index];
+    return ret;
+}
+
 
 #endif

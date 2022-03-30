@@ -1,14 +1,22 @@
-#ifndef COURSE_MANAGEMENT_MODULE_H
-#define COURSE_MANAGEMENT_MODULE_H
+#pragma once
+#ifndef MODULE_H
+#define MODULE_H
 
 #include <iostream>
 
-class Module
-{
-public:
+using namespace std;
 
-private:
+class Module{
+    private:
+        string module_name;
+        int grade;
 
+    public:
+        Module(string);
+        void setModuleName(string&);
+        string getModuleName() const;
+        void setGrades(int);
+        string getGrades() const;
 };
 
-#endif //COURSE_MANAGEMENT_MODULE_H
+#endif

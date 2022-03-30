@@ -10,11 +10,12 @@
 #include "Person.h"
 #include "Classes.h"
 #include "Lecturer.h"
+#include "Module.h"
 
 using namespace std;
 
-Lecturer::Lecturer(string fname, string lname, string email, string contact)
-    : Person(fname, lname, email, contact)
+Lecturer::Lecturer(string username, string password, string fname, string lname, string contact, string email)
+    : Person(username, password, fname, lname, contact, email)
 {
 
 }
@@ -52,13 +53,49 @@ void Lecturer::deleteClass(Classes &deleted_class){
 }
 
 void Lecturer::getClasses(){
+    int index = 1;
     for (auto c : classes){
-        cout << c.getName() << endl;
+        cout << index << ". " << c.getName() << endl;
+        ++index;
     }
 }
 
 void Lecturer::getClassList(Classes &c){
-    c.getStudentList();
+    if (!classes.empty()){
+        auto is_teaching = false;
+        for (auto cl : classes){
+            if(cl.getName() == c.getName()){
+                is_teaching = true;
+                break;
+            }
+        }
+        if(!is_teaching){
+            cout << "Lecturer does not have permission to view this classlist!" << endl;
+        }else{
+            c.getStudentList();
+        }
+    }else{
+        cout << "Lecturer is not teaching any classes!" << endl;
+    }
+    
+}
+
+// Temporary method. (Change to take in input in future version)
+void Lecturer::setStudentGrades(){
+    getClasses();
+    int choice;
+    cout << "Select class by index: ";
+    cin >> choice;
+    Classes cr = classes[choice-1]; // Class reference
+    cr.getStudentList();
+    cout << "Select student to assign grade by index: ";
+    cin >> choice;
+    Student s = cr.getStudent(choice-1); // Student object
+    cout << "Enter a value from 1 - 100 to assign grade: ";
+    cin >> choice;
+    s.displayDetails();
+    
+    
 }
 
 void Lecturer::displayDetails(){

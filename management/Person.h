@@ -32,6 +32,7 @@ class Person{
         string getContact() const; // Gets contact info
         void setEmail(string email); // Sets email info
         string getEmail() const; // Gets email info
+        void displayDetails();
 };
 
 #endif
