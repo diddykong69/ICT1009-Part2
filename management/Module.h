@@ -2,21 +2,21 @@
 #ifndef MODULE_H
 #define MODULE_H
 
-#include <iostream>
+#include <string>
 
 using namespace std;
 
 class Module{
     private:
         string module_name;
-        int grade;
-
+        int grades;
     public:
         Module(string);
         void setModuleName(string&);
         string getModuleName() const;
-        void setGrades(int);
-        string getGrades() const;
+        void setGrades(const int&);
+        string getGrades() const; // Returns the alphabetical grade value
 };
+
 
 #endif

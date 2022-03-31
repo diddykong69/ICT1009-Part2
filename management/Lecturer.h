@@ -1,5 +1,4 @@
 #pragma once
-
 #ifndef LECTURER_H
 #define LECTURER_H
 
@@ -9,23 +8,22 @@
 
 // header files
 #include "Person.h"
-#include "Classes.h"
-#include "Module.h"
+#include "Classroom.h"
 
 using namespace std;
 
 class Lecturer : public Person{
     private:
-        static const string type;
-        vector <Classes> classes;
+        const string type = "Lecturer";
+        vector <Classroom*> classrooms;
     public:
-        Lecturer(string username, string password, string fname, string lname, string contact, string email);
-        void getClasses();
-        void deleteClass(Classes&);
-        void addClass(Classes&);
-        void getClassList(Classes&);
+        Lecturer(string username, string password, string first_name, string last_name, string contact, string email);
+        void showClasses() const;
+        void addClasses(Classroom&);
+        void deleteClasses(Classroom&);
+        void showClassList(Classroom&) const;
         void setStudentGrades();
-        void displayDetails();
+        void displayDetails() const;
 };
 
 #endif
