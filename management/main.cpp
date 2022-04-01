@@ -26,35 +26,35 @@ void endProgram() {
     exit(1);
 }
 
-int main(int argc, const char * argv[]) {
-  
-    Menu studentMenu("Select an option");
-    studentMenu.addItem("View grades", &option0);
-    studentMenu.addItem("View lectuers", &option1);
-    studentMenu.addItem("View modules", &option2);
-    studentMenu.addItem("Exit", &endProgram);
-
-    Menu lectuererMenu("Select an option");
-    lectuererMenu.addItem("View students", &option0);
-    lectuererMenu.addItem("View modules", &option2);
-    lectuererMenu.addItem("Exit", &endProgram);
-
-    Menu adminMenu("Select an option");
-    adminMenu.addItem("Add/edit students", &option0);
-    adminMenu.addItem("Add/edit lecturers", &option1);
-    adminMenu.addItem("Add/edit modules", &option2);
-    adminMenu.addItem("Exit", &endProgram);
-
-    Student student;
-    student.setMatriCode(2);
-    student.setGrades(90);
-    student.setModules("1009");
-    student.showStudent();
-    
-    // print the respective menu and get input
-    // studentMenu.printMenu();
-    // lectuererMenu.printMenu();
-    // adminMenu.printMenu();
-  
-    return 0;
-}
+//int main(int argc, const char * argv[]) {
+//
+//    Menu studentMenu("Select an option");
+//    studentMenu.addItem("View grades", &option0);
+//    studentMenu.addItem("View lectuers", &option1);
+//    studentMenu.addItem("View modules", &option2);
+//    studentMenu.addItem("Exit", &endProgram);
+//
+//    Menu lectuererMenu("Select an option");
+//    lectuererMenu.addItem("View students", &option0);
+//    lectuererMenu.addItem("View modules", &option2);
+//    lectuererMenu.addItem("Exit", &endProgram);
+//
+//    Menu adminMenu("Select an option");
+//    adminMenu.addItem("Add/edit students", &option0);
+//    adminMenu.addItem("Add/edit lecturers", &option1);
+//    adminMenu.addItem("Add/edit modules", &option2);
+//    adminMenu.addItem("Exit", &endProgram);
+//
+////    Student student;
+////    student.setMatriCode(2);
+////    student.setGrades(90);
+////    student.setModules("1009");
+////    student.showStudent();
+//
+//    // print the respective menu and get input
+////     studentMenu.printMenu();
+//    // lectuererMenu.printMenu();
+//    // adminMenu.printMenu();
+//
+//    return 0;
+//}
