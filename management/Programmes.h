@@ -14,6 +14,8 @@ public:
 
     void createProgramme();
 
+    void displayProgrammes();
+
 private:
     sqlDB database{};
 

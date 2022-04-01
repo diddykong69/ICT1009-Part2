@@ -144,10 +144,31 @@ void Programmes::setDegree()
     this->programmeDegree = degrees[selectedDegreeIndex];
 }
 
-int main()
+void Programmes::displayProgrammes()
 {
-    Programmes p1;
-    p1.createProgramme();
+    this->sqlQuery = this->database.query(
+        "SELECT programme_name, programme_description, programme_credits, "
+        "programme_duration, programme_eligibility, degree FROM programmes;"
+    );
 
-    return 0;
+    if (this->sqlQuery != 0)
+    {
+        fmt::print(
+                fg(fmt::color::red),
+                "Something went wrong. The programmes could not be displayed.\n"
+                "Please try again.\n",
+                this->programmeName
+        );
+    }
+
+    database.print();
 }
+
+//int main()
+//{
+//    Programmes p1;
+//    p1.createProgramme();
+//    p1.displayProgrammes();
+//
+//    return 0;
+//}
