@@ -2,6 +2,10 @@
 #include <stdio.h>
 #include <iostream>
 
+#ifndef MENU_H
+#define MENU_H
+
+
 Menu::Menu() {
     
 }
@@ -80,3 +84,5 @@ void Menu::printMenu() {
     }
     
 }
+
+#endif

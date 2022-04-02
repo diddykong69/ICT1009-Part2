@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "menu.h"
 #include "Student.h"
+#include "Authenication.h"
+#include "admin.h"
 #include "..\sql\sqlDB.h"
 
 using namespace std;
@@ -28,10 +30,33 @@ void endProgram() {
 }
 
 int main(int argc, const char * argv[]) {
-        sqlDB test;
-    test.query("SELECT * FROM users;");
-    test.print();
-    cout << endl;
+    string username;
+    string password;
+    string classtype;
+
+
+
+
+    
+    cout << "Please enter username:";
+    cin >> username;
+    cout << "Please enter password:";
+    cin >> password;
+    Authenication test(username,password);
+    test.authenicate();
+    classtype = test.get_role();
+    cout << "Hello "<<username <<" Role:" << classtype << endl;
+    if(classtype == "admin"){
+        Admin new_class(username);
+            Menu adminMenu("Select an option");
+    adminMenu.addItem("Add/edit students", &option0);
+    adminMenu.addItem("Add/edit lecturers", &option1);
+    adminMenu.addItem("Add/edit modules", &option2);
+    adminMenu.addItem("Exit", &endProgram);
+        adminMenu.printMenu();
+    }
+    
+    
   
 //     Menu studentMenu("Select an option");
 //     studentMenu.addItem("View grades", &option0);
@@ -44,11 +69,6 @@ int main(int argc, const char * argv[]) {
 //     lectuererMenu.addItem("View modules", &option2);
 //     lectuererMenu.addItem("Exit", &endProgram);
 
-//     Menu adminMenu("Select an option");
-//     adminMenu.addItem("Add/edit students", &option0);
-//     adminMenu.addItem("Add/edit lecturers", &option1);
-//     adminMenu.addItem("Add/edit modules", &option2);
-//     adminMenu.addItem("Exit", &endProgram);
 
 //     Student student;
 //     student.setMatriCode(2);

@@ -9,9 +9,15 @@
 #include <cstdio>
 
 using namespace std;
-
+static map<int,map<string,string>> mapping;
 
 class sqlDB{
+    private:
+    string DATABASE_NAME = "../sql/PMSDB.db";
+    char* CHAR_DATABASE_NAME = &DATABASE_NAME[0];
+    map<int,map<string,string>> response;
+    map<int,map<string,string>>::iterator outside_ptr;
+    map<string,string>::iterator inside_ptr;
     sqlite3* db;
     int exit = 0;
     char *errMsg = 0;
@@ -20,12 +26,11 @@ class sqlDB{
    public: 
     sqlDB();
     ~sqlDB();
-    map<int,map<string,string>> response;
-    map<int,map<string,string>>::iterator outside_ptr;
-    map<string,string>::iterator inside_ptr;
+
     int query(string sql);
     void update();
     void print();
+    map<int,map<string,string>> get_response();
     
     
 };

@@ -4,9 +4,7 @@
 #define sqlDB_CPP
 
 #include "sqlDB.h"
-string DATABASE_NAME = "../sql/example.db";
-char* CHAR_DATABASE_NAME = &DATABASE_NAME[0];
-map<int,map<string,string>> mapping;
+
 int ITERATION = 0;
 sqlDB::sqlDB()
 {
@@ -90,14 +88,17 @@ int sqlDB::callback(void *data, int argc, char **argv, char **azColName)
     return 0;
 }
 
+ map<int,map<string,string>> sqlDB::get_response(){
+     return response;
+ }
+
 /* int main(int argc, char** argv)
 {
     sqlDB test;
     test.query("SELECT * FROM users;");
-    test.print();
+    cout << test.response[0]["username"];
+    //test.print();
     cout << endl;
-    test.query("SELECT * FROM users;");
-    test.print();
 }    */
 
 #endif
