@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <sstream>
 #include "../sql/sqlDB.h"
 #include "fmt/core.h"
 #include "fmt/color.h"
@@ -27,18 +28,12 @@ private:
     std::string aboutProgramme{};
     std::string eligibility{};
     std::string programmeDegree{};
+    std::string userInput{};
 
     std::vector<std::string> degrees{};
 
-    void setProgrammeName();
-
-    void setAboutProgramme();
-
-    void setProgrammeCredits();
-
-    void setProgrammeDuration();
-
-    void setProgrammeEligibility();
+    template<typename T>
+    void setProgrammeProperties(const string &question, T *propertyToSet);
 
     void setDegree();
 

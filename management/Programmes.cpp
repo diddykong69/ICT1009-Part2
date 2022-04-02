@@ -2,34 +2,83 @@
 
 Programmes::Programmes() = default;
 
+/**
+ * Creates a new programme
+ */
 void Programmes::createProgramme()
 {
-    setProgrammeName();
-    setAboutProgramme();
-    setProgrammeCredits();
-    setProgrammeDuration();
-    setProgrammeEligibility();
+    auto askProgrammeName{
+            fmt::format("What will the new programme be called?\n")
+    };
+
+    // Ask what the programme name would be & set it
+    setProgrammeProperties(askProgrammeName, &this->programmeName);
+
+    auto askAboutProgramme{
+            fmt::format(
+                    "What will the programme {} be about?\n",
+                    this->programmeName
+            )
+    };
+
+    // Ask what the programme is about & set it
+    setProgrammeProperties(askAboutProgramme, &this->aboutProgramme);
+
+    auto askProgrammeCredit{
+            fmt::format(
+                    "What will the total credit be for the programme {}\n",
+                    this->programmeName
+            )
+    };
+
+    // Ask what the total credits for the programme will be & set it
+    setProgrammeProperties(askProgrammeCredit, &this->programmeCredits);
+
+    auto askProgrammeDuration{
+            fmt::format(
+                    "How long will it take to complete the programme {} "
+                    "(in months)\n",
+                    this->programmeName
+            )
+    };
+
+    // Ask how long the programme will be & set it
+    setProgrammeProperties(askProgrammeDuration, &this->programmeDuration);
+
+    auto askProgrammeEligibility{
+            fmt::format(
+                    "What are the requirements needed to be eligible for this "
+                    "programme ({})?\n",
+                    this->programmeName
+            )
+    };
+
+    // Ask what the requirements to be eligible for the programme are & set it
+    setProgrammeProperties(askProgrammeEligibility, &this->eligibility);
+
+    /* Ask what degree a student of the programme can get upon completion & set
+     it */
     setDegree();
 
-    std::string insertQuery = fmt::format(
+    // Create an INSERT INTO query for creating the programme
+    auto insertQuery = fmt::format(
             "INSERT INTO programmes (programme_name, programme_description, "
             "programme_credits, programme_duration, programme_eligibility, "
-            "degree, created_by, updated_by) VALUES ('{programmeName}', "
-            "'{aboutProgramme}', {programmeCredits}, {programmeDuration}, "
-            "'{programmeEligibility}', '{programmeDegree}', '{createdBy}', "
-            "'{updatedBy}');",
+            "degree) VALUES ('{programmeName}', '{aboutProgramme}', "
+            "{programmeCredits}, {programmeDuration}, '{programmeEligibility}',"
+            " '{programmeDegree}');",
             fmt::arg("programmeName", this->programmeName),
             fmt::arg("aboutProgramme", this->aboutProgramme),
             fmt::arg("programmeCredits", this->programmeCredits),
             fmt::arg("programmeDuration", this->programmeDuration),
             fmt::arg("programmeEligibility", this->eligibility),
-            fmt::arg("programmeDegree", this->programmeDegree),
-            fmt::arg("createdBy", 1),
-            fmt::arg("updatedBy", 1)
+            fmt::arg("programmeDegree", this->programmeDegree)
     );
 
+    // Execute the INSERT INTO query
     this->sqlQuery = this->database.query(insertQuery);
 
+    // Check if query was successfully executed
     if (this->sqlQuery != 0)
     {
         fmt::print(
@@ -45,47 +94,64 @@ void Programmes::createProgramme()
     }
 }
 
-void Programmes::setProgrammeName()
+/**
+ * Set the name, description, total credits, duration, eligibility & obtainable
+ * degree of the programme to be created
+ * @param question The question to ask user
+ * @param propertyToSet The property (i.e. class variable) to set
+ */
+template<typename T>
+void Programmes::setProgrammeProperties(const string &question,
+                                        T *propertyToSet)
 {
-    fmt::print("What will the new programme be called?\n");
-    getline(std::cin, this->programmeName);
+    bool canBreak{false};
+
+    auto strProgrammeCreditsMemoryAddress{
+            fmt::format("{}", fmt::ptr(&this->programmeCredits))
+    };
+
+    auto strProgrammeDurationMemoryAddress{
+            fmt::format("{}", fmt::ptr(&this->programmeDuration))
+    };
+
+    auto strPropertyToSetMemoryAddress{
+            fmt::format("{}", fmt::ptr(&*propertyToSet))
+    };
+
+    while (!canBreak)
+    {
+        fmt::print("{}", question);
+
+        getline(std::cin, this->userInput);
+
+        std::stringstream ss(this->userInput);
+
+        if (strPropertyToSetMemoryAddress
+            == strProgrammeCreditsMemoryAddress
+            || strPropertyToSetMemoryAddress
+               == strProgrammeDurationMemoryAddress)
+        {
+            if (ss >> *propertyToSet
+                && ss.eof()
+                && std::stoi(this->userInput) > 0)
+            {
+                canBreak = true;
+            }
+        }
+        else
+        {
+            if (ss >> *propertyToSet && !this->userInput.empty())
+            {
+                canBreak = true;
+            }
+        }
+    }
 }
 
-void Programmes::setAboutProgramme()
-{
-    fmt::print("What will the programme {} be about?\n", this->programmeName);
-    getline(std::cin, this->aboutProgramme);
-}
-
-void Programmes::setProgrammeCredits()
-{
-    fmt::print(
-            "What will the total credit be for the programme {}\n",
-            this->programmeName
-    );
-    std::cin >> this->programmeCredits;
-    std::cin.ignore();
-}
-
-void Programmes::setProgrammeDuration()
-{
-    fmt::print(
-            "How long will it take to complete the programme {} (in months)\n",
-            this->programmeName
-    );
-    std::cin >> this->programmeDuration;
-    std::cin.ignore();
-}
-
-void Programmes::setProgrammeEligibility()
-{
-    fmt::print(
-            "What are the requirements to enroll in the programme {}?\n",
-            this->programmeName
-    );
-    getline(std::cin, this->eligibility);
-}
-
+/**
+ * Ask user what degree a student of the programme can obtain upon completing
+ * the programme
+ */
 void Programmes::setDegree()
 {
     int selectedDegreeIndex{};
@@ -121,34 +187,46 @@ void Programmes::setDegree()
             "Doctor of Philosophy (PhD)"
     };
 
-    fmt::print(
-            "Choose which degree a student of this programme ({0})\nwill {1}\n",
-            this->programmeName,
-            "get at the end of the programme"
-    );
-
-    int index{1};
-    for (const std::string &degree: degrees)
+    while (true)
     {
         fmt::print(
-                "{index}) {degree}\n",
-                fmt::arg("index", index),
-                fmt::arg("degree", degree)
+                "Choose which degree a student of this programme "
+                "({})\nwill get at the end of the programme\n",
+                this->programmeName
         );
-        index++;
+
+        int index{1};
+        for (const std::string &degree: this->degrees)
+        {
+            fmt::print(
+                    "{index}) {degree}\n",
+                    fmt::arg("index", index),
+                    fmt::arg("degree", degree)
+            );
+            index++;
+        }
+
+        fmt::print("Degree selected: ");
+        std::cin >> selectedDegreeIndex;
+        std::cin.ignore();
+
+        if (selectedDegreeIndex - 1 >= 0 &&
+            selectedDegreeIndex <= degrees.size())
+        {
+            break;
+        }
     }
 
-    fmt::print("Degree selected: ");
-    std::cin >> selectedDegreeIndex;
-    std::cin.ignore();
-    this->programmeDegree = degrees[selectedDegreeIndex];
+    this->programmeDegree = this->degrees[selectedDegreeIndex - 1];
 }
 
 void Programmes::displayProgrammes()
 {
+    int programmeIndex{};
+
     this->sqlQuery = this->database.query(
-        "SELECT programme_name, programme_description, programme_credits, "
-        "programme_duration, programme_eligibility, degree FROM programmes;"
+            "SELECT programme_name, programme_description, programme_credits, "
+            "programme_duration, programme_eligibility, degree FROM programmes;"
     );
 
     if (this->sqlQuery != 0)
@@ -161,14 +239,80 @@ void Programmes::displayProgrammes()
         );
     }
 
-    database.print();
+    while (programmeIndex != this->database.response.size() + 1)
+    {
+        fmt::print(
+                "Programmes available in SIT "
+                "(Enter the programme's index no. for more info!)\n"
+        );
+
+        for (int i = 0; i < this->database.response.size(); i++)
+        {
+            fmt::print(
+                    "{}) {}\n",
+                    i + 1,
+                    this->database.response[i]["programme_name"]
+            );
+        }
+
+        fmt::print("{}) Go back\n", this->database.response.size() + 1);
+
+        fmt::print("View more info about programme: ");
+        std::cin >> programmeIndex;
+        std::cin.ignore();
+
+        if (programmeIndex >= 1 && programmeIndex <= database.response.size())
+        {
+            fmt::print(
+                    fmt::emphasis::underline,
+                    "{}\n",
+                    database.response[programmeIndex - 1]["programme_name"]
+            );
+
+            fmt::print(
+                    "About:\n{about}\n\nTotal credits:\n{credits}\n\n"
+                    "Duration:\n{duration}\n\nDegree:\n{degree}\n\n"
+                    "Eligibility:\n{eligibility}\n\n",
+                    fmt::arg(
+                            "about",
+                            this->database.response
+                            [programmeIndex - 1]["programme_description"]
+                    ),
+                    fmt::arg(
+                            "credits",
+                            this->database.response
+                            [programmeIndex - 1]["programme_credits"]
+                    ),
+                    fmt::arg(
+                            "duration",
+                            this->database.response
+                            [programmeIndex - 1]["programme_duration"]
+                    ),
+                    fmt::arg(
+                            "degree",
+                            this->database.response
+                            [programmeIndex - 1]["degree"]
+                    ),
+                    fmt::arg(
+                            "eligibility",
+                            this->database.response
+                            [programmeIndex - 1]["programme_eligibility"]
+                    )
+            );
+        }
+        else if (programmeIndex == this->database.response.size() + 1)
+        {
+            // Go back
+        }
+    }
 }
 
-//int main()
-//{
-//    Programmes p1;
+
+int main()
+{
+    Programmes p1;
 //    p1.createProgramme();
-//    p1.displayProgrammes();
-//
-//    return 0;
-//}
+    p1.displayProgrammes();
+
+    return 0;
+}

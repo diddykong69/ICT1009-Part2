@@ -1,3 +1,6 @@
+#ifndef sqlDB_H
+#define sqlDB_H
+
 #include <iostream>
 #include <sqlite3.h>
 #include <functional>
@@ -10,21 +13,16 @@
 
 using namespace std;
 
+static map<int, map<string, string>> mapping;
+
 class sqlDB
 {
 public:
-    sqlite3 *db{};
-    char *errMsg{};
-
     map<int, map<string, string>> response;
-    map<int, map<string, string>>::iterator outside_ptr;
-    map<string, string>::iterator inside_ptr;
 
     sqlDB();
 
     ~sqlDB();
-
-    bool connectToDB();
 
     int query(const string &sql);
 
@@ -33,4 +31,12 @@ public:
     void print();
 
     static int callback(void *data, int argc, char **argv, char **azColName);
+
+private:
+    sqlite3 *db{};
+    char *errMsg{};
+    map<int, map<string, string>>::iterator outside_ptr;
+    map<string, string>::iterator inside_ptr;
 };
+
+#endif

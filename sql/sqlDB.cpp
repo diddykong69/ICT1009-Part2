@@ -1,7 +1,7 @@
 // you need to compile with -l sqlite3.... example: g++ sqlDb.cpp -l sqlite3
 #include "sqlDB.h"
 
-map<int, map<string, string>> mapping;
+//map<int, map<string, string>> mapping;
 int ITERATION = 0;
 
 sqlDB::sqlDB()
@@ -54,10 +54,6 @@ int sqlDB::query(const string &sql)
         //cerr << "Error: " << errMsg << endl;
         sqlite3_free(errMsg);
         return 1;
-    }
-    else
-    {
-        cout << "Operation OK!" << endl;
     }
 
     return 0;
