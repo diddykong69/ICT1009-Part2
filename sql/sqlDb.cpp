@@ -1,6 +1,13 @@
 // you need to compile with -l sqlite3.... example: g++ sqlDb.cpp -l sqlite3
-#include "sqlDB.h"
 
+#ifndef sqlDB_CPP
+#define sqlDB_CPP
+
+#include "sqlDB.h"
+string DATABASE_NAME = "../sql/example.db";
+char* CHAR_DATABASE_NAME = &DATABASE_NAME[0];
+map<int,map<string,string>> mapping;
+int ITERATION = 0;
 sqlDB::sqlDB()
 {
 
@@ -41,7 +48,6 @@ int sqlDB::query(string sql)
 
 void sqlDB::print()
 {
-    update();
     if (response.size() == 0){
         cout << "No data found.";
     }
@@ -89,5 +95,9 @@ int sqlDB::callback(void *data, int argc, char **argv, char **azColName)
     sqlDB test;
     test.query("SELECT * FROM users;");
     test.print();
+    cout << endl;
+    test.query("SELECT * FROM users;");
+    test.print();
+}    */
 
-}   */
+#endif

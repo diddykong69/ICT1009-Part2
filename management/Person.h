@@ -1,7 +1,7 @@
 #pragma once
 #ifndef PERSON_H
 #define PERSON_H
-
+#include "..\sql\sqlDB.h"
 #include <string>
 
 using namespace std;

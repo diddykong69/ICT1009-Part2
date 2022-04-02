@@ -1,3 +1,7 @@
+
+#ifndef sqlDB_H
+#define sqlDB_H
+
 #include <iostream>
 #include <sqlite3.h>
 #include <string>
@@ -5,10 +9,7 @@
 #include <cstdio>
 
 using namespace std;
-string DATABASE_NAME = "../sql/example.db";
-char* CHAR_DATABASE_NAME = &DATABASE_NAME[0];
-map<int,map<string,string>> mapping;
-int ITERATION = 0;
+
 
 class sqlDB{
     sqlite3* db;
@@ -28,3 +29,5 @@ class sqlDB{
     
     
 };
+
+#endif
