@@ -17,13 +17,14 @@ class Student : public Person{
         vector <Module*> modules;
         const string type = "Student";
     public:
-        Student(string matri_code, string password, string first_name, string last_name, string contact, string email);
+        Student(string matri_code, string first_name, string last_name, string contact, string email);
         void setMatriCode(string& matri_code);
         string getMatriCode() const;
         void deleteModule(Module&);
         void addModule(Module&);
         Module getModule(const int&);
         void setGrades(const string&, const int&);
+        string getGrades(const string&);
         string getType() const;
         void showModules() const;
         void displayDetails() const;

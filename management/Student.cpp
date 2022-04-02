@@ -10,8 +10,8 @@
 
 using namespace std;
 
-Student::Student(string matri_code, string password, string first_name, string last_name, string contact, string email)
-    : Person(matri_code, password, first_name, last_name, contact, email)
+Student::Student(string matri_code, string first_name, string last_name, string contact, string email)
+    : Person(matri_code, first_name, last_name, contact, email)
 {
     setMatriCode(matri_code);
 };
@@ -62,6 +62,14 @@ void Student::setGrades(const string& module_name, const int& new_grades){
         }
     }
 };
+string Student::getGrades(const string& module_name){
+    for (auto module : modules){
+        if (module->getModuleName() == module_name){
+            return module->getGrades();
+        }
+    }
+    return "-";
+};
 Module Student::getModule(const int& index){
     return *modules[index];
 };
@@ -75,12 +83,13 @@ void Student::showModules() const{
         int index = 1;
         cout << "Modules taking:" << endl;
         for (auto module : modules){
-            cout << index << ": " << module->getModuleName() << " Grades: " << module->getGrades() << endl;
+            cout << index << ". " << module->getModuleName() << " Grades: " << module->getGrades() << endl;
             index++;
         }
     }
 };
 void Student::displayDetails() const{
+    cout << "Displaying details for: " << endl;
     Person::displayDetails();
     cout << "Type: " << getType() << endl;
     showModules();

@@ -1,7 +1,7 @@
 #pragma once
 #ifndef PERSON_H
 #define PERSON_H
-#include "..\sql\sqlDB.h"
+
 #include <string>
 
 using namespace std;
@@ -9,17 +9,15 @@ using namespace std;
 class Person{
     private:
         string username;
-        string password;
         string first_name;
         string last_name;
         string contact;
         string email;
     public:
-        Person(string username, string password, string first_name, string last_name, string contact, string email);
+        Person();
+        Person(string username, string first_name, string last_name, string contact, string email);
         void setUsername(string&);
         string getUsername() const;
-        void setPassword(string&);
-        // TODO: implement authentication checking in future
         void setFirstName(string&);
         string getFirstName() const;
         void setLastName(string&);
@@ -31,5 +29,6 @@ class Person{
         string getEmail() const;
         void displayDetails() const;
 };
+
 
 #endif

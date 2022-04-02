@@ -9,9 +9,12 @@
 
 using namespace std;
 
-Person::Person(string username, string password, string first_name, string last_name, string contact, string email){
+Person::Person(){
+
+};
+
+Person::Person(string username, string first_name, string last_name, string contact, string email){
     setUsername(username);
-    setPassword(password);
     setFirstName(first_name);
     setLastName(last_name);
     setContact(contact);
@@ -22,9 +25,6 @@ void Person::setUsername(string& username){
 };
 string Person::getUsername() const{
     return username;
-};
-void Person::setPassword(string& password){
-    this->password = password;
 };
 void Person::setFirstName(string& first_name){
     this->first_name = first_name;

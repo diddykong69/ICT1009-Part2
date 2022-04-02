@@ -13,11 +13,14 @@
 using namespace std;
 
 class Lecturer : public Person{
+    friend ostream & operator<<(ostream& out, const Lecturer& lec);
+    friend istream & operator>>(istream& in, Lecturer& lec);
     private:
         const string type = "Lecturer";
         vector <Classroom*> classrooms;
     public:
-        Lecturer(string username, string password, string first_name, string last_name, string contact, string email);
+        Lecturer();
+        Lecturer(string username, string first_name, string last_name, string contact, string email);
         void showClasses() const;
         void addClasses(Classroom&);
         void deleteClasses(Classroom&);
@@ -25,5 +28,8 @@ class Lecturer : public Person{
         void setStudentGrades();
         void displayDetails() const;
 };
+
+ostream& operator<<(ostream& out, const Lecturer& lec);
+istream & operator>>(istream& in, Lecturer& lec);
 
 #endif

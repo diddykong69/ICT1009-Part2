@@ -6,13 +6,27 @@
 
 using namespace std;
 
-Lecturer::Lecturer(string username, string password, string first_name, string last_name, string contact, string email)
-    : Person(username, password, first_name, last_name, contact, email)
+ostream& operator<< (ostream& out, const Lecturer& lec){
+        out << lec.getUsername() << "\n" << lec.getFirstName() << "\n" << lec.getLastName() << "\n" << lec.getContact() << "\n" << lec.getEmail() << "\n";
+        for (auto classroom : lec.classrooms){
+            out << classroom->getClassroomName() << "\n";
+        }
+        return out;
+};
+
+
+Lecturer::Lecturer(){
+
+}
+
+Lecturer::Lecturer(string username, string first_name, string last_name, string contact, string email)
+    : Person(username, first_name, last_name, contact, email)
 {
 
 };
 void Lecturer::showClasses() const{
     int index = 1;
+    cout << "Classes teaching: " << endl;
     for (auto classroom : classrooms){
         cout << index << ". " << classroom->getClassroomName() << endl;
         index++;
@@ -83,14 +97,13 @@ void Lecturer::setStudentGrades(){
     sr.showModules();
     cout << "Select modules from list by index: ";
     cin >> choice;
-    auto m = sr.getModule(choice-1);
-    string old_grade = m.getGrades();
+    auto m = sr.getModule(choice-1);    
     cout << "Enter grade score for " << m.getModuleName() << ": ";
     cin >> choice;
-    m.setGrades(choice);
-    cout << "Grades for " << m.getModuleName() << " have been updated successfully";
-    cout << "Old grades: " << old_grade << endl;
-    cout << "New grades: " << m.getGrades() << endl;
+    sr.setGrades(m.getModuleName(), choice);
+    cout << "Grades for " << m.getModuleName() << " have been updated successfully" << endl;
+    cout << "Old grades: " << m.getGrades() << endl;
+    cout << "New grades: " << sr.getGrades(m.getModuleName()) << endl;
 };
 void Lecturer::displayDetails() const{
     Person::displayDetails();
