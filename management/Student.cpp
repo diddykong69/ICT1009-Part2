@@ -23,8 +23,6 @@ Student::Student(string matri_code, string username,string first_name, string la
             modules.push_back(mod);
         }
     }
-    
-    
 };
 void Student::setMatriCode(string& matri_code){
     this->matri_code = matri_code;

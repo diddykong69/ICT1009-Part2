@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "menu.h"
 #include "Student.h"
+#include "Lecturer.h"
 #include "Authenication.h"
 #include "admin.h"
 #include "..\sql\sqlDB.h"
@@ -41,7 +42,7 @@ int main(int argc, const char * argv[]) {
     Authenication test(username,password);
     test.authenicate();
     classtype = test.get_role();
-    cout << "Hello "<<username <<" Role:" << classtype << endl;
+    cout << "Hello "<<username << "\n" << " Role:" << classtype << endl;
     if(classtype == "admin"){
         Admin new_class(test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
         cout << new_class.getUsername();
@@ -49,6 +50,11 @@ int main(int argc, const char * argv[]) {
     }
     if (classtype == "student"){
         Student new_class(test.get_matri_code(),test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
+        new_class.showModules();
+    }
+
+    if (classtype == "lecturer"){
+        Lecturer new_class(test.get_username(), test.get_first_name(), test.get_last_name(), test.get_email());
         new_class.showModules();
     }
     
