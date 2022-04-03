@@ -10,10 +10,21 @@
 
 using namespace std;
 
-Student::Student(string matri_code, string first_name, string last_name, string contact, string email)
-    : Person(matri_code, first_name, last_name, contact, email)
+Student::Student(string matri_code, string username,string first_name, string last_name, string email)
+    : Person(username,first_name, last_name, email)
 {
     setMatriCode(matri_code);
+    int no_result = conn.query("SELECT * FROM student WHERE admission_number = '"+matri_code+"'");
+    if (!no_result)
+    {
+        response = conn.get_response();
+        for(int i=0; i < response.size();i++){
+            Module mod(response[i]["module"], stoi(response[i]["grade"]));
+            modules.push_back(&mod);
+        }
+    }
+    
+    
 };
 void Student::setMatriCode(string& matri_code){
     this->matri_code = matri_code;

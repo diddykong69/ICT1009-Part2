@@ -11,7 +11,7 @@ class Module{
         string module_name;
         int grades;
     public:
-        Module(string);
+        Module(string, int);
         void setModuleName(string&);
         string getModuleName() const;
         void setGrades(const int&);

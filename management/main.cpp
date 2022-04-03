@@ -33,10 +33,6 @@ int main(int argc, const char * argv[]) {
     string username;
     string password;
     string classtype;
-
-
-
-
     
     cout << "Please enter username:";
     cin >> username;
@@ -49,12 +45,11 @@ int main(int argc, const char * argv[]) {
     if(classtype == "admin"){
         Admin new_class(test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
         cout << new_class.getUsername();
-    //         Menu adminMenu("Select an option");
-    // adminMenu.addItem("Add/edit students", &option0);
-    // adminMenu.addItem("Add/edit lecturers", &option1);
-    // adminMenu.addItem("Add/edit modules", &option2);
-    // adminMenu.addItem("Exit", &endProgram);
-    //     adminMenu.printMenu();
+
+    }
+    if (classtype == "student"){
+        Student new_class(test.get_matri_code(),test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
+        new_class.showModules();
     }
     
     
@@ -76,6 +71,13 @@ int main(int argc, const char * argv[]) {
 //     student.setGrades(90);
 //     student.setModules("1009");
 //     student.showStudent();
+
+    //         Menu adminMenu("Select an option");
+    // adminMenu.addItem("Add/edit students", &option0);
+    // adminMenu.addItem("Add/edit lecturers", &option1);
+    // adminMenu.addItem("Add/edit modules", &option2);
+    // adminMenu.addItem("Exit", &endProgram);
+    //     adminMenu.printMenu();
     
 //     // print the respective menu and get input
 //     // studentMenu.printMenu();

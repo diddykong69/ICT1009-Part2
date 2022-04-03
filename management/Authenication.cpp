@@ -17,6 +17,7 @@ bool Authenication::authenicate(){
     first_name = conn.get_response()[0]["First_name"];
     last_name = conn.get_response()[0]["Last_name"];
     email = conn.get_response()[0]["email_address"];
+    matri_code = conn.get_response()[0]["admission_number"];
     return result;
 };
 
@@ -40,6 +41,9 @@ string Authenication::get_username(){
     return username;
 }
 
+string Authenication::get_matri_code(){
+    return matri_code;
+}
 
 
 /* int main(int argc, const char * argv[]) {

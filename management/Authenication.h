@@ -5,7 +5,6 @@
 #include <string> // npos
 #include <map>
 #include "../sql/sqlDB.h"
-#include "admin.h"
 
 using namespace std;
 
@@ -20,6 +19,7 @@ class Authenication{
     string first_name;
     string last_name;
     string email;
+    string matri_code;
     public:
     Authenication(string user, string password);
     bool authenicate();    
@@ -28,6 +28,7 @@ class Authenication{
     string get_first_name();
     string get_last_name();
     string get_email();
+    string get_matri_code();
 };
 
 #endif

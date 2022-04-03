@@ -8,9 +8,9 @@
 
 using namespace std;
 
-Module::Module(string module_name){
+Module::Module(string module_name, int grade){
     setModuleName(module_name);
-    grades = -1;
+    setGrades(grade);
 };
 void Module::setModuleName(string& module_name){
     this->module_name = module_name;

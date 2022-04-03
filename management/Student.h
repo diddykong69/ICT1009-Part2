@@ -8,16 +8,19 @@
 // header files
 #include "Person.h"
 #include "Module.h"
+#include "../sql/sqlDB.h"
 
 using namespace std;
 
 class Student : public Person{
     private:
+        sqlDB conn;
+        map<int,map<string,string>> response;
         string matri_code;
         vector <Module*> modules;
         const string type = "Student";
     public:
-        Student(string matri_code, string first_name, string last_name, string contact, string email);
+        Student(string matri_code,string username,string first_name, string last_name, string email);
         void setMatriCode(string& matri_code);
         string getMatriCode() const;
         void deleteModule(Module&);
