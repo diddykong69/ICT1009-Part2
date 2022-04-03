@@ -89,10 +89,9 @@ void Student::showModules() const{
     if (modules.empty()){
         cout << "Student is not taking any modules" << endl;
     }else{
-        int index = 1;
         cout << "Modules taking:" << endl;
-        for (auto module : modules){
-            cout << module->getModuleName();
+        int index = 1;
+        for (auto module : modules){            
             cout << index << ". " << module->getModuleName() << " Grades: " << module->getGrades() << endl;
             index++;
         }

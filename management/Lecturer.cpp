@@ -10,16 +10,23 @@ using namespace std;
 Lecturer::Lecturer(string admission_number, string username, string first_name, string last_name, string email)
     : Person(admission_number, username, first_name, last_name, email)
 {
-
+    int no_result = conn.query("SELECT * FROM lecturers WHERE admission_number = '"+admission_number+"'");
+    if (!no_result)
+    {
+        response = conn.get_response();
+        for(int i=0; i < response.size();i++){            
+            modules.push_back(response[i]["modules"]);
+        }
+    }
 };
-// void Lecturer::showClasses() const{
-//     int index = 1;
-//     cout << "Classes teaching: " << endl;
-//     for (auto classroom : classrooms){
-//         cout << index << ". " << classroom->getClassroomName() << endl;
-//         index++;
-//     }
-// };
+void Lecturer::showModules() const{
+    cout << "Classes teaching: " << endl;
+    int index = 1;
+    for (auto module : modules){
+        cout << index << ". " << module << endl;
+        index++;
+    }
+};
 // void Lecturer::addClasses(Classroom& new_class){
 //     if (classrooms.empty()){
 //         classrooms.push_back(&new_class);
