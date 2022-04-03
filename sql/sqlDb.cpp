@@ -16,7 +16,7 @@ sqlDB::sqlDB()
     }
     else
     {
-        std::cout << "Opened Database Successfully!" << std::endl;
+        // std::cout << "Opened Database Successfully!" << std::endl;
     }
 };
 

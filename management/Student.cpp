@@ -55,23 +55,6 @@ void Student::deleteModule(Module& delete_module){
     }
 };
 void Student::addModule(Module& new_module){
-    // if (modules.empty()){
-    //     modules.push_back(&new_module);
-    //     cout << "Student: " << getName() << " is now taking " << new_module.getModuleName() << endl;
-    // }else{
-    //     bool already_taking = false;
-    //     for (auto module : modules){
-    //         if (module->getModuleName() == new_module.getModuleName()){
-    //             already_taking = true;
-    //             cout << "Student is already taking " << new_module.getModuleName() << endl;
-    //             break;
-    //         }
-    //     }
-    //     if (!already_taking){
-    //         modules.push_back(&new_module);
-    //         cout << "Student: " << getName() << " is now taking " << new_module.getModuleName() << endl;
-    //     }
-    // }
     modules.push_back(&new_module);
 };
 void Student::setGrades(const string& module_name, const int& new_grades){

@@ -111,20 +111,20 @@ void Lecturer::setStudentGrades(){
             cout << i+1 << ". " << response[i]["First_name"] << " " << response[i]["Last_name"] << " | Module name: " << response[i]["module"] << " Grade: " << response[i]["grade"] << endl;
         }
     }
-    choice = 0;
-    Student temp_student(response[choice]["admission_number"], response[choice]["user_name"], response[choice]["First_name"], response[choice]["Last_name"], response[choice]["email"]);
-    string search_id = response[choice]["admission_number"];
-
-    result = conn.query("SELECT * FROM student WHERE student.admission_number = '" + search_id + "'");
+    cout << "Select student to assign grade by index (e.g. 1): ";
+    cin >> choice;
+    choice = choice - 1;
+    string module_name = response[choice]["module"];
+    Student temp_student(response[choice]["admission_number"], response[choice]["user_name"], response[choice]["First_name"], response[choice]["Last_name"], response[choice]["email_address"]);
+    
+    cout << "Assign new grade value (e.g. 50): ";
+    cin >> choice;
+    temp_student.setGrades(module_name, choice);
     temp_student.displayDetails();
-    // if (!result){
-    //     response = conn.get_response();        
-    //     for (int i = 0; i < response.size(); i++){
-    //         Module mod(response[i]["module"], response[i]["grade"]);
-    //         temp_student.addModule(mod);
-    //     }
-    // }
-    // temp_student.displayDetails();
+
+    
+
+    
 
     
 }
