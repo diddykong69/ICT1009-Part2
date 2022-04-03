@@ -14,7 +14,7 @@ class Admin: public Person{
         int sql_query;
         string own_username;
     public:
-    Admin(string username, string first_name, string last_name, string email);
+    Admin(string admission_number, string username, string first_name, string last_name, string email);
     string get_own_username();
     int add_user(string user,string admission_number,string email_address, string pass, string role);
     int remove_user(string user);

@@ -4,7 +4,8 @@
 
 #include "admin.h"
 
-Admin::Admin(string username, string first_name, string last_name, string email):Person(username,first_name,last_name,email){ 
+Admin::Admin(string admission_number, string username, string first_name, string last_name, string email)
+    :Person(admission_number, username,first_name,last_name,email){ 
     
 };
 

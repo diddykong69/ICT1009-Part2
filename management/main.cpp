@@ -44,7 +44,7 @@ int main(int argc, const char * argv[]) {
     classtype = test.get_role();
     cout << "Hello "<<username << "\n" << " Role:" << classtype << endl;
     if(classtype == "admin"){
-        Admin new_class(test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
+        Admin new_class(test.get_matri_code(), test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
         cout << new_class.getUsername();
 
     }
@@ -53,10 +53,10 @@ int main(int argc, const char * argv[]) {
         new_class.showModules();
     }
 
-    if (classtype == "lecturer"){
-        Lecturer new_class(test.get_username(), test.get_first_name(), test.get_last_name(), test.get_email());
-        new_class.showModules();
-    }
+    // if (classtype == "lecturer"){
+    //     Lecturer new_class(test.get_username(), test.get_first_name(), test.get_last_name(), test.get_email());
+    //     new_class.showModules();
+    // }
     
     
   

@@ -11,7 +11,7 @@
 using namespace std;
 
 Student::Student(string matri_code, string username,string first_name, string last_name, string email)
-    : Person(username,first_name, last_name, email)
+    : Person(matri_code, username, first_name, last_name, email)
 {
     setMatriCode(matri_code);
     int no_result = conn.query("SELECT * FROM student WHERE admission_number = '"+matri_code+"'");

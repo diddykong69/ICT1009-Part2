@@ -13,12 +13,22 @@ Person::Person(){
 
 };
 
-Person::Person(string username, string first_name, string last_name, string email){
+Person::Person(string admission_number, string username, string first_name, string last_name, string email){
+    setAdmissionNumber(admission_number);
     setUsername(username);
     setFirstName(first_name);
     setLastName(last_name);
     setEmail(email);
 };
+
+void Person::setAdmissionNumber(string& admission_number){
+    this->admission_number = admission_number;
+};
+
+string Person::getAdmissionNumber() const{
+    return admission_number;
+};
+
 void Person::setUsername(string& username){
     this->username = username;
 };

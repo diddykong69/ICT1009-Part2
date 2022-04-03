@@ -4,6 +4,7 @@
         "algorithm": "cpp",
         "map": "cpp",
         "iosfwd": "cpp",
-        "functional": "cpp"
+        "functional": "cpp",
+        "xstring": "cpp"
     }
 }
