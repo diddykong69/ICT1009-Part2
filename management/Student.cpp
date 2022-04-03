@@ -10,8 +10,6 @@
 
 using namespace std;
 
-Student::Student(){ };
-
 Student::Student(string matri_code, string username,string first_name, string last_name, string email)
     : Person(matri_code, username, first_name, last_name, email)
 {
@@ -29,7 +27,7 @@ Student::Student(string matri_code, string username,string first_name, string la
 
 Student::~Student(){
     for (auto mod : modules){
-        int result = conn.query("UPDATE student SET grade = '" + mod->getGrades() + "' WHERE admission_number = '" 
+        conn.query("UPDATE student SET grade = '" + mod->getGrades() + "' WHERE admission_number = '" 
         + matri_code + "' AND module = '" + mod->getModuleName() + "'");
     }    
 };
