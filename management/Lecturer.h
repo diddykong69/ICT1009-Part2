@@ -20,7 +20,7 @@ class Lecturer : public Person{
         vector <Classroom*> classrooms;
     public:
         Lecturer();
-        Lecturer(string username, string first_name, string last_name, string contact, string email);
+        Lecturer(string username, string first_name, string last_name, string email);
         void showClasses() const;
         void addClasses(Classroom&);
         void deleteClasses(Classroom&);

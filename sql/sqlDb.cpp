@@ -92,6 +92,7 @@ int sqlDB::callback(void *data, int argc, char **argv, char **azColName)
      return response;
  }
 
+
 /* int main(int argc, char** argv)
 {
     sqlDB test;

@@ -14,11 +14,30 @@ bool Authenication::authenicate(){
        return result;
    }
     role = conn.get_response()[0]["role"];
+    first_name = conn.get_response()[0]["First_name"];
+    last_name = conn.get_response()[0]["Last_name"];
+    email = conn.get_response()[0]["email_address"];
     return result;
 };
 
 string Authenication::get_role(){
     return role;
+}
+
+string Authenication::get_email(){
+    return email;
+}
+
+string Authenication::get_first_name(){
+    return first_name;
+}
+
+string Authenication::get_last_name(){
+    return last_name;
+}
+
+string Authenication::get_username(){
+    return username;
 }
 
 

@@ -13,11 +13,10 @@ Person::Person(){
 
 };
 
-Person::Person(string username, string first_name, string last_name, string contact, string email){
+Person::Person(string username, string first_name, string last_name, string email){
     setUsername(username);
     setFirstName(first_name);
     setLastName(last_name);
-    setContact(contact);
     setEmail(email);
 };
 void Person::setUsername(string& username){
@@ -38,12 +37,6 @@ void Person::setLastName(string& last_name){
 string Person::getLastName() const{
     return last_name;
 };
-void Person::setContact(string& contact){
-    this->contact = contact;
-};
-string Person::getContact() const{
-    return contact;
-};
 void Person::setEmail(string& email){
     this->email = email;
 };
@@ -55,7 +48,6 @@ string Person::getName() const{
 }
 void Person::displayDetails() const{
     cout << "Name: " << getName() << endl;
-    cout << "Contact: " << getContact() << endl;
     cout << "Email: " << getEmail() << endl;
 };
 

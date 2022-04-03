@@ -47,13 +47,14 @@ int main(int argc, const char * argv[]) {
     classtype = test.get_role();
     cout << "Hello "<<username <<" Role:" << classtype << endl;
     if(classtype == "admin"){
-        Admin new_class(username);
-            Menu adminMenu("Select an option");
-    adminMenu.addItem("Add/edit students", &option0);
-    adminMenu.addItem("Add/edit lecturers", &option1);
-    adminMenu.addItem("Add/edit modules", &option2);
-    adminMenu.addItem("Exit", &endProgram);
-        adminMenu.printMenu();
+        Admin new_class(test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
+        cout << new_class.getUsername();
+    //         Menu adminMenu("Select an option");
+    // adminMenu.addItem("Add/edit students", &option0);
+    // adminMenu.addItem("Add/edit lecturers", &option1);
+    // adminMenu.addItem("Add/edit modules", &option2);
+    // adminMenu.addItem("Exit", &endProgram);
+    //     adminMenu.printMenu();
     }
     
     

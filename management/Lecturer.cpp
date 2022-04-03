@@ -7,7 +7,7 @@
 using namespace std;
 
 ostream& operator<< (ostream& out, const Lecturer& lec){
-        out << lec.getUsername() << "\n" << lec.getFirstName() << "\n" << lec.getLastName() << "\n" << lec.getContact() << "\n" << lec.getEmail() << "\n";
+        out << lec.getUsername() << "\n" << lec.getFirstName() << "\n" << lec.getLastName()  << "\n" << lec.getEmail() << "\n";
         for (auto classroom : lec.classrooms){
             out << classroom->getClassroomName() << "\n";
         }
@@ -19,8 +19,8 @@ Lecturer::Lecturer(){
 
 }
 
-Lecturer::Lecturer(string username, string first_name, string last_name, string contact, string email)
-    : Person(username, first_name, last_name, contact, email)
+Lecturer::Lecturer(string username, string first_name, string last_name, string email)
+    : Person(username, first_name, last_name, email)
 {
 
 };

@@ -4,8 +4,7 @@
 
 #include "admin.h"
 
-Admin::Admin(string usr){
-    own_username = usr;
+Admin::Admin(string username, string first_name, string last_name, string email):Person(username,first_name,last_name,email){ 
     
 };
 

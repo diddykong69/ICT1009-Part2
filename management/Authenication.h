@@ -17,10 +17,17 @@ class Authenication{
     string username;
     string password;
     string role;
+    string first_name;
+    string last_name;
+    string email;
     public:
     Authenication(string user, string password);
     bool authenicate();    
     string get_role();
+    string get_username();
+    string get_first_name();
+    string get_last_name();
+    string get_email();
 };
 
 #endif

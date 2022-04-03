@@ -11,11 +11,10 @@ class Person{
         string username;
         string first_name;
         string last_name;
-        string contact;
         string email;
     public:
         Person();
-        Person(string username, string first_name, string last_name, string contact, string email);
+        Person(string username, string first_name, string last_name, string email);
         void setUsername(string&);
         string getUsername() const;
         void setFirstName(string&);
@@ -23,8 +22,6 @@ class Person{
         void setLastName(string&);
         string getLastName() const;
         string getName() const;
-        void setContact(string&);
-        string getContact() const;
         void setEmail(string&);
         string getEmail() const;
         void displayDetails() const;
