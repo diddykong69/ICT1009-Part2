@@ -19,8 +19,7 @@ Lecturer::Lecturer(string admission_number, string username, string first_name, 
         }
     }
 };
-void Lecturer::showModules() const{
-    cout << "Classes teaching: " << endl;
+void Lecturer::showModules() const{    
     int index = 1;
     for (auto module : modules){
         cout << index << ". " << module << endl;
@@ -100,11 +99,40 @@ void Lecturer::showModules() const{
 //     cout << "Old grades: " << m.getGrades() << endl;
 //     cout << "New grades: " << sr.getGrades(m.getModuleName()) << endl;
 // };
-// void Lecturer::displayDetails() const{
-//     Person::displayDetails();
-//     cout << "Classes teaching: " << endl;
-//     showClasses();
-// };
+
+void Lecturer::setStudentGrades(){
+    vector <Module> modules;
+    cout << "Showing all students:" << endl;
+    int choice;
+    int result = conn.query("SELECT users.First_name, users.Last_name, users.admission_number, users.email_address, users.user_name, student.module, student.grade FROM users, student WHERE users.role = 'student' AND users.admission_number = student.admission_number");    
+    if (!result){
+        response = conn.get_response();
+        for (int i = 0; i < response.size(); i++){
+            cout << i+1 << ". " << response[i]["First_name"] << " " << response[i]["Last_name"] << " | Module name: " << response[i]["module"] << " Grade: " << response[i]["grade"] << endl;
+        }
+    }
+    choice = 0;
+    Student temp_student(response[choice]["admission_number"], response[choice]["user_name"], response[choice]["First_name"], response[choice]["Last_name"], response[choice]["email"]);
+    string search_id = response[choice]["admission_number"];
+
+    result = conn.query("SELECT * FROM student WHERE student.admission_number = '" + search_id + "'");
+    temp_student.displayDetails();
+    // if (!result){
+    //     response = conn.get_response();        
+    //     for (int i = 0; i < response.size(); i++){
+    //         Module mod(response[i]["module"], response[i]["grade"]);
+    //         temp_student.addModule(mod);
+    //     }
+    // }
+    // temp_student.displayDetails();
+
+    
+}
+void Lecturer::displayDetails() const{
+    Person::displayDetails();
+    cout << "Classes teaching: " << endl;
+    showModules();
+};
 
 
 #endif

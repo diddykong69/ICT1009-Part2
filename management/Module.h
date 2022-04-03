@@ -9,9 +9,9 @@ using namespace std;
 class Module{
     private:
         string module_name;
-        int grades;
+        string grades;
     public:
-        Module(string, int);
+        Module(string, string);
         void setModuleName(string&);
         string getModuleName() const;
         void setGrades(const int&);

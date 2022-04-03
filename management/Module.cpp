@@ -8,9 +8,9 @@
 
 using namespace std;
 
-Module::Module(string module_name, int grade){
+Module::Module(string module_name, string grade){
     setModuleName(module_name);
-    setGrades(grade);
+    this->grades = grade;
 };
 void Module::setModuleName(string& module_name){
     this->module_name = module_name;
@@ -18,10 +18,7 @@ void Module::setModuleName(string& module_name){
 string Module::getModuleName() const{
     return module_name;
 };
-void Module::setGrades(const int& module_grade){
-    this->grades = module_grade;
-};
-string Module::getGrades() const{
+void Module::setGrades(const int& grades){
     string ret;
     if (grades >= 80){
         ret = "A";
@@ -36,10 +33,12 @@ string Module::getGrades() const{
     }else if (grades >= 0 && grades < 40){
         ret = "F";
     }else{
-        // If grades is less 0, return undefined alphabetical grade
         ret = "-";
     }
-    return ret;
+    this->grades = ret;
+};
+string Module::getGrades() const{
+    return grades;
 };
 
 #endif

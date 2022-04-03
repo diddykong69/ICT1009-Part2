@@ -55,7 +55,8 @@ int main(int argc, const char * argv[]) {
 
     if (classtype == "lecturer"){
         Lecturer new_class(test.get_matri_code(), test.get_username(), test.get_first_name(), test.get_last_name(), test.get_email());
-        new_class.showModules();
+        // new_class.displayDetails();
+        new_class.setStudentGrades();
     }
     
     

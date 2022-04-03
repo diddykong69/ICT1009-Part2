@@ -20,7 +20,9 @@ class Student : public Person{
         vector <Module*> modules;
         const string type = "Student";
     public:
+        Student();
         Student(string matri_code,string username,string first_name, string last_name, string email);
+        ~Student();
         void setMatriCode(string& matri_code);
         string getMatriCode() const;
         void deleteModule(Module&);

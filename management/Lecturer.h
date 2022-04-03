@@ -8,6 +8,8 @@
 
 // header files
 #include "Person.h"
+#include "Student.h"
+#include "Module.h"
 #include "../sql/sqlDB.h"
 
 
@@ -23,9 +25,6 @@ class Lecturer : public Person{
         Lecturer();
         Lecturer(string admission_number, string username, string first_name, string last_name, string email);
         void showModules() const;
-        // void addClasses(Classroom&);
-        // void deleteClasses(Classroom&);
-        // void showClassList(Classroom&) const;
         void setStudentGrades();
         void displayDetails() const;
 };

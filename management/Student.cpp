@@ -10,6 +10,8 @@
 
 using namespace std;
 
+Student::Student(){ };
+
 Student::Student(string matri_code, string username,string first_name, string last_name, string email)
     : Person(matri_code, username, first_name, last_name, email)
 {
@@ -19,11 +21,19 @@ Student::Student(string matri_code, string username,string first_name, string la
     {
         response = conn.get_response();
         for(int i=0; i < response.size();i++){
-            Module *mod = new Module(response[i]["module"], stoi(response[i]["grade"]));
+            Module *mod = new Module(response[i]["module"], response[i]["grade"]);
             modules.push_back(mod);
         }
     }
 };
+
+Student::~Student(){
+    for (auto mod : modules){
+        int result = conn.query("UPDATE student SET grade = '" + mod->getGrades() + "' WHERE admission_number = '" 
+        + matri_code + "' AND module = '" + mod->getModuleName() + "'");
+    }    
+};
+
 void Student::setMatriCode(string& matri_code){
     this->matri_code = matri_code;
 };
@@ -45,23 +55,24 @@ void Student::deleteModule(Module& delete_module){
     }
 };
 void Student::addModule(Module& new_module){
-    if (modules.empty()){
-        modules.push_back(&new_module);
-        cout << "Student: " << getName() << " is now taking " << new_module.getModuleName() << endl;
-    }else{
-        bool already_taking = false;
-        for (auto module : modules){
-            if (module->getModuleName() == new_module.getModuleName()){
-                already_taking = true;
-                cout << "Student is already taking " << new_module.getModuleName() << endl;
-                break;
-            }
-        }
-        if (!already_taking){
-            modules.push_back(&new_module);
-            cout << "Student: " << getName() << " is now taking " << new_module.getModuleName() << endl;
-        }
-    }
+    // if (modules.empty()){
+    //     modules.push_back(&new_module);
+    //     cout << "Student: " << getName() << " is now taking " << new_module.getModuleName() << endl;
+    // }else{
+    //     bool already_taking = false;
+    //     for (auto module : modules){
+    //         if (module->getModuleName() == new_module.getModuleName()){
+    //             already_taking = true;
+    //             cout << "Student is already taking " << new_module.getModuleName() << endl;
+    //             break;
+    //         }
+    //     }
+    //     if (!already_taking){
+    //         modules.push_back(&new_module);
+    //         cout << "Student: " << getName() << " is now taking " << new_module.getModuleName() << endl;
+    //     }
+    // }
+    modules.push_back(&new_module);
 };
 void Student::setGrades(const string& module_name, const int& new_grades){
     for (auto module : modules){

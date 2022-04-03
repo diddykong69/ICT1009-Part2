@@ -38,7 +38,7 @@ int sqlDB::query(string sql)
     }
     else
     {
-        cout << "Operation OK!" << endl;
+        // cout << "Operation OK!" << endl;
     }
     
     return (0);
