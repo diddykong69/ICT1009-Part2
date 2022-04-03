@@ -19,8 +19,8 @@ Student::Student(string matri_code, string username,string first_name, string la
     {
         response = conn.get_response();
         for(int i=0; i < response.size();i++){
-            Module mod(response[i]["module"], stoi(response[i]["grade"]));
-            modules.push_back(&mod);
+            Module *mod = new Module(response[i]["module"], stoi(response[i]["grade"]));
+            modules.push_back(mod);
         }
     }
     
@@ -94,6 +94,7 @@ void Student::showModules() const{
         int index = 1;
         cout << "Modules taking:" << endl;
         for (auto module : modules){
+            cout << module->getModuleName();
             cout << index << ". " << module->getModuleName() << " Grades: " << module->getGrades() << endl;
             index++;
         }
