@@ -47,11 +47,13 @@ int main(int argc, const char * argv[]) {
     lectuererMenu.addItem("View modules", &option2);
     lectuererMenu.addItem("Exit", &endProgram);
 
-
     Menu adminMenu("Select an option");
-    adminMenu.addItem("Add/edit students", &option0);
-    adminMenu.addItem("Add/edit lecturers", &option1);
-    adminMenu.addItem("Add/edit modules", &option2);
+    adminMenu.addItem("Add students", &option0);
+    adminMenu.addItem("Edit students", &option0);
+    adminMenu.addItem("Add lecturers", &option1);
+    adminMenu.addItem("Edit lectuerers", &option1);
+    adminMenu.addItem("Add modules", &option2);
+    adminMenu.addItem("Edit modules", &option2);
     adminMenu.addItem("Exit", &endProgram);    
 
     while(!program_exit){
