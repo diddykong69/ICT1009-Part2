@@ -9,20 +9,25 @@
 
 using namespace std;
 
+Admin admin;
+
 void globalCallback(int option) {
     std::cout << "Global Callback Selection: " << option << std::endl;
 }
 
 void option0() {
-    std::cout << "Option 0" << std::endl;
+    // Admin: add student into DB
+    admin.add_user("student");
 }
 
 void option1() {
-    std::cout << "Option 1" << std::endl;
+    // Admin: edit user
+    admin.edit_user<string>();
 }
 
 void option2() {
-    std::cout << "Option 2" << std::endl;
+    // Admin: add lecturer into DB
+    admin.add_user("lecturer");
 }
 
 void endProgram() {
@@ -30,17 +35,12 @@ void endProgram() {
     exit(1);
 }
 
+
 int main(int argc, const char * argv[]) {
     string username;
     string password;
     string classtype;
     bool program_exit = false;
-
-    Menu studentMenu("Select an option");
-    studentMenu.addItem("View grades", &option0);
-    studentMenu.addItem("View lectuers", &option1);
-    studentMenu.addItem("View modules", &option2);
-    studentMenu.addItem("Exit", &endProgram);
 
     Menu lectuererMenu("Select an option");
     lectuererMenu.addItem("View students", &option0);
@@ -56,17 +56,18 @@ int main(int argc, const char * argv[]) {
         Authenication test(username,password);
         test.authenicate();
         classtype = test.get_role();
-        cout << "Hello "<<username << "\n" << " Role:" << classtype << endl;
+        cout << "Hello "<<username << "\n" << "Role:" << classtype << endl;
         if(classtype == "admin"){
             Admin new_class(test.get_matri_code(), test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
             Menu adminMenu("Select an option");
-            adminMenu.addItem("Add students", &new_class.add_user("student"););
-            adminMenu.addItem("Edit students", &option0);
-            adminMenu.addItem("Add lecturers", &option1);
+            adminMenu.addItem("Add students", &option0);
+            adminMenu.addItem("Edit students", &option1);
+            adminMenu.addItem("Add lecturers", &option2); // TODO
             adminMenu.addItem("Edit lectuerers", &option1);
-            adminMenu.addItem("Add modules", &option2);
-            adminMenu.addItem("Remove modules", &option2);
-            adminMenu.addItem("Exit", &endProgram);           
+            adminMenu.addItem("Add modules", &option2); // TODO
+            adminMenu.addItem("Remove modules", &option2); // TODO
+            adminMenu.addItem("Exit", &endProgram);
+            adminMenu.printMenu();      
         }
         if (classtype == "student"){
             Student new_class(test.get_matri_code(),test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());

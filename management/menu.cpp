@@ -63,7 +63,7 @@ void Menu::printMenu() {
     if (hasHeader) std::cout << header << "\n" << std::endl;
     
     // Enumerate in print options
-    for (int i = 0; i < menuItems.size(); i++) std::cout << i << ".) " << menuItems[i]->getTitle() << std::endl;
+    for (int i = 0; i < menuItems.size(); i++) std::cout << i+1 << ".) " << menuItems[i]->getTitle() << std::endl;
 
     
     // Prompt user for selection
@@ -77,7 +77,7 @@ void Menu::printMenu() {
         printMenu();
     } else {
         // Call menu item's callback
-        menuItems[option]->performCallback();
+        menuItems[option-1]->performCallback();
         
         // If global callback supplied, call that with index as parameter
         if (globalCallbackPtr != nullptr) globalCallbackPtr(option);

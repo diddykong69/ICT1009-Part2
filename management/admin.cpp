@@ -4,6 +4,8 @@
 
 #include "admin.h"
 
+Admin::Admin(){ };
+
 Admin::Admin(string admission_number, string username, string first_name, string last_name, string email)
     :Person(admission_number, username,first_name,last_name,email){ 
     
@@ -17,7 +19,7 @@ int Admin::add_user(string role){
     string user, admission_number, email_address, pass, first_name, last_name;
     cin.clear();
     cin.sync();
-    cout << "Adding user:\n";
+    cout << "Adding " << role << ":\n";
     cout << "Enter username to add: ";
     getline(cin, user);
     cout << "Enter first name: ";
@@ -69,13 +71,26 @@ int Admin::view_users(string user="%"){
     return (0);
 };
 
-template <typename T>int Admin::edit_user(string user,string field, T value){
-    sql_query = test.query("UPDATE users SET "+field+" = '"+value+"' WHERE user_name = '"+user+"'");
-    if(sql_query){
-        return (1);
-    }
-    return(0);
-};
+// Moves the declaration over to the .h file so that main could reference the template function directly
+
+// template <typename T>int Admin::edit_user(){
+//     string user, field;
+//     T value;
+//     cin.clear();
+//     cin.sync();
+//     cout << "Enter username to edit: ";
+//     getline(cin, user);
+//     cout << "Enter fieldname to modify: ";
+//     getline(cin, field);
+//     cout << "Enter new value: ";
+//     getline(cin, value);
+
+//     sql_query = test.query("UPDATE users SET "+field+" = '"+value+"' WHERE user_name = '"+user+"'");
+//     if(sql_query){
+//         return (1);
+//     }
+//     return(0);
+// };
 
 
 #endif
