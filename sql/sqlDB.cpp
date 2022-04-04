@@ -20,19 +20,20 @@ sqlDB::sqlDB()
     /* Using regex, replace this file's file name with the file name of the DB
     to get the absolute path to the database file */
     std::string dbFileAbsolutePath = std::regex_replace(
-        currFileAbsolutePath, std::regex(pattern), "PMSDB.db"
+            currFileAbsolutePath, std::regex(pattern), "PMSDB.db"
     );
 
     /* Attempt to open database with the DB absolute path obtained.
      If it doesn't work, fallback to relative and if that doesn't work,
      notify user that the database cannot be opened */
-    if (sqlite3_open(dbFileAbsolutePath.c_str(), &db) != SQLITE_OK ||
-        sqlite3_open("../sql/PMSDB.db", &db) != SQLITE_OK)
+    if (sqlite3_open(dbFileAbsolutePath.c_str(), &db) != SQLITE_OK)
     {
-        std::cerr
-        << "Error opening database: "
-        << sqlite3_errmsg(db)
-        << std::endl;
+        fmt::print(
+                stderr,
+                fg(fmt::color::red),
+                "Error opening database: {}\n",
+                sqlite3_errmsg(db)
+        );
     }
 }
 

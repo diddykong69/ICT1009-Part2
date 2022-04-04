@@ -197,6 +197,141 @@ CMakeFiles/ICT1009-Part2.dir/management/Classroom.cpp.o: ../management/Classroom
   /usr/include/c++/11/bits/vector.tcc \
   ../management/Student.h \
   ../management/Person.h \
+  ../sql/sqlDB.h \
+  /usr/include/sqlite3.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/erase_if.h \
+  /usr/include/c++/11/map \
+  /usr/include/c++/11/bits/stl_tree.h \
+  /usr/include/c++/11/bits/stl_map.h \
+  /usr/include/c++/11/bits/stl_multimap.h \
+  /usr/include/c++/11/experimental/source_location \
+  /usr/include/c++/11/regex \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/bits/ranges_algo.h \
+  /usr/include/c++/11/bits/ranges_algobase.h \
+  /usr/include/c++/11/iterator \
+  /usr/include/c++/11/bits/stream_iterator.h \
+  /usr/include/c++/11/bits/ranges_util.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
+  /usr/include/c++/11/bitset \
+  /usr/include/c++/11/locale \
+  /usr/include/c++/11/bits/locale_facets_nonio.h \
+  /usr/include/c++/11/ctime \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/11/bits/atomic_wait.h \
+  /usr/include/c++/11/climits \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/syscall.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
+  /usr/include/c++/11/bits/std_mutex.h \
+  /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/bits/ranges_uninitialized.h \
+  /usr/include/c++/11/bits/uses_allocator_args.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/stack \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/c++/11/bits/regex_constants.h \
+  /usr/include/c++/11/bits/regex_error.h \
+  /usr/include/c++/11/bits/regex_automaton.h \
+  /usr/include/c++/11/bits/regex_automaton.tcc \
+  /usr/include/c++/11/bits/regex_scanner.h \
+  /usr/include/c++/11/bits/regex_scanner.tcc \
+  /usr/include/c++/11/bits/regex_compiler.h \
+  /usr/include/c++/11/bits/regex_compiler.tcc \
+  /usr/include/c++/11/bits/regex.h \
+  /usr/include/c++/11/bits/regex.tcc \
+  /usr/include/c++/11/bits/regex_executor.h \
+  /usr/include/c++/11/bits/regex_executor.tcc \
+  ../dependencies/fmt/include/fmt/core.h \
+  /usr/include/c++/11/cstddef \
+  /usr/include/c++/11/limits \
+  ../dependencies/fmt/include/fmt/color.h \
+  ../dependencies/fmt/include/fmt/format.h \
+  /usr/include/c++/11/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../dependencies/fmt/include/fmt/core.h \
+  ../dependencies/Bcrypt/bcrypt.h \
   ../management/Module.h
 
 CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o: ../management/Lecturer.cpp \
@@ -394,6 +529,141 @@ CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o: ../management/Lecturer.c
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
   ../management/Person.h \
+  ../sql/sqlDB.h \
+  /usr/include/sqlite3.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/erase_if.h \
+  /usr/include/c++/11/map \
+  /usr/include/c++/11/bits/stl_tree.h \
+  /usr/include/c++/11/bits/stl_map.h \
+  /usr/include/c++/11/bits/stl_multimap.h \
+  /usr/include/c++/11/experimental/source_location \
+  /usr/include/c++/11/regex \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/bits/ranges_algo.h \
+  /usr/include/c++/11/bits/ranges_algobase.h \
+  /usr/include/c++/11/iterator \
+  /usr/include/c++/11/bits/stream_iterator.h \
+  /usr/include/c++/11/bits/ranges_util.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
+  /usr/include/c++/11/bitset \
+  /usr/include/c++/11/locale \
+  /usr/include/c++/11/bits/locale_facets_nonio.h \
+  /usr/include/c++/11/ctime \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/11/bits/atomic_wait.h \
+  /usr/include/c++/11/climits \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/syscall.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
+  /usr/include/c++/11/bits/std_mutex.h \
+  /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/bits/ranges_uninitialized.h \
+  /usr/include/c++/11/bits/uses_allocator_args.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/stack \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/c++/11/bits/regex_constants.h \
+  /usr/include/c++/11/bits/regex_error.h \
+  /usr/include/c++/11/bits/regex_automaton.h \
+  /usr/include/c++/11/bits/regex_automaton.tcc \
+  /usr/include/c++/11/bits/regex_scanner.h \
+  /usr/include/c++/11/bits/regex_scanner.tcc \
+  /usr/include/c++/11/bits/regex_compiler.h \
+  /usr/include/c++/11/bits/regex_compiler.tcc \
+  /usr/include/c++/11/bits/regex.h \
+  /usr/include/c++/11/bits/regex.tcc \
+  /usr/include/c++/11/bits/regex_executor.h \
+  /usr/include/c++/11/bits/regex_executor.tcc \
+  ../dependencies/fmt/include/fmt/core.h \
+  /usr/include/c++/11/cstddef \
+  /usr/include/c++/11/limits \
+  ../dependencies/fmt/include/fmt/color.h \
+  ../dependencies/fmt/include/fmt/format.h \
+  /usr/include/c++/11/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../dependencies/fmt/include/fmt/core.h \
+  ../dependencies/Bcrypt/bcrypt.h \
   ../management/Classroom.h \
   ../management/Student.h \
   ../management/Module.h
@@ -747,7 +1017,147 @@ CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o: ../management/Person.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  ../management/Person.h
+  ../management/Person.h \
+  ../sql/sqlDB.h \
+  /usr/include/sqlite3.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/erase_if.h \
+  /usr/include/c++/11/vector \
+  /usr/include/c++/11/bits/stl_uninitialized.h \
+  /usr/include/c++/11/bits/stl_vector.h \
+  /usr/include/c++/11/bits/stl_bvector.h \
+  /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/c++/11/map \
+  /usr/include/c++/11/bits/stl_tree.h \
+  /usr/include/c++/11/bits/stl_map.h \
+  /usr/include/c++/11/bits/stl_multimap.h \
+  /usr/include/c++/11/experimental/source_location \
+  /usr/include/c++/11/regex \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/bits/ranges_algo.h \
+  /usr/include/c++/11/bits/ranges_algobase.h \
+  /usr/include/c++/11/iterator \
+  /usr/include/c++/11/bits/stream_iterator.h \
+  /usr/include/c++/11/bits/ranges_util.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
+  /usr/include/c++/11/bitset \
+  /usr/include/c++/11/locale \
+  /usr/include/c++/11/bits/locale_facets_nonio.h \
+  /usr/include/c++/11/ctime \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/11/bits/atomic_wait.h \
+  /usr/include/c++/11/climits \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/syscall.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
+  /usr/include/c++/11/bits/std_mutex.h \
+  /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/bits/ranges_uninitialized.h \
+  /usr/include/c++/11/bits/uses_allocator_args.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/stack \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/c++/11/bits/regex_constants.h \
+  /usr/include/c++/11/bits/regex_error.h \
+  /usr/include/c++/11/bits/regex_automaton.h \
+  /usr/include/c++/11/bits/regex_automaton.tcc \
+  /usr/include/c++/11/bits/regex_scanner.h \
+  /usr/include/c++/11/bits/regex_scanner.tcc \
+  /usr/include/c++/11/bits/regex_compiler.h \
+  /usr/include/c++/11/bits/regex_compiler.tcc \
+  /usr/include/c++/11/bits/regex.h \
+  /usr/include/c++/11/bits/regex.tcc \
+  /usr/include/c++/11/bits/regex_executor.h \
+  /usr/include/c++/11/bits/regex_executor.tcc \
+  ../dependencies/fmt/include/fmt/core.h \
+  /usr/include/c++/11/cstddef \
+  /usr/include/c++/11/limits \
+  ../dependencies/fmt/include/fmt/color.h \
+  ../dependencies/fmt/include/fmt/format.h \
+  /usr/include/c++/11/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../dependencies/fmt/include/fmt/core.h \
+  ../dependencies/Bcrypt/bcrypt.h
 
 CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o: ../management/Programmes.cpp \
   /usr/include/stdc-predef.h \
@@ -1297,6 +1707,117 @@ CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o: ../management/Student.cpp
   /usr/include/c++/11/pstl/execution_defs.h \
   ../management/Student.h \
   ../management/Person.h \
+  ../sql/sqlDB.h \
+  /usr/include/sqlite3.h \
+  /usr/include/c++/11/map \
+  /usr/include/c++/11/bits/stl_tree.h \
+  /usr/include/c++/11/bits/stl_map.h \
+  /usr/include/c++/11/bits/stl_multimap.h \
+  /usr/include/c++/11/experimental/source_location \
+  /usr/include/c++/11/regex \
+  /usr/include/c++/11/bitset \
+  /usr/include/c++/11/locale \
+  /usr/include/c++/11/bits/locale_facets_nonio.h \
+  /usr/include/c++/11/ctime \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/11/bits/atomic_wait.h \
+  /usr/include/c++/11/climits \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/syscall.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
+  /usr/include/c++/11/bits/std_mutex.h \
+  /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/bits/ranges_uninitialized.h \
+  /usr/include/c++/11/bits/uses_allocator_args.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/stack \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/c++/11/bits/regex_constants.h \
+  /usr/include/c++/11/bits/regex_error.h \
+  /usr/include/c++/11/bits/regex_automaton.h \
+  /usr/include/c++/11/bits/regex_automaton.tcc \
+  /usr/include/c++/11/bits/regex_scanner.h \
+  /usr/include/c++/11/bits/regex_scanner.tcc \
+  /usr/include/c++/11/bits/regex_compiler.h \
+  /usr/include/c++/11/bits/regex_compiler.tcc \
+  /usr/include/c++/11/bits/regex.h \
+  /usr/include/c++/11/bits/regex.tcc \
+  /usr/include/c++/11/bits/regex_executor.h \
+  /usr/include/c++/11/bits/regex_executor.tcc \
+  ../dependencies/fmt/include/fmt/core.h \
+  /usr/include/c++/11/cstddef \
+  /usr/include/c++/11/limits \
+  ../dependencies/fmt/include/fmt/color.h \
+  ../dependencies/fmt/include/fmt/format.h \
+  /usr/include/c++/11/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../dependencies/fmt/include/fmt/core.h \
+  ../dependencies/Bcrypt/bcrypt.h \
   ../management/Module.h
 
 CMakeFiles/ICT1009-Part2.dir/management/admin.cpp.o: ../management/admin.cpp \
@@ -1601,6 +2122,33 @@ CMakeFiles/ICT1009-Part2.dir/management/admin.cpp.o: ../management/admin.cpp \
   ../dependencies/fmt/include/fmt/core.h \
   /usr/include/c++/11/cstddef \
   /usr/include/c++/11/limits \
+  ../dependencies/fmt/include/fmt/color.h \
+  ../dependencies/fmt/include/fmt/format.h \
+  /usr/include/c++/11/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../dependencies/fmt/include/fmt/core.h \
   ../dependencies/Bcrypt/bcrypt.h
 
 CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o: ../management/main.cpp \
@@ -1801,6 +2349,141 @@ CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o: ../management/main.cpp \
   ../management/menu_item.h \
   ../management/Student.h \
   ../management/Person.h \
+  ../sql/sqlDB.h \
+  /usr/include/sqlite3.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/erase_if.h \
+  /usr/include/c++/11/map \
+  /usr/include/c++/11/bits/stl_tree.h \
+  /usr/include/c++/11/bits/stl_map.h \
+  /usr/include/c++/11/bits/stl_multimap.h \
+  /usr/include/c++/11/experimental/source_location \
+  /usr/include/c++/11/regex \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/bits/ranges_algo.h \
+  /usr/include/c++/11/bits/ranges_algobase.h \
+  /usr/include/c++/11/iterator \
+  /usr/include/c++/11/bits/stream_iterator.h \
+  /usr/include/c++/11/bits/ranges_util.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
+  /usr/include/c++/11/bitset \
+  /usr/include/c++/11/locale \
+  /usr/include/c++/11/bits/locale_facets_nonio.h \
+  /usr/include/c++/11/ctime \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/11/bits/atomic_wait.h \
+  /usr/include/c++/11/climits \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/syscall.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
+  /usr/include/c++/11/bits/std_mutex.h \
+  /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/bits/ranges_uninitialized.h \
+  /usr/include/c++/11/bits/uses_allocator_args.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/stack \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/c++/11/bits/regex_constants.h \
+  /usr/include/c++/11/bits/regex_error.h \
+  /usr/include/c++/11/bits/regex_automaton.h \
+  /usr/include/c++/11/bits/regex_automaton.tcc \
+  /usr/include/c++/11/bits/regex_scanner.h \
+  /usr/include/c++/11/bits/regex_scanner.tcc \
+  /usr/include/c++/11/bits/regex_compiler.h \
+  /usr/include/c++/11/bits/regex_compiler.tcc \
+  /usr/include/c++/11/bits/regex.h \
+  /usr/include/c++/11/bits/regex.tcc \
+  /usr/include/c++/11/bits/regex_executor.h \
+  /usr/include/c++/11/bits/regex_executor.tcc \
+  ../dependencies/fmt/include/fmt/core.h \
+  /usr/include/c++/11/cstddef \
+  /usr/include/c++/11/limits \
+  ../dependencies/fmt/include/fmt/color.h \
+  ../dependencies/fmt/include/fmt/format.h \
+  /usr/include/c++/11/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../dependencies/fmt/include/fmt/core.h \
+  ../dependencies/Bcrypt/bcrypt.h \
   ../management/Module.h
 
 CMakeFiles/ICT1009-Part2.dir/management/menu.cpp.o: ../management/menu.cpp \
@@ -2459,7 +3142,34 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
   /usr/include/c++/11/bits/regex_executor.tcc \
   ../dependencies/fmt/include/fmt/core.h \
   /usr/include/c++/11/cstddef \
-  /usr/include/c++/11/limits
+  /usr/include/c++/11/limits \
+  ../dependencies/fmt/include/fmt/color.h \
+  ../dependencies/fmt/include/fmt/format.h \
+  /usr/include/c++/11/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../dependencies/fmt/include/fmt/core.h
 
 
 ../sql/sqlDB.cpp:
@@ -2470,11 +3180,17 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/c++/11/stdlib.h:
 
-../dependencies/Bcrypt/bcrypt.h:
-
 ../management/admin.h:
 
 ../management/admin.cpp:
+
+../management/Programmes.h:
+
+../management/Programmes.cpp:
+
+../management/Module.h:
+
+../dependencies/Bcrypt/bcrypt.h:
 
 /usr/include/c++/11/tr1/riemann_zeta.tcc:
 
@@ -2546,6 +3262,10 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/syscall.h:
 
+/usr/include/c++/11/sstream:
+
+/usr/include/x86_64-linux-gnu/asm/unistd_64.h:
+
 /usr/include/x86_64-linux-gnu/sys/syscall.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
@@ -2555,16 +3275,6 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
-
-/usr/include/c++/11/bits/atomic_wait.h:
-
-/usr/include/c++/11/bits/atomic_lockfree_defines.h:
-
-/usr/include/c++/11/bits/atomic_base.h:
 
 /usr/include/stdlib.h:
 
@@ -2628,6 +3338,12 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/libintl.h:
 
+../management/main.cpp:
+
+../management/Lecturer.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
 /usr/include/c++/11/bits/stl_deque.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
@@ -2670,31 +3386,17 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
-../management/main.cpp:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-../management/Lecturer.h:
-
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/c++/11/bits/predefined_ops.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
-
-/usr/include/c++/11/debug/debug.h:
+/usr/include/c++/11/bits/atomic_wait.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/c++/11/bits/ranges_algo.h:
 
 /usr/include/c++/11/bits/stl_iterator.h:
-
-/usr/include/c++/11/climits:
-
-/usr/include/c++/11/bits/sstream.tcc:
-
-/usr/include/c++/11/new:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
@@ -2782,8 +3484,6 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/c++/11/ctime:
 
-../management/Module.h:
-
 /usr/include/c++/11/ext/type_traits.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
@@ -2864,6 +3564,8 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
 /usr/include/c++/11/bits/exception_ptr.h:
 
 /usr/include/c++/11/bits/regex_automaton.tcc:
@@ -2902,6 +3604,12 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/c++/11/bits/functexcept.h:
 
+../management/Module.cpp:
+
+/usr/include/c++/11/bits/concept_check.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
 /usr/include/c++/11/streambuf:
 
 /usr/include/c++/11/bits/regex.tcc:
@@ -2909,6 +3617,8 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
 /usr/include/c++/11/ext/numeric_traits.h:
+
+/usr/include/c++/11/bits/atomic_base.h:
 
 /usr/include/features.h:
 
@@ -3030,15 +3740,17 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
 
-/usr/include/c++/11/pstl/glue_algorithm_defs.h:
-
 ../management/Person.cpp:
+
+/usr/include/c++/11/pstl/glue_algorithm_defs.h:
 
 /usr/include/c++/11/stdexcept:
 
 /usr/include/string.h:
 
 /usr/include/c++/11/bits/streambuf.tcc:
+
+/usr/include/c++/11/bits/atomic_lockfree_defines.h:
 
 /usr/include/c++/11/bits/uniform_int_dist.h:
 
@@ -3082,28 +3794,6 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/c++/11/bits/vector.tcc:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
-
-../management/Student.h:
-
-/usr/include/c++/11/bits/concept_check.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
-../management/Module.cpp:
-
-../management/Programmes.cpp:
-
-../management/Programmes.h:
-
-../management/Student.cpp:
-
-/usr/include/c++/11/bits/hashtable_policy.h:
-
-/usr/include/x86_64-linux-gnu/asm/unistd_64.h:
-
-/usr/include/c++/11/sstream:
-
 ../sql/sqlDB.h:
 
 /usr/include/c++/11/bits/regex_compiler.tcc:
@@ -3112,15 +3802,29 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/c++/11/bits/stl_relops.h:
 
+/usr/include/c++/11/debug/debug.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
+
 /usr/include/c++/11/tr1/beta_function.tcc:
 
 /usr/include/c++/11/array:
+
+/usr/include/c++/11/bits/sstream.tcc:
+
+/usr/include/c++/11/new:
+
+/usr/include/c++/11/climits:
 
 /usr/include/c++/11/bits/uses_allocator.h:
 
 /usr/include/c++/11/bits/refwrap.h:
 
 /usr/include/c++/11/bits/hashtable.h:
+
+../management/Student.cpp:
+
+/usr/include/c++/11/bits/hashtable_policy.h:
 
 /usr/include/endian.h:
 
@@ -3142,6 +3846,10 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
 
+../management/Student.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
+
 /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
 
 ../management/menu_item.h:
@@ -3155,3 +3863,5 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 /usr/include/c++/11/bits/regex.h:
 
 /usr/include/c++/11/bits/shared_ptr_atomic.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:

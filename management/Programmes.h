@@ -17,6 +17,8 @@ public:
 
     void displayProgrammes();
 
+    void updateProgramme();
+
 private:
     sqlDB database{};
 
@@ -33,10 +35,30 @@ private:
     std::vector<std::string> degrees{};
 
     template<typename T>
-    void setProgrammeProperties(const string &question, T *propertyToSet);
+    void setProgrammeProperties(const std::string &question, T *propertyToSet);
 
-    void setDegree();
+    void setDegree(
+            const std::string &nameOfProgramme,
+            const std::string &currDegree = "",
+            bool isUpdate = false
+    );
 
+    void getAllProgrammes();
+
+    std::string monthToYearMonth(int durationInMonths);
+
+    void displayProgrammesMenu(
+            const std::string_view &topText,
+            const std::string_view &bottomText
+    );
+
+    template<typename T>
+    void setUpdateQuery(const std::string &colName, T newVal, int id);
+
+    void updateProgrammeProperty(
+            std::map<int, std::map<std::string, std::string>> &results,
+            int programmeIndex
+    );
 };
 
 #endif //ICT1009_PART2_PROGRAMMES_H

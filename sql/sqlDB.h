@@ -10,6 +10,7 @@
 #include <experimental/source_location>
 #include <regex>
 #include "fmt/core.h"
+#include "fmt/color.h"
 
 using namespace std;
 
