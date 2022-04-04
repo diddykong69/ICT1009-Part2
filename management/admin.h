@@ -16,7 +16,7 @@ class Admin: public Person{
     public:
     Admin(string admission_number, string username, string first_name, string last_name, string email);
     string get_own_username();
-    int add_user();
+    int add_user(string);
     int remove_user(string user);
     int remove_user(int id);
     int view_users(string user);

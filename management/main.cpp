@@ -47,14 +47,6 @@ int main(int argc, const char * argv[]) {
     lectuererMenu.addItem("View modules", &option2);
     lectuererMenu.addItem("Exit", &endProgram);
 
-    Menu adminMenu("Select an option");
-    adminMenu.addItem("Add students", &option0);
-    adminMenu.addItem("Edit students", &option0);
-    adminMenu.addItem("Add lecturers", &option1);
-    adminMenu.addItem("Edit lectuerers", &option1);
-    adminMenu.addItem("Add modules", &option2);
-    adminMenu.addItem("Edit modules", &option2);
-    adminMenu.addItem("Exit", &endProgram);    
 
     while(!program_exit){
         cout << "Please enter username: ";
@@ -67,12 +59,19 @@ int main(int argc, const char * argv[]) {
         cout << "Hello "<<username << "\n" << " Role:" << classtype << endl;
         if(classtype == "admin"){
             Admin new_class(test.get_matri_code(), test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
-            // new_class.add_user();           
-            adminMenu.printMenu();            
+            Menu adminMenu("Select an option");
+            adminMenu.addItem("Add students", &new_class.add_user("student"););
+            adminMenu.addItem("Edit students", &option0);
+            adminMenu.addItem("Add lecturers", &option1);
+            adminMenu.addItem("Edit lectuerers", &option1);
+            adminMenu.addItem("Add modules", &option2);
+            adminMenu.addItem("Remove modules", &option2);
+            adminMenu.addItem("Exit", &endProgram);           
         }
         if (classtype == "student"){
             Student new_class(test.get_matri_code(),test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
-            new_class.displayDetails();            
+            new_class.displayDetails();  
+            program_exit = true;          
         }
 
         if (classtype == "lecturer"){

@@ -13,8 +13,8 @@ string Admin::get_own_username(){
     return own_username;
 }
 
-int Admin::add_user(){
-    string user, admission_number, email_address, pass, role, first_name, last_name;
+int Admin::add_user(string role){
+    string user, admission_number, email_address, pass, first_name, last_name;
     cin.clear();
     cin.sync();
     cout << "Adding user:\n";
@@ -30,15 +30,16 @@ int Admin::add_user(){
     getline(cin, email_address);
     cout << "Enter password: ";
     getline(cin, pass);
-    cout << "Enter role: ";
-    getline(cin, role);
 
     
     sql_query = test.query("INSERT INTO users (user_name, admission_number, email_address, password, role, First_name, Last_name) VALUES ('" + user + "', '" + admission_number + "', '" + email_address + "', '" + pass + "', '" + role + "', '" + first_name + "', '" + last_name + "');");
     if(sql_query){
         return 1;
-    };
-    return 0;
+    }else{
+        cout << "New " << role << " has been added" << endl;
+        return 0;
+    }
+    
 };
 
 int Admin::remove_user(string user){
