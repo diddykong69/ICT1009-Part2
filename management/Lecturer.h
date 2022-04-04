@@ -25,8 +25,8 @@ class Lecturer : public Person{
         Lecturer();
         Lecturer(string admission_number, string username, string first_name, string last_name, string email);
         void showModules() const;
-        void setStudentGrades();
-        void displayDetails() const;
+        void setStudentGrades(); // Able to assign new grades to students
+        void displayDetails() const; // Display lecturer's details
 };
 
 

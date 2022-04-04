@@ -71,9 +71,7 @@ string Student::getGrades(const string& module_name){
     }
     return "-";
 };
-Module Student::getModule(const int& index){
-    return *modules[index];
-};
+
 string Student::getType() const{
     return type;
 };

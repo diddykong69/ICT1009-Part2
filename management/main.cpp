@@ -34,62 +34,58 @@ int main(int argc, const char * argv[]) {
     string username;
     string password;
     string classtype;
+    bool program_exit = false;
+
+    Menu studentMenu("Select an option");
+    studentMenu.addItem("View grades", &option0);
+    studentMenu.addItem("View lectuers", &option1);
+    studentMenu.addItem("View modules", &option2);
+    studentMenu.addItem("Exit", &endProgram);
+
+    Menu lectuererMenu("Select an option");
+    lectuererMenu.addItem("View students", &option0);
+    lectuererMenu.addItem("View modules", &option2);
+    lectuererMenu.addItem("Exit", &endProgram);
+
+
+    Menu adminMenu("Select an option");
+    adminMenu.addItem("Add/edit students", &option0);
+    adminMenu.addItem("Add/edit lecturers", &option1);
+    adminMenu.addItem("Add/edit modules", &option2);
+    adminMenu.addItem("Exit", &endProgram);    
+
+    while(!program_exit){
+        cout << "Please enter username: ";
+        cin >> username;
+        cout << "Please enter password: ";
+        cin >> password;
+        Authenication test(username,password);
+        test.authenicate();
+        classtype = test.get_role();
+        cout << "Hello "<<username << "\n" << " Role:" << classtype << endl;
+        if(classtype == "admin"){
+            Admin new_class(test.get_matri_code(), test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
+            // new_class.add_user();           
+            adminMenu.printMenu();            
+        }
+        if (classtype == "student"){
+            Student new_class(test.get_matri_code(),test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
+            new_class.displayDetails();            
+        }
+
+        if (classtype == "lecturer"){
+            Lecturer new_class(test.get_matri_code(), test.get_username(), test.get_first_name(), test.get_last_name(), test.get_email());
+            // new_class.displayDetails();
+            lectuererMenu.printMenu();            
+        }
+    }
     
-    cout << "Please enter username:";
-    cin >> username;
-    cout << "Please enter password:";
-    cin >> password;
-    Authenication test(username,password);
-    test.authenicate();
-    classtype = test.get_role();
-    cout << "Hello "<<username << "\n" << " Role:" << classtype << endl;
-    if(classtype == "admin"){
-        Admin new_class(test.get_matri_code(), test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
-        cout << new_class.getUsername();
-
-    }
-    if (classtype == "student"){
-        Student new_class(test.get_matri_code(),test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
-        new_class.displayDetails();
-    }
-
-    if (classtype == "lecturer"){
-        Lecturer new_class(test.get_matri_code(), test.get_username(), test.get_first_name(), test.get_last_name(), test.get_email());
-        new_class.displayDetails();
-        // new_class.setStudentGrades();
-    }
     
     
   
-//     Menu studentMenu("Select an option");
-//     studentMenu.addItem("View grades", &option0);
-//     studentMenu.addItem("View lectuers", &option1);
-//     studentMenu.addItem("View modules", &option2);
-//     studentMenu.addItem("Exit", &endProgram);
-
-//     Menu lectuererMenu("Select an option");
-//     lectuererMenu.addItem("View students", &option0);
-//     lectuererMenu.addItem("View modules", &option2);
-//     lectuererMenu.addItem("Exit", &endProgram);
-
-
-//     Student student;
-//     student.setMatriCode(2);
-//     student.setGrades(90);
-//     student.setModules("1009");
-//     student.showStudent();
-
-    //         Menu adminMenu("Select an option");
-    // adminMenu.addItem("Add/edit students", &option0);
-    // adminMenu.addItem("Add/edit lecturers", &option1);
-    // adminMenu.addItem("Add/edit modules", &option2);
-    // adminMenu.addItem("Exit", &endProgram);
-    //     adminMenu.printMenu();
     
 //     // print the respective menu and get input
-//     // studentMenu.printMenu();
-//     // lectuererMenu.printMenu();
-//     // adminMenu.printMenu();
-  
+
+  //     // studentMenu.printMenu();
  return 0;
  }
