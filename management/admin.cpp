@@ -62,8 +62,8 @@ int Admin::remove_user(int id){
 return 0;
 };
 
-int Admin::view_users(string user="%"){
-    sql_query = test.query("SELECT * FROM users WHERE user_name LIKE '"+user+"';");
+int Admin::view_users(string role="%"){
+    sql_query = test.query("SELECT First_name, Last_name, admission_number, email_address FROM users WHERE role LIKE '"+role+"';");
     if(sql_query){
         return (1);
     };
@@ -71,26 +71,7 @@ int Admin::view_users(string user="%"){
     return (0);
 };
 
-// Moves the declaration over to the .h file so that main could reference the template function directly
 
-// template <typename T>int Admin::edit_user(){
-//     string user, field;
-//     T value;
-//     cin.clear();
-//     cin.sync();
-//     cout << "Enter username to edit: ";
-//     getline(cin, user);
-//     cout << "Enter fieldname to modify: ";
-//     getline(cin, field);
-//     cout << "Enter new value: ";
-//     getline(cin, value);
-
-//     sql_query = test.query("UPDATE users SET "+field+" = '"+value+"' WHERE user_name = '"+user+"'");
-//     if(sql_query){
-//         return (1);
-//     }
-//     return(0);
-// };
 
 
 #endif

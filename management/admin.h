@@ -20,7 +20,8 @@ class Admin: public Person{
     int add_user(string);
     int remove_user(string user);
     int remove_user(int id);
-    int view_users(string user);
+    int add_module(string);
+    int view_users(string role);
     template <typename T>int edit_user(){
         string user, field;
         T value;

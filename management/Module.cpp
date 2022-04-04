@@ -8,6 +8,11 @@
 
 using namespace std;
 
+Module::Module(string module_name){
+    setModuleName(module_name);
+    setGrades(-1);
+};
+
 Module::Module(string module_name, string grade){
     setModuleName(module_name);
     this->grades = grade;
