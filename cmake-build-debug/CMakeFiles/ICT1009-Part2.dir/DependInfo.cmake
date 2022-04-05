@@ -8,15 +8,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Admin.cpp" "CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o.d"
+  "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Authentication.cpp" "CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o.d"
   "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Classroom.cpp" "CMakeFiles/ICT1009-Part2.dir/management/Classroom.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/Classroom.cpp.o.d"
   "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Lecturer.cpp" "CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o.d"
+  "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Menu.cpp" "CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o.d"
   "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Module.cpp" "CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.o.d"
   "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Person.cpp" "CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o.d"
   "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Programmes.cpp" "CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o.d"
   "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Student.cpp" "CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o.d"
-  "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/admin.cpp" "CMakeFiles/ICT1009-Part2.dir/management/admin.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/admin.cpp.o.d"
   "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/main.cpp" "CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o.d"
-  "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/menu.cpp" "CMakeFiles/ICT1009-Part2.dir/management/menu.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/menu.cpp.o.d"
   "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/menu_item.cpp" "CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o.d"
   "/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/sql/sqlDB.cpp" "CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o" "gcc" "CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o.d"
   )

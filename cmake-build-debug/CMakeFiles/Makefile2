@@ -100,7 +100,7 @@ dependencies/fmt/clean: dependencies/fmt/CMakeFiles/fmt.dir/clean
 CMakeFiles/bcrypt.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bcrypt.dir/build.make CMakeFiles/bcrypt.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bcrypt.dir/build.make CMakeFiles/bcrypt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=13,14,15 "Built target bcrypt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=14,15,16 "Built target bcrypt"
 .PHONY : CMakeFiles/bcrypt.dir/all
 
 # Build rule for subdir invocation for target.
@@ -127,12 +127,12 @@ CMakeFiles/ICT1009-Part2.dir/all: CMakeFiles/bcrypt.dir/all
 CMakeFiles/ICT1009-Part2.dir/all: dependencies/fmt/CMakeFiles/fmt.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target ICT1009-Part2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target ICT1009-Part2"
 .PHONY : CMakeFiles/ICT1009-Part2.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ICT1009-Part2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ICT1009-Part2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/ICT1009-Part2.dir/rule
@@ -153,7 +153,7 @@ CMakeFiles/ICT1009-Part2.dir/clean:
 dependencies/fmt/CMakeFiles/fmt.dir/all:
 	$(MAKE) $(MAKESILENT) -f dependencies/fmt/CMakeFiles/fmt.dir/build.make dependencies/fmt/CMakeFiles/fmt.dir/depend
 	$(MAKE) $(MAKESILENT) -f dependencies/fmt/CMakeFiles/fmt.dir/build.make dependencies/fmt/CMakeFiles/fmt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=16,17,18 "Built target fmt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=17,18,19 "Built target fmt"
 .PHONY : dependencies/fmt/CMakeFiles/fmt.dir/all
 
 # Build rule for subdir invocation for target.

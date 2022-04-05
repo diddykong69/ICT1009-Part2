@@ -8,22 +8,26 @@
 
 // header files
 #include "Person.h"
-#include "Classroom.h"
+#include "Student.h"
+#include "Module.h"
+#include "../sql/sqlDB.h"
+
 
 using namespace std;
 
 class Lecturer : public Person{
     private:
+        sqlDB conn;
+        map<int,map<string,string>> response;
         const string type = "Lecturer";
-        vector <Classroom*> classrooms;
+        vector <string> modules;
     public:
-        Lecturer(string username, string password, string first_name, string last_name, string contact, string email);
-        void showClasses() const;
-        void addClasses(Classroom&);
-        void deleteClasses(Classroom&);
-        void showClassList(Classroom&) const;
-        void setStudentGrades();
-        void displayDetails() const;
+        Lecturer();
+        Lecturer(string admission_number, string username, string first_name, string last_name, string email);
+        void showModules() const;
+        void setStudentGrades(); // Able to assign new grades to students
+        void displayDetails() const; // Display lecturer's details
 };
+
 
 #endif

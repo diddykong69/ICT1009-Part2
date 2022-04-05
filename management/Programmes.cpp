@@ -239,7 +239,7 @@ void Programmes::setDegree(
     this->programmeDegree = this->degrees[selectedDegreeIndex - 1];
 }
 
-void Programmes::getAllProgrammes()
+int Programmes::getAllProgrammes()
 {
     this->sqlQuery = this->database.query(
             "SELECT * FROM programmes;"
@@ -254,33 +254,10 @@ void Programmes::getAllProgrammes()
                 this->programmeName
         );
 
-        // Go back to previous menu
-    }
-}
-
-void Programmes::displayProgrammesMenu(
-        const std::string_view &topText,
-        const std::string_view &bottomText
-)
-{
-    fmt::print("{}", topText);
-
-    for (auto i = 0; i < this->database.response.size(); i++)
-    {
-        fmt::print(
-                "{}) {}\n",
-                i + 1,
-                this->database.response[i]["programme_name"]
-        );
+        return -1;
     }
 
-    fmt::print(
-            "{}) Go back\n{}",
-            this->database.response.size() + 1,
-            bottomText
-    );
-
-    getline(std::cin, this->userInput);
+    return 0;
 }
 
 std::string Programmes::monthToYearMonth(int durationInMonths)
@@ -290,20 +267,23 @@ std::string Programmes::monthToYearMonth(int durationInMonths)
     std::string month{};
 
     year = fmt::format(
-            "{} year(s)",
+            "{} year(s) ",
             fmt::to_string(durationInMonths / 12)
     );
     month = fmt::format(
-            " {} month(s)",
+            "{} month(s)",
             fmt::to_string(durationInMonths - std::stoi(year) * 12)
     );
 
     duration = fmt::format(
             "{year}{month}",
-            fmt::arg("year", year),
+            fmt::arg(
+                    "year",
+                    year = year == "0 year(s) " ? "" : year
+            ),
             fmt::arg(
                     "month",
-                    month = month == " 0 month(s)" ? "" : month
+                    month = month == "0 month(s)" ? "" : month
             )
     );
 
@@ -318,10 +298,12 @@ void Programmes::displayProgrammes()
 
     while (programmeIndex != this->database.response.size() + 1)
     {
-        displayProgrammesMenu(
+        Menu::displayProgrammesOrModulesMenu(
                 "Programmes available in SIT "
                 "(Enter the programme's index no. for more info!)\n",
-                "View more info about programme: "
+                "View more info about programme: ",
+                this->database.response,
+                this->userInput
         );
 
         std::stringstream ss(this->userInput);
@@ -376,16 +358,12 @@ void Programmes::displayProgrammes()
                         )
                 );
             }
-            else if (programmeIndex == this->database.response.size() + 1)
-            {
-                // Go back
-            }
         }
     }
 }
 
 template<typename T>
-void Programmes::setUpdateQuery(const std::string &colName, T newVal, int id)
+int Programmes::setUpdateQuery(const std::string &colName, T newVal, int id)
 {
     auto updateQuery = fmt::format(
             "UPDATE programmes SET {column_name} = {value} WHERE "
@@ -404,8 +382,10 @@ void Programmes::setUpdateQuery(const std::string &colName, T newVal, int id)
                 "Failed to update. Please try again.\n"
         );
 
-        // Go back to previous menu
+        return -1;
     }
+
+    return 0;
 }
 
 void Programmes::updateProgrammeProperty(
@@ -595,9 +575,11 @@ void Programmes::updateProgramme()
         getAllProgrammes();
         results = this->database.response;
 
-        displayProgrammesMenu(
+        Menu::displayProgrammesOrModulesMenu(
                 "Which programme would you like to make changes to?\n",
-                "Update programme: "
+                "Update programme: ",
+                results,
+                this->userInput
         );
 
         std::stringstream ss(this->userInput);
@@ -612,11 +594,479 @@ void Programmes::updateProgramme()
     }
 }
 
+std::set<int> Programmes::intFromStr(const std::string &extractFrom)
+{
+    std::set<int> extractedIntegers{};
+    regex pattern("[0-9]+");
+
+    for (auto it = sregex_iterator(extractFrom.begin(), extractFrom.end(),
+                                   pattern);
+         it != sregex_iterator();
+         it++)
+    {
+        smatch match = *it;
+        extractedIntegers.insert(std::stoi(match.str(0)));
+    }
+
+    return extractedIntegers;
+}
+
+int Programmes::getCreditsLeft(int selectedProgrammeID)
+{
+    this->sqlQuery = this->database.query(
+            fmt::format(
+                    "SELECT programme_credits FROM programmes WHERE "
+                    "programme_id = {}",
+                    selectedProgrammeID
+            )
+    );
+
+    int currCredits{std::stoi(this->database.response[0]["programme_credits"])};
+
+    this->sqlQuery = this->database.query(
+            fmt::format(
+                    "SELECT module_credit FROM modules WHERE module_id "
+                    "IN (SELECT module_id from curricula where "
+                    "programme_id = {});",
+                    selectedProgrammeID
+            )
+    );
+
+    if (this->sqlQuery != 0)
+    {
+        fmt::print(
+                stderr,
+                fg(fmt::color::red),
+                "Unable to retrieve the credits of modules already "
+                "assigned to {}\n",
+                this->programmeName
+        );
+    }
+
+    for (auto a = 0;
+         a < this->database.response.size() && currCredits - std::stoi(
+                 this->database.response[a]["module_credit"]
+         ) >= 0; a++)
+    {
+        currCredits -= std::stoi(
+                this->database.response[a]["module_credit"]
+        );
+    }
+
+    return currCredits;
+}
+
+/**
+ * Check if there's enough credit for a module to be assigned to a programme
+ * @param selectedProgrammeID the programme's id
+ * @param moduleCredit How much credit a module is
+ * @return true if insufficient, else false
+ */
+bool Programmes::insufficientCredits(int selectedProgrammeID, int moduleCredit)
+{
+    int currCredits{getCreditsLeft(selectedProgrammeID)};
+
+    if (currCredits - moduleCredit < 0)
+    {
+        fmt::print(
+                fg(fmt::color::red),
+                "Unable to add module. Insufficient credit.\nTotal "
+                "credits: {total}\nCredits left: {left}\n",
+                fmt::arg("total", this->programmeCredits),
+                fmt::arg("left", currCredits)
+        );
+
+        return true;
+    }
+
+    return false;
+}
+
+/**
+ * Continuation from addCurriculum()
+ * @param selectedProgrammeID The programmme_id of the programme modules are to
+ * be assigned to
+ */
+void Programmes::addModulesToProgramme(int selectedProgrammeID)
+{
+    std::map<int, std::map<std::string, std::string>> allModulesResults{};
+
+    auto canBreak{false};
+
+    auto currCredits{this->programmeCredits};
+    int moduleCredit{};
+    int moduleID{};
+
+    while (true)
+    {
+        auto selectModulesQuery{
+                fmt::format(
+                        "SELECT * FROM modules WHERE module_id NOT IN "
+                        "(SELECT module_id FROM curricula WHERE "
+                        "programme_id = {});",
+                        selectedProgrammeID
+                )
+        };
+
+        this->sqlQuery = this->database.query(selectModulesQuery);
+
+        // Check if query was successfully executed
+        if (this->sqlQuery != 0)
+        {
+            fmt::print(
+                    stderr,
+                    fg(fmt::color::red),
+                    "Unable to retrieve modules\n"
+            );
+        }
+
+        allModulesResults = this->database.response;
+
+        Menu::displayProgrammesOrModulesMenu(
+                fmt::format(
+                        "Which module(s) would you like students of {}\nto "
+                        "learn?\n(Note: You can add more than 1 module in 1 go."
+                        "Anything can be a delimiter.)\n",
+                        this->programmeName
+                ),
+                "Module(s) selected: ",
+                allModulesResults,
+                this->userInput,
+                true
+        );
+
+        for (std::set<int> selectedModules{intFromStr(this->userInput)};
+             int i: selectedModules)
+        {
+            if (i == allModulesResults.size() + 1)
+            {
+                canBreak = true;
+                continue;
+            }
+
+            auto selectedModule{
+                    fmt::format(
+                            "{}: {}",
+                            allModulesResults[i - 1]["module_code"],
+                            allModulesResults[i - 1]["module_name"]
+                    )
+            };
+
+            this->sqlQuery = this->database.query(
+                    fmt::format(
+                            "SELECT module_id, module_credit FROM modules "
+                            "WHERE module_code = '{}';",
+                            allModulesResults[i - 1]["module_code"]
+                    )
+            );
+
+            if (this->sqlQuery != 0)
+            {
+                fmt::print(
+                        stderr,
+                        fg(fmt::color::red),
+                        "Unable to retrieve module id & credits of {}\n",
+                        allModulesResults[i - 1]["module_name"]
+                );
+            }
+
+            moduleID = std::stoi(this->database.response[0]["module_id"]);
+
+            moduleCredit = std::stoi(
+                    this->database.response[0]["module_credit"]
+            );
+
+            if (insufficientCredits(selectedProgrammeID, moduleCredit))
+            {
+                continue;
+            }
+
+            auto insertQuery{
+                    fmt::format(
+                            "INSERT INTO curricula (programme_id, module_id) "
+                            "VALUES ({programme}, {module});",
+                            fmt::arg("programme", selectedProgrammeID),
+                            fmt::arg("module", moduleID)
+                    )
+            };
+
+            this->sqlQuery = this->database.query(insertQuery);
+
+            // Check if query was successfully executed
+            if (this->sqlQuery != 0)
+            {
+                fmt::print(
+                        stderr,
+                        fg(fmt::color::red),
+                        "Unable to add module(s). Please try again.\n"
+                );
+            }
+            else
+            {
+                fmt::print(
+                        "The module {module} has been successfully assigned\n"
+                        "to the programme {programme}.\n",
+                        fmt::arg("programme", this->programmeName),
+                        fmt::arg("module", selectedModule)
+                );
+
+                currCredits -= moduleCredit;
+            }
+        }
+
+        if (canBreak)
+        {
+            break;
+        }
+    }
+}
+
+/**
+ * Assign module to programme
+ */
+void Programmes::addCurriculum()
+{
+    int selectedProgrammeID{};
+
+    std::string selectedModule{};
+
+    getAllProgrammes();
+
+    std::map<int, std::map<std::string, std::string>> allProgrammesResults{
+            this->database.response
+    };
+
+    std::map<int, std::map<std::string, std::string>> allModulesResults{};
+
+    while (selectedProgrammeID != allProgrammesResults.size() + 1)
+    {
+        Menu::displayProgrammesOrModulesMenu(
+                "Which programme would you like to add modules to?\n",
+                "Programme selected: ",
+                allProgrammesResults,
+                this->userInput
+        );
+
+        if (std::stringstream ss(this->userInput);
+                ss >> selectedProgrammeID && ss.eof() &&
+                selectedProgrammeID >= 1 &&
+                selectedProgrammeID <= allProgrammesResults.size())
+        {
+            this->programmeName = allProgrammesResults[
+                    selectedProgrammeID - 1
+            ]["programme_name"];
+
+            this->programmeCredits = std::stoi(
+                    allProgrammesResults[
+                            selectedProgrammeID - 1
+                    ]["programme_credits"]);
+
+            addModulesToProgramme(selectedProgrammeID);
+        }
+    }
+}
+
+void Programmes::removeModulesFromProgramme(int selectedProgrammeIndex)
+{
+    std::map<int, std::map<std::string, std::string>> allModulesResults{};
+
+    auto canBreak{false};
+
+    auto maxCredits{this->programmeCredits};
+    int moduleCredit{};
+    int moduleID{};
+
+    while (true)
+    {
+        auto currCredits{getCreditsLeft(selectedProgrammeIndex)};
+
+        this->sqlQuery = this->database.query(
+                fmt::format(
+                        "SELECT * FROM modules WHERE module_id IN (SELECT "
+                        "module_id FROM curricula WHERE programme_id = {});",
+                        selectedProgrammeIndex
+                )
+        );
+
+        if (this->sqlQuery != 0)
+        {
+            fmt::print(
+                    stderr,
+                    fg(fmt::color::red),
+                    "Unable to retrieve modules of the programme {}\n",
+                    this->programmeName
+            );
+        }
+
+        allModulesResults = this->database.response;
+
+        Menu::displayProgrammesOrModulesMenu(
+                fmt::format(
+                        "Which module(s) would you like to remove from the "
+                        "programme {}? (Note: You can add more than 1 module"
+                        " in 1 go. Anything can be a delimiter.)\n",
+                        this->programmeName
+                ),
+                "Modules to remove: ",
+                allModulesResults,
+                this->userInput,
+                true
+        );
+
+        for (std::set<int> selectedModules{intFromStr(this->userInput)};
+             int i: selectedModules)
+        {
+            if (i == allModulesResults.size() + 1)
+            {
+                canBreak = true;
+                continue;
+            }
+
+            auto selectedModule{
+                    fmt::format(
+                            "{}: {}",
+                            allModulesResults[i - 1]["module_code"],
+                            allModulesResults[i - 1]["module_name"]
+                    )
+            };
+
+            this->sqlQuery = this->database.query(
+                    fmt::format(
+                            "SELECT module_id, module_credit FROM modules WHERE "
+                            "module_code = '{}';",
+                            allModulesResults[i - 1]["module_code"]
+                    )
+            );
+
+            if (this->sqlQuery != 0)
+            {
+                fmt::print(
+                        stderr,
+                        fg(fmt::color::red),
+                        "Unable to retrieve module id & credits of {}\n",
+                        allModulesResults[i - 1]["module_name"]
+                );
+            }
+
+            moduleID = std::stoi(this->database.response[0]["module_id"]);
+
+            moduleCredit = std::stoi(
+                    this->database.response[0]["module_credit"]
+            );
+
+            if (currCredits + moduleCredit > maxCredits)
+            {
+                fmt::print(
+                        "You cannot exceed the total credits set for the "
+                        "programme {}",
+                        this->programmeName
+                );
+
+                continue;
+            }
+
+            auto deleteQuery{
+                    fmt::format(
+                            "DELETE FROM curricula WHERE programme_id = "
+                            "{programme_id} AND module_id = {module_id}",
+                            fmt::arg("programme_id", selectedProgrammeIndex),
+                            fmt::arg("module_id", moduleID)
+                    )
+            };
+
+            this->sqlQuery = this->database.query(deleteQuery);
+
+            // Check if query was successfully executed
+            if (this->sqlQuery != 0)
+            {
+                fmt::print(
+                        stderr,
+                        fg(fmt::color::red),
+                        "Unable to remove module(s). Please try again.\n"
+                );
+            }
+            else
+            {
+                fmt::print(
+                        "The module {module} has been successfully removed\n"
+                        "from the programme {programme}.\n",
+                        fmt::arg("programme", this->programmeName),
+                        fmt::arg("module", selectedModule)
+                );
+
+                currCredits += moduleCredit;
+            }
+
+        }
+
+        if (canBreak)
+        {
+            break;
+        }
+    }
+}
+
+void Programmes::removeCurriculum()
+{
+    int selectedProgrammeIndex{};
+
+    while (true)
+    {
+        this->sqlQuery = this->database.query(
+                "SELECT programme_id, programme_name, programme_credits from "
+                "programmes where programme_id in "
+                "(select programme_id from curricula);"
+        );
+        if (this->sqlQuery != 0)
+        {
+            fmt::print(
+                    stderr,
+                    fg(fmt::color::red),
+                    "Unable to retrieve curricula\n"
+            );
+        }
+
+        std::map<int, std::map<std::string, std::string>> curriculaResults
+                = this->database.response;
+
+        Menu::displayProgrammesOrModulesMenu(
+                "Which programme would you like to remove modules from?\n",
+                "Programme selected: ",
+                curriculaResults,
+                this->userInput
+        );
+
+        if (std::stringstream ss(this->userInput);
+                ss >> selectedProgrammeIndex && ss.eof() &&
+                selectedProgrammeIndex >= 1 &&
+                selectedProgrammeIndex <= curriculaResults.size())
+        {
+            this->programmeName = curriculaResults[
+                    selectedProgrammeIndex - 1
+            ]["programme_name"];
+
+            this->programmeCredits = std::stoi(
+                    curriculaResults[
+                            selectedProgrammeIndex - 1
+                    ]["programme_credits"]
+            );
+            removeModulesFromProgramme(selectedProgrammeIndex);
+        }
+
+        if (selectedProgrammeIndex == curriculaResults.size() + 1)
+        {
+            break;
+        }
+    }
+}
+
 int main()
 {
     Programmes p1;
 //    p1.createProgramme();
 //    p1.displayProgrammes();
-    p1.updateProgramme();
+//    p1.updateProgramme();
+//    p1.addCurriculum();
+    p1.removeCurriculum();
     return 0;
 }

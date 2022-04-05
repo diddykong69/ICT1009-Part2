@@ -230,6 +230,18 @@
 		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/dependencies/fmt/src/os.cc">
 			<Option target="fmt"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Admin.cpp">
+			<Option target="ICT1009-Part2"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Admin.h">
+			<Option target="ICT1009-Part2"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Authentication.cpp">
+			<Option target="ICT1009-Part2"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Authentication.h">
+			<Option target="ICT1009-Part2"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Classroom.cpp">
 			<Option target="ICT1009-Part2"/>
 		</Unit>
@@ -240,6 +252,12 @@
 			<Option target="ICT1009-Part2"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Lecturer.h">
+			<Option target="ICT1009-Part2"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Menu.cpp">
+			<Option target="ICT1009-Part2"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Menu.h">
 			<Option target="ICT1009-Part2"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Module.cpp">
@@ -266,19 +284,7 @@
 		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Student.h">
 			<Option target="ICT1009-Part2"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/admin.cpp">
-			<Option target="ICT1009-Part2"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/admin.h">
-			<Option target="ICT1009-Part2"/>
-		</Unit>
 		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/main.cpp">
-			<Option target="ICT1009-Part2"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/menu.cpp">
-			<Option target="ICT1009-Part2"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/menu.h">
 			<Option target="ICT1009-Part2"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/menu_item.cpp">

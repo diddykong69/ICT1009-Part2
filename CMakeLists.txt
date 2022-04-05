@@ -12,14 +12,16 @@ add_executable(
         sql/sqlDB.cpp
         sql/sqlDB.h
         management/main.cpp
-        management/admin.cpp
-        management/admin.h
+        management/Admin.cpp
+        management/Admin.h
+        management/Authentication.cpp
+        management/Authentication.h
         management/Classroom.cpp
         management/Classroom.h
         management/Lecturer.cpp
         management/Lecturer.h
-        management/menu.cpp
-        management/menu.h
+        management/Menu.cpp
+        management/Menu.h
         management/menu_item.cpp
         management/menu_item.h
         management/Module.cpp

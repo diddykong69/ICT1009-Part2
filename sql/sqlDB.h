@@ -31,13 +31,16 @@ public:
 
     void print();
 
-    static int callback(void *data, int argc, char **argv, char **azColName);
+    map<int, map<string, string>> get_response() const;
 
 private:
     sqlite3 *db{};
     char *errMsg{};
     map<int, map<string, string>>::iterator outside_ptr;
     map<string, string>::iterator inside_ptr;
+
+    static int callback(void *data, int argc, char **argv, char **azColName);
+
 };
 
 #endif

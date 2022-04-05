@@ -203,6 +203,54 @@ dependencies/Bcrypt/blowfish.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bcrypt.dir/build.make CMakeFiles/bcrypt.dir/dependencies/Bcrypt/blowfish.cpp.s
 .PHONY : dependencies/Bcrypt/blowfish.cpp.s
 
+management/Admin.o: management/Admin.cpp.o
+.PHONY : management/Admin.o
+
+# target to build an object file
+management/Admin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o
+.PHONY : management/Admin.cpp.o
+
+management/Admin.i: management/Admin.cpp.i
+.PHONY : management/Admin.i
+
+# target to preprocess a source file
+management/Admin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.i
+.PHONY : management/Admin.cpp.i
+
+management/Admin.s: management/Admin.cpp.s
+.PHONY : management/Admin.s
+
+# target to generate assembly for a file
+management/Admin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.s
+.PHONY : management/Admin.cpp.s
+
+management/Authentication.o: management/Authentication.cpp.o
+.PHONY : management/Authentication.o
+
+# target to build an object file
+management/Authentication.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o
+.PHONY : management/Authentication.cpp.o
+
+management/Authentication.i: management/Authentication.cpp.i
+.PHONY : management/Authentication.i
+
+# target to preprocess a source file
+management/Authentication.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.i
+.PHONY : management/Authentication.cpp.i
+
+management/Authentication.s: management/Authentication.cpp.s
+.PHONY : management/Authentication.s
+
+# target to generate assembly for a file
+management/Authentication.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.s
+.PHONY : management/Authentication.cpp.s
+
 management/Classroom.o: management/Classroom.cpp.o
 .PHONY : management/Classroom.o
 
@@ -250,6 +298,30 @@ management/Lecturer.s: management/Lecturer.cpp.s
 management/Lecturer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.s
 .PHONY : management/Lecturer.cpp.s
+
+management/Menu.o: management/Menu.cpp.o
+.PHONY : management/Menu.o
+
+# target to build an object file
+management/Menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o
+.PHONY : management/Menu.cpp.o
+
+management/Menu.i: management/Menu.cpp.i
+.PHONY : management/Menu.i
+
+# target to preprocess a source file
+management/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.i
+.PHONY : management/Menu.cpp.i
+
+management/Menu.s: management/Menu.cpp.s
+.PHONY : management/Menu.s
+
+# target to generate assembly for a file
+management/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.s
+.PHONY : management/Menu.cpp.s
 
 management/Module.o: management/Module.cpp.o
 .PHONY : management/Module.o
@@ -347,30 +419,6 @@ management/Student.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.s
 .PHONY : management/Student.cpp.s
 
-management/admin.o: management/admin.cpp.o
-.PHONY : management/admin.o
-
-# target to build an object file
-management/admin.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/admin.cpp.o
-.PHONY : management/admin.cpp.o
-
-management/admin.i: management/admin.cpp.i
-.PHONY : management/admin.i
-
-# target to preprocess a source file
-management/admin.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/admin.cpp.i
-.PHONY : management/admin.cpp.i
-
-management/admin.s: management/admin.cpp.s
-.PHONY : management/admin.s
-
-# target to generate assembly for a file
-management/admin.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/admin.cpp.s
-.PHONY : management/admin.cpp.s
-
 management/main.o: management/main.cpp.o
 .PHONY : management/main.o
 
@@ -394,30 +442,6 @@ management/main.s: management/main.cpp.s
 management/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/main.cpp.s
 .PHONY : management/main.cpp.s
-
-management/menu.o: management/menu.cpp.o
-.PHONY : management/menu.o
-
-# target to build an object file
-management/menu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/menu.cpp.o
-.PHONY : management/menu.cpp.o
-
-management/menu.i: management/menu.cpp.i
-.PHONY : management/menu.i
-
-# target to preprocess a source file
-management/menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/menu.cpp.i
-.PHONY : management/menu.cpp.i
-
-management/menu.s: management/menu.cpp.s
-.PHONY : management/menu.s
-
-# target to generate assembly for a file
-management/menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ICT1009-Part2.dir/build.make CMakeFiles/ICT1009-Part2.dir/management/menu.cpp.s
-.PHONY : management/menu.cpp.s
 
 management/menu_item.o: management/menu_item.cpp.o
 .PHONY : management/menu_item.o
@@ -484,12 +508,21 @@ help:
 	@echo "... dependencies/Bcrypt/blowfish.o"
 	@echo "... dependencies/Bcrypt/blowfish.i"
 	@echo "... dependencies/Bcrypt/blowfish.s"
+	@echo "... management/Admin.o"
+	@echo "... management/Admin.i"
+	@echo "... management/Admin.s"
+	@echo "... management/Authentication.o"
+	@echo "... management/Authentication.i"
+	@echo "... management/Authentication.s"
 	@echo "... management/Classroom.o"
 	@echo "... management/Classroom.i"
 	@echo "... management/Classroom.s"
 	@echo "... management/Lecturer.o"
 	@echo "... management/Lecturer.i"
 	@echo "... management/Lecturer.s"
+	@echo "... management/Menu.o"
+	@echo "... management/Menu.i"
+	@echo "... management/Menu.s"
 	@echo "... management/Module.o"
 	@echo "... management/Module.i"
 	@echo "... management/Module.s"
@@ -502,15 +535,9 @@ help:
 	@echo "... management/Student.o"
 	@echo "... management/Student.i"
 	@echo "... management/Student.s"
-	@echo "... management/admin.o"
-	@echo "... management/admin.i"
-	@echo "... management/admin.s"
 	@echo "... management/main.o"
 	@echo "... management/main.i"
 	@echo "... management/main.s"
-	@echo "... management/menu.o"
-	@echo "... management/menu.i"
-	@echo "... management/menu.s"
 	@echo "... management/menu_item.o"
 	@echo "... management/menu_item.i"
 	@echo "... management/menu_item.s"

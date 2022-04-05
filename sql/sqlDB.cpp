@@ -1,8 +1,7 @@
 // you need to compile with -l sqlite3.... example: g++ sqlDb.cpp -l sqlite3
 #include "sqlDB.h"
 
-//map<int, map<string, string>> mapping;
-int ITERATION = 0;
+auto ITERATION = 0;
 
 sqlDB::sqlDB()
 {
@@ -46,8 +45,13 @@ int sqlDB::query(const string &sql)
 {
     string data("CALLBACK FUNCTION");
     mapping.clear();
-    int rc = sqlite3_exec(db, sql.c_str(), callback, (void *) data.c_str(),
-                          &errMsg);
+    int rc = sqlite3_exec(
+            db,
+            sql.c_str(),
+            callback,
+            (void *) data.c_str(),
+            &errMsg
+    );
     update();
     if (rc != SQLITE_OK)
     {
@@ -62,14 +66,12 @@ int sqlDB::query(const string &sql)
 
 void sqlDB::print()
 {
-    update();
     if (response.empty())
     {
         cout << "No data found.";
     }
     else
     {
-
         for (outside_ptr = response.begin();
              outside_ptr != response.end(); outside_ptr++)
         {
@@ -91,13 +93,13 @@ void sqlDB::print()
             cout << endl;
         }
     }
-};
+}
 
 void sqlDB::update()
 {
     ITERATION = 0;
     response = mapping;
-};
+}
 
 int sqlDB::callback(void *data, int argc, char **argv, char **azColName)
 {
@@ -108,6 +110,11 @@ int sqlDB::callback(void *data, int argc, char **argv, char **azColName)
     }
     ITERATION += 1;
     return 0;
+}
+
+map<int, map<string, string>> sqlDB::get_response() const
+{
+    return response;
 }
 
 /* int main(int argc, char** argv)
