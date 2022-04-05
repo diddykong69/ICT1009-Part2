@@ -24,7 +24,7 @@ void option0() {
 };
 
 void option1() {
-    // Admin: edit user
+    // Admin: edit user by admission number
     admin.edit_user<string>();
 };
 
@@ -34,7 +34,7 @@ void option2() {
 };
 
 void option3(){
-    // Add module to student
+    // Admin: Add module to student
     string id, mod_name;
     cin.clear();
     cin.sync();
@@ -53,7 +53,8 @@ void option3(){
     new_student.displayDetails();
 };
 
-void option4(){
+void option4(){ 
+    // Admin: Remove modules to student
     string id, mod_name;
     cin.clear();
     cin.sync();
@@ -78,7 +79,7 @@ void option5(){
     cout << endl;
 };
 
-void option6(){
+void option6(){ // Lecturer: Assign grades
     string id, mod_name, grades;
     cin.clear();
     cin.sync();
@@ -111,6 +112,7 @@ int main(int argc, const char * argv[]) {
 
 
     while(!login_success){
+        // Initial login prompt; Keeps prompting if invalid user
         cout << "Please enter username: ";
         cin >> username;
         cout << "Please enter password: ";
@@ -125,11 +127,13 @@ int main(int argc, const char * argv[]) {
             cout << "Wrong username/password" << endl;
         }
     }
+    // After login success, create a database connection object
     Authenication test(username,password);
     test.authenicate();
     cout << "Hello "<<username << endl;
 
     while(!program_exit){
+        // Based on the connection object's classtype, perform different actions
         if(classtype == "admin"){
             Admin new_class(test.get_matri_code(), test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
             Menu adminMenu("Select an option");
