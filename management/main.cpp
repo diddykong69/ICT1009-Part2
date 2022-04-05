@@ -107,15 +107,26 @@ int main(int argc, const char * argv[]) {
     string password;
     string classtype;
     bool program_exit = false;
+    bool login_success = false;
 
 
-    cout << "Please enter username: ";
-    cin >> username;
-    cout << "Please enter password: ";
-    cin >> password;
+    while(!login_success){
+        cout << "Please enter username: ";
+        cin >> username;
+        cout << "Please enter password: ";
+        cin >> password;
+        Authenication test(username,password);
+        test.authenicate();
+        classtype = "";
+        classtype += test.get_role();
+        if (classtype != ""){
+            login_success = true;            
+        }else{
+            cout << "Wrong username/password" << endl;
+        }
+    }
     Authenication test(username,password);
     test.authenicate();
-    classtype = test.get_role();
     cout << "Hello "<<username << endl;
 
     while(!program_exit){
