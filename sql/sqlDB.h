@@ -1,38 +1,46 @@
-
 #ifndef sqlDB_H
 #define sqlDB_H
 
 #include <iostream>
 #include <sqlite3.h>
+#include <functional>
 #include <string>
 #include <map>
 #include <cstdio>
+#include <experimental/source_location>
+#include <regex>
+#include "fmt/core.h"
+#include "fmt/color.h"
 
 using namespace std;
-static map<int,map<string,string>> mapping;
 
-class sqlDB{
-    private:
-    string DATABASE_NAME = "../sql/PMSDB.db";
-    char* CHAR_DATABASE_NAME = &DATABASE_NAME[0];
-    map<int,map<string,string>> response;
-    map<int,map<string,string>>::iterator outside_ptr;
-    map<string,string>::iterator inside_ptr;
-    sqlite3* db;
-    int exit = 0;
-    char *errMsg = 0;
-    static int callback(void* data, int argc, char** argv, char** azColName);
-    
-   public: 
+static map<int, map<string, string>> mapping;
+
+class sqlDB
+{
+public:
+    map<int, map<string, string>> response;
+
     sqlDB();
+
     ~sqlDB();
 
-    int query(string sql);
+    int query(const string &sql);
+
     void update();
+
     void print();
-    map<int,map<string,string>> get_response();
-    
-    
+
+    map<int, map<string, string>> get_response() const;
+
+private:
+    sqlite3 *db{};
+    char *errMsg{};
+    map<int, map<string, string>>::iterator outside_ptr;
+    map<string, string>::iterator inside_ptr;
+
+    static int callback(void *data, int argc, char **argv, char **azColName);
+
 };
 
 #endif
