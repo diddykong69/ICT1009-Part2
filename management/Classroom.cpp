@@ -12,17 +12,17 @@ using namespace std;
 Classroom::Classroom(std::string classroomName)
 {
     setClassroomName(classroomName);
-};
+}
 
 void Classroom::setClassroomName(std::string &nameOfClassroom)
 {
     this->classroomName = nameOfClassroom;
-};
+}
 
 std::string Classroom::getClassroomName() const
 {
     return classroomName;
-};
+}
 
 void Classroom::addStudent(Student &newStudent)
 {
@@ -52,10 +52,10 @@ void Classroom::displayStudentList()
         for (auto student: students)
         {
             std::cout
-            << "Student "
-            << iter << ": "
-            << student->getName()
-            << std::endl;
+                    << "Student "
+                    << iter << ": "
+                    << student->getName()
+                    << std::endl;
             iter++;
         }
     }

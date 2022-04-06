@@ -52,4 +52,4 @@ private:
     void (*globalCallbackPtr)(int) = nullptr;
 };
 
-#endif /* menu_hpp */
+#endif /* menu_h */

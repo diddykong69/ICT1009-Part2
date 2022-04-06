@@ -260,6 +260,9 @@ int Programmes::getAllProgrammes()
     return 0;
 }
 
+/**
+ * Convert months to year months (E.g. 38 months -> 3 year(s) 2 month(s))
+ */
 std::string Programmes::monthToYearMonth(int durationInMonths)
 {
     std::string duration{};
@@ -290,6 +293,9 @@ std::string Programmes::monthToYearMonth(int durationInMonths)
     return duration;
 }
 
+/**
+ * Show info about a programme
+ */
 void Programmes::displayProgrammes()
 {
     int programmeIndex{};
@@ -362,6 +368,13 @@ void Programmes::displayProgrammes()
     }
 }
 
+/**
+ * Query for updating programmes
+ * @param colName Column to update
+ * @param newVal The new value that the column will have
+ * @param id Which row to update
+ * @return 0 if successful, -1 if not
+ */
 template<typename T>
 int Programmes::setUpdateQuery(const std::string &colName, T newVal, int id)
 {
@@ -388,6 +401,11 @@ int Programmes::setUpdateQuery(const std::string &colName, T newVal, int id)
     return 0;
 }
 
+/**
+ *
+ * @param results A map containing the values of every programme
+ * @param programmeIndex The index of the programme user selected
+ */
 void Programmes::updateProgrammeProperty(
         map<int, map<string, string>> &results,
         int programmeIndex
@@ -564,6 +582,9 @@ void Programmes::updateProgrammeProperty(
     }
 }
 
+/**
+ * Update a programme
+ */
 void Programmes::updateProgramme()
 {
     int programmeIndex{};
@@ -594,6 +615,12 @@ void Programmes::updateProgramme()
     }
 }
 
+/**
+ * Extract every integer from a given string using regex & store any matches in
+ * a set
+ * @param extractFrom The string to extract integers from
+ * @return A set with all the integers found in the given string
+ */
 std::set<int> Programmes::intFromStr(const std::string &extractFrom)
 {
     std::set<int> extractedIntegers{};
@@ -611,6 +638,11 @@ std::set<int> Programmes::intFromStr(const std::string &extractFrom)
     return extractedIntegers;
 }
 
+/**
+ * Check how much credit a programme has left
+ * @param selectedProgrammeID The id of the programme to check
+ * @return The credits a programme has left
+ */
 int Programmes::getCreditsLeft(int selectedProgrammeID)
 {
     this->sqlQuery = this->database.query(
@@ -866,6 +898,10 @@ void Programmes::addCurriculum()
     }
 }
 
+/**
+ * Remove module(s) from a programme (cont.)
+ * @param selectedProgrammeIndex The programme to remove module(s) from
+ */
 void Programmes::removeModulesFromProgramme(int selectedProgrammeIndex)
 {
     std::map<int, std::map<std::string, std::string>> allModulesResults{};
@@ -1006,6 +1042,9 @@ void Programmes::removeModulesFromProgramme(int selectedProgrammeIndex)
     }
 }
 
+/**
+ * Remove module(s) from a programme
+ */
 void Programmes::removeCurriculum()
 {
     int selectedProgrammeIndex{};

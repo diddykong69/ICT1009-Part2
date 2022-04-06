@@ -1,5 +1,5 @@
-#ifndef AUTHENICATION_CPP
-#define AUTHENICATION_CPP
+#ifndef AUTHENTICATION_CPP
+#define AUTHENTICATION_CPP
 
 #include "Authentication.h"
 
@@ -12,7 +12,7 @@ Authentication::Authentication(
     password(std::move(password))
 {}
 
-bool Authentication::authenicate()
+bool Authentication::authenticate()
 {
     int result = conn.query(
             "SELECT * FROM users where user_name = '" + username +
@@ -31,7 +31,7 @@ bool Authentication::authenicate()
     matriCode = conn.get_response()[0]["admission_number"];
 
     return true;
-};
+}
 
 string Authentication::getRole()
 {
@@ -65,7 +65,7 @@ string Authentication::getMatriCode()
 
 /* int main(int argc, const char * argv[]) {
     Authentication user("tester","test");
-    cout << bool(user.authenicate());
+    cout << bool(user.authenticate());
     cout << user.getRole();
 } */
 #endif

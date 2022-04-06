@@ -23,7 +23,7 @@ private:
 public:
     Authentication(string username, string password);
 
-    bool authenicate();
+    bool authenticate();
 
     string getRole();
 

@@ -1,5 +1,4 @@
 #include "menu.h"
-#include <stdio.h>
 #include <iostream>
 
 #ifndef MENU_H
@@ -7,37 +6,29 @@
 
 
 Menu::Menu()
-{
-
-}
+= default;
 
 Menu::Menu(std::string initHeader)
 {
-
     // Set header and header flag
     hasHeader = true;
     header = initHeader;
-
 }
 
 Menu::Menu(std::string initHeader, void (*initCallback)(int))
 {
-
     // Set header and header flag
     hasHeader = true;
     header = initHeader;
 
     // Set global callback
     globalCallbackPtr = initCallback;
-
 }
 
 Menu::Menu(void (*initCallback)(int))
 {
-
     // Set global callback
     globalCallbackPtr = initCallback;
-
 }
 
 void Menu::addItem(std::string title)
