@@ -55,7 +55,6 @@ public:
         }
         return (0);
     };
-
 };
 
 #endif

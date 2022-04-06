@@ -76,5 +76,4 @@ void Lecturer::displayDetails() const
     showModules();
 }
 
-
 #endif

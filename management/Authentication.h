@@ -4,6 +4,7 @@
 #include <iostream> // cout and cin
 #include <string> // npos
 #include <map>
+#include <utility>
 #include "../sql/sqlDB.h"
 #include "../dependencies/Bcrypt/bcrypt.h"
 

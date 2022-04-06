@@ -1,10 +1,6 @@
 #include "menu.h"
 #include <iostream>
 
-#ifndef MENU_H
-#define MENU_H
-
-
 Menu::Menu()
 = default;
 
@@ -86,6 +82,15 @@ void Menu::printMenu()
 
 }
 
+/**
+ * A numbered-listed menu used in Programmes
+ * @param topText The question you want user to fulfill
+ * @param bottomText For users to know that input is expected (Something like "Ans: ")
+ * @param results The results obtained from executing SQL query
+ * @param userInput To save user input
+ * @param forModules Printed output is different for modules. This parameter is to check
+ * if the menu will be for modules or programmes
+ */
 void Menu::displayProgrammesOrModulesMenu(
         const string_view &topText,
         const string_view &bottomText,
@@ -123,5 +128,3 @@ void Menu::displayProgrammesOrModulesMenu(
 
     getline(std::cin, userInput);
 }
-
-#endif

@@ -1,4 +1,3 @@
-// you need to compile with -l sqlite3.... example: g++ sqlDb.cpp -l sqlite3
 #include "sqlDB.h"
 
 auto ITERATION = 0;
@@ -56,7 +55,6 @@ int sqlDB::query(const string &sql)
     if (rc != SQLITE_OK)
     {
         fprintf(stderr, "SQL error: %s\n", errMsg);
-        //cerr << "Error: " << errMsg << endl;
         sqlite3_free(errMsg);
         return 1;
     }
@@ -105,7 +103,6 @@ int sqlDB::callback(void *data, int argc, char **argv, char **azColName)
 {
     for (int i = 0; i < argc; i++)
     {
-        // printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
         mapping[ITERATION][azColName[i]] = argv[i] ? argv[i] : "NULL";
     }
     ITERATION += 1;
@@ -116,11 +113,3 @@ map<int, map<string, string>> sqlDB::get_response() const
 {
     return response;
 }
-
-/* int main(int argc, char** argv)
-{
-    sqlDB test;
-    test.query("SELECT * FROM users;");
-    test.print();
-
-}   */

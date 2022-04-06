@@ -16,8 +16,6 @@ add_executable(
         management/Admin.h
         management/Authentication.cpp
         management/Authentication.h
-        management/Classroom.cpp
-        management/Classroom.h
         management/Lecturer.cpp
         management/Lecturer.h
         management/Menu.cpp

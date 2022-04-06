@@ -1,5 +1,5 @@
-#ifndef menu_h
-#define menu_h
+#ifndef MENU_H
+#define MENU_H
 
 #include <iostream>
 #include <stdio.h>
@@ -10,7 +10,6 @@
 
 class Menu
 {
-
 public:
     //Constructor & Destructor
     Menu();

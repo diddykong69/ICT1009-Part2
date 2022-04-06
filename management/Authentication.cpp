@@ -3,8 +3,6 @@
 
 #include "Authentication.h"
 
-#include <utility>
-
 Authentication::Authentication(
         std::string username,
         std::string password
@@ -63,9 +61,4 @@ string Authentication::getMatriCode()
     return matriCode;
 }
 
-/* int main(int argc, const char * argv[]) {
-    Authentication user("tester","test");
-    cout << bool(user.authenticate());
-    cout << user.getRole();
-} */
 #endif

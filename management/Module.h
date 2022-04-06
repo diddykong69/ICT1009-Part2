@@ -25,5 +25,4 @@ public:
     string getGrades() const; // Returns the alphabetical grade value
 };
 
-
 #endif

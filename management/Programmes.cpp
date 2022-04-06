@@ -239,6 +239,11 @@ void Programmes::setDegree(
     this->programmeDegree = this->degrees[selectedDegreeIndex - 1];
 }
 
+/**
+ * Get every programme found in the database
+ * 
+ * @return int 0 if successful, 1 if fail
+ */
 int Programmes::getAllProgrammes()
 {
     this->sqlQuery = this->database.query(
@@ -1098,14 +1103,3 @@ void Programmes::removeCurriculum()
         }
     }
 }
-
-//int main()
-//{
-//    Programmes p1;
-////    p1.createProgramme();
-////    p1.displayProgrammes();
-////    p1.updateProgramme();
-//    p1.addCurriculum();
-////    p1.removeCurriculum();
-//    return 0;
-//}

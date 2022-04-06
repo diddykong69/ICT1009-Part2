@@ -12,7 +12,6 @@
 #include "Module.h"
 #include "../sql/sqlDB.h"
 
-
 using namespace std;
 
 class Lecturer : public Person
@@ -33,6 +32,5 @@ public:
     void setStudentGrades(); // Able to assign new grades to students
     void displayDetails() const; // Display lecturer's details
 };
-
 
 #endif
