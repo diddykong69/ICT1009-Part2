@@ -10,7 +10,7 @@ using namespace std;
 
 class Admin: public Person{
     private:
-        sqlDB test;
+        sqlDB conn;
         int sql_query;
         string own_username;
     public:
@@ -22,24 +22,7 @@ class Admin: public Person{
     int remove_user(int id);
     int add_module(string);
     int view_users(string role);
-    template <typename T>int edit_user(){
-        string admission_number, field;
-        T value;
-        cin.clear();
-        cin.sync();
-        cout << "Enter admission number to edit: ";
-        getline(cin, admission_number);
-        cout << "Enter fieldname to modify: ";
-        getline(cin, field);
-        cout << "Enter new value: ";
-        getline(cin, value);
-
-        sql_query = test.query("UPDATE users SET "+field+" = '"+value+"' WHERE admission_number = '"+admission_number+"'");
-        if(sql_query){
-            return (1);
-        }
-        return(0);
-    };
+    template <typename T>int edit_user();
 
 };
 
