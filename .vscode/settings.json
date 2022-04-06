@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "algorithm": "cpp",
+        "map": "cpp",
+        "iosfwd": "cpp",
+        "functional": "cpp",
+        "xstring": "cpp",
+        "*.tcc": "cpp",
+        "memory": "cpp",
+        "new": "cpp",
+        "numeric": "cpp",
+        "system_error": "cpp"
+    }
+}

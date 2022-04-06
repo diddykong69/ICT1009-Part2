@@ -1,84 +1,105 @@
-//you need to compile with -l sqlite3.... example: g++ sqlDb.cpp -l
+// you need to compile with -l sqlite3.... example: g++ sqlDb.cpp -l sqlite3
 
-#include <iostream>
-#include <sqlite3.h>
-#include <string>
-#include <map>
+#ifndef sqlDB_CPP
+#define sqlDB_CPP
 
-using namespace std;
-string DATABASE_NAME = "example.db";
-char* CHAR_DATABASE_NAME = &DATABASE_NAME[0];
-map<int,map<string,string>> mapping;
+#include "sqlDB.h"
+
 int ITERATION = 0;
+sqlDB::sqlDB()
+{
 
-class SqlDb{
-    sqlite3* db;
-    int exit = 0;
-    static int callback(void* data, int argc, char** argv, char** azColName);
-    
-   public: 
-    SqlDb();
-    int select(string sql);
-    void print();
-    map<int,map<string,string>> response = mapping;
-    map<int,map<string,string>>::iterator outside_ptr;
-    map<string,string>::iterator inside_ptr;
-    
-};
-
-SqlDb::SqlDb(){
-    
     exit = sqlite3_open(CHAR_DATABASE_NAME, &db);
     if (exit)
     {
         std::cerr << "Error open DB " << sqlite3_errmsg(db) << std::endl;
-    }else{
-        std::cout << "Opened Database Successfully!" << std::endl;
+    }
+    else
+    {
+        // std::cout << "Opened Database Successfully!" << std::endl;
     }
 };
 
-int SqlDb::select(string sql){
+sqlDB::~sqlDB(){
+sqlite3_close(db);
+}
+
+int sqlDB::query(string sql)
+{
     string data("CALLBACK FUNCTION");
-    int rc = sqlite3_exec(db, sql.c_str(), callback, (void*)data.c_str(), NULL);
-  
-    if (rc != SQLITE_OK)
-        cerr << "Error SELECT" << endl;
-    else {
-        cout << "Operation OK!" << endl;
+    mapping.clear();
+    int rc = sqlite3_exec(db, sql.c_str(), callback, (void *)data.c_str(), &errMsg);
+    update();
+    if (rc != SQLITE_OK){
+        fprintf(stderr, "SQL error: %s\n", errMsg);
+        //cerr << "Error: " << errMsg << endl;
+        sqlite3_free(errMsg);
+        return 1;
     }
-    sqlite3_close(db);
+    else
+    {
+        // cout << "Operation OK!" << endl;
+    }
+    
     return (0);
 }
 
-void SqlDb::print(){
-    for(outside_ptr = response.begin(); outside_ptr!=response.end();outside_ptr++){
-        for(inside_ptr = outside_ptr->second.begin(); inside_ptr != outside_ptr->second.end();inside_ptr++){
-            cout << "First Key is "<<outside_ptr->first
-            << " And second key is "<< inside_ptr->first
-            << " and the value is "<< inside_ptr->second<<endl;
-        }
-        
+void sqlDB::print()
+{
+    if (response.size() == 0){
+        cout << "No data found.";
     }
+    else{
+
+    for (outside_ptr = response.begin(); outside_ptr != response.end(); outside_ptr++)
+    {
+        if (outside_ptr->first == 0)
+        {
+            for (inside_ptr = outside_ptr->second.begin(); inside_ptr != outside_ptr->second.end(); inside_ptr++)
+            {
+                printf("%-10s | ", inside_ptr->first.c_str());
+            }
+            cout << endl;
+        }
+
+        for (inside_ptr = outside_ptr->second.begin(); inside_ptr != outside_ptr->second.end(); inside_ptr++)
+        {
+            printf("%-10s | ", inside_ptr->second.c_str());
+        }
+        cout << endl;
+    }}
 };
 
-int SqlDb::callback(void* data, int argc, char** argv, char** azColName)
+void sqlDB::update()
+{
+    ITERATION = 0;
+    response = mapping;
+};
+
+int sqlDB::callback(void *data, int argc, char **argv, char **azColName)
 {
     int i;
-  
-    for (i = 0; i < argc; i++) {
-        //printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
-        mapping[ITERATION][azColName[i]] =  argv[i] ? argv[i] : "NULL";
+    for (i = 0; i < argc; i++)
+    {
+        // printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
+        mapping[ITERATION][azColName[i]] = argv[i] ? argv[i] : "NULL";
     }
     ITERATION += 1;
     return 0;
 }
 
+ map<int,map<string,string>> sqlDB::get_response(){
+     return response;
+ }
 
 
-int main(int argc, char** argv)
+/* int main(int argc, char** argv)
 {
-    SqlDb test;
-    test.select("SELECT * FROM PERSON;");
-    test.print();
+    sqlDB test;
+    test.query("SELECT * FROM users;");
+    cout << test.response[0]["username"];
+    //test.print();
+    cout << endl;
+}    */
 
-}
+#endif

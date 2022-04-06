@@ -1,87 +1,62 @@
 #ifndef LECTURER_CPP
 #define LECTURER_CPP
-#include <iostream> // cout and cin
-#include <string> // npos
+
+// header files
 #include "Lecturer.h"
-#include "Person.h"
-#include <algorithm> // For unique and sort
 
 using namespace std;
 
-vector<string> split (string s, string delimiter) {
-    size_t pos_start = 0, pos_end, delim_len = delimiter.length();
-    string token;
-    vector<string> res;
 
-    while ((pos_end = s.find_first_of(delimiter, pos_start)) != string::npos) {
-        if(pos_end > pos_start){
-            res.push_back(s.substr(pos_start, pos_end-pos_start));
-        }
-        pos_start = pos_end+1;
-    }
-    if(pos_start < s.length()){
-        res.push_back(s.substr(pos_start, string::npos));
-    }
-    return res;
-}
-
-const string Lecturer::type = "Lecturer";
-Lecturer::Lecturer(string username, string password, string first_name, string last_name, string contact, string email, vector<string>&modules)
-    : Person(username, password, first_name, last_name, contact, email)
+Lecturer::Lecturer(string admission_number, string username, string first_name, string last_name, string email)
+    : Person(admission_number, username, first_name, last_name, email)
 {
-    vector <string> res;
-    for(int i = 0; i < modules.size(); ++i){
-        this->modules.push_back(modules[i]);
-    }
-    
-}
-
-void Lecturer::addModule(string m){
-    vector <string> newModules;
-    newModules = split(m, ", ");
-    for(auto module : newModules){
-        modules.push_back(module);
-    }
-    sort(modules.begin(), modules.end());
-    modules.erase(unique(modules.begin(), modules.end()), modules.end());
-
-}
-
-void Lecturer::deleteModule(string m){
-    vector <string> removeModules;
-    removeModules = split(m, ", ");
-    for(auto module : removeModules){
-        modules.erase(remove(modules.begin(), modules.end(), module), modules.end());
-    }
-    
-}
-
-const string Lecturer::getType() const{
-    return type;
-}
-
-
-
-void Lecturer::showModules(){
-    sort(modules.begin(), modules.end());
-    for (int i = 0; i < modules.size(); i++){
-        if(i != 0){
-            cout << ", " << modules.at(i);
-        }else{
-            cout << modules.at(i);
+    int no_result = conn.query("SELECT * FROM lecturers WHERE admission_number = '"+admission_number+"'");
+    if (!no_result)
+    {
+        response = conn.get_response();
+        for(int i=0; i < response.size();i++){            
+            modules.push_back(response[i]["modules"]);
         }
     }
-}
+};
 
-void Lecturer::DisplayDetails(){
-    cout << "==============================" << endl;
-    cout << "Name: " << getFirst() << " " << getLast() << endl;
-    cout << "Contact: " << getContact() << endl;
-    cout << "Email: " << getEmail() << endl;
-    cout << "Module teaching: ";
-    showModules();
-    cout << endl;
+
+void Lecturer::showModules() const{    
+    int index = 1;
+    for (auto module : modules){
+        cout << index << ". " << module << endl;
+        index++;
+    }
+};
+
+void Lecturer::setStudentGrades(){
+    vector <Module> modules;
+    cout << "Showing all students:" << endl;
+    int choice;
+    int result = conn.query("SELECT users.First_name, users.Last_name, users.admission_number, users.email_address, users.user_name, student.module, student.grade FROM users, student WHERE users.role = 'student' AND users.admission_number = student.admission_number");    
+    if (!result){
+        response = conn.get_response();
+        for (int i = 0; i < response.size(); i++){
+            cout << i+1 << ". " << response[i]["First_name"] << " " << response[i]["Last_name"] << " | Module name: " << response[i]["module"] << " Grade: " << response[i]["grade"] << endl;
+        }
+    }
+    cout << "Select student to assign grade by index (e.g. 1): ";
+    cin >> choice;
+    choice = choice - 1;
+    string module_name = response[choice]["module"];
+    Student temp_student(response[choice]["admission_number"], response[choice]["user_name"], response[choice]["First_name"], response[choice]["Last_name"], response[choice]["email_address"]);
+    
+    cout << "Assign new grade value (e.g. 50): ";
+    cin >> choice;
+    temp_student.setGrades(module_name, choice);
+    temp_student.displayDetails();
+
 }
+void Lecturer::displayDetails() const{
+    Person::displayDetails();
+    cout << "Classes teaching: " << endl;
+    showModules();
+};
 
 
 #endif
