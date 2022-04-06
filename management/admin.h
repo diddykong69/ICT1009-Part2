@@ -23,18 +23,18 @@ class Admin: public Person{
     int add_module(string);
     int view_users(string role);
     template <typename T>int edit_user(){
-        string user, field;
+        string admission_number, field;
         T value;
         cin.clear();
         cin.sync();
-        cout << "Enter username to edit: ";
-        getline(cin, user);
+        cout << "Enter admission number to edit: ";
+        getline(cin, admission_number);
         cout << "Enter fieldname to modify: ";
         getline(cin, field);
         cout << "Enter new value: ";
         getline(cin, value);
 
-        sql_query = test.query("UPDATE users SET "+field+" = '"+value+"' WHERE user_name = '"+user+"'");
+        sql_query = test.query("UPDATE users SET "+field+" = '"+value+"' WHERE admission_number = '"+admission_number+"'");
         if(sql_query){
             return (1);
         }

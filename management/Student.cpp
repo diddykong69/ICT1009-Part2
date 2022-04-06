@@ -10,6 +10,20 @@
 
 using namespace std;
 
+
+Student::Student(string matri_code){
+    setMatriCode(matri_code);
+    int no_result = conn.query("SELECT * FROM student WHERE admission_number = '"+matri_code+"'");
+    if (!no_result)
+    {
+        response = conn.get_response();
+        for(int i=0; i < response.size();i++){
+            Module *mod = new Module(response[i]["module"], response[i]["grade"]);
+            modules.push_back(mod);
+        }
+    }
+ };
+
 Student::Student(string matri_code, string username,string first_name, string last_name, string email)
     : Person(matri_code, username, first_name, last_name, email)
 {
@@ -87,6 +101,12 @@ void Student::showModules() const{
         }
     }
 };
+
+int Student::getTakingModules() const{
+    int takingModules = modules.size();
+    return takingModules;
+};
+
 void Student::displayDetails() const{
     cout << "Displaying details for: " << endl;
     Person::displayDetails();

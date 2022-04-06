@@ -24,7 +24,9 @@ void option0() {
 };
 
 void option1() {
-    // Admin: edit user by admission number
+    // Admin: edit student by admission number
+    conn.query("SELECT First_name, Last_name, admission_number, email_address, password FROM users WHERE role = 'student'");
+    conn.print();
     admin.edit_user<string>();
 };
 
@@ -38,11 +40,14 @@ void option3(){
     string id, mod_name;
     cin.clear();
     cin.sync();
+    conn.query("SELECT First_name, Last_name, admission_number FROM users WHERE role = 'student'");
+    conn.print();
     cout << "Enter student admission number: ";
     getline(cin, id);
     conn.query("SELECT * FROM users WHERE admission_number = '" + id + "' AND role = 'student'");
     response = conn.get_response();
-    Student new_student(response[0]["admission_number"], response[0]["user_name"], response[0]["First_name"], response[0]["Last_name"], response[0]["email_address"]);
+    Student new_student(response[0]["admission_number"]);
+    new_student = response;
     new_student.displayDetails();
     cout << "Enter new module name to add to student: ";
     getline(cin, mod_name);
@@ -58,11 +63,15 @@ void option4(){
     string id, mod_name;
     cin.clear();
     cin.sync();
+    conn.query("SELECT First_name, Last_name, users.admission_number, module, grade FROM student, users WHERE student.admission_number = users.admission_number;");
+    conn.print();
     cout << "Enter student admission number: ";
     getline(cin, id);
     conn.query("SELECT * FROM users WHERE admission_number = '" + id + "' AND role = 'student'");
     response = conn.get_response();
-    Student new_student(response[0]["admission_number"], response[0]["user_name"], response[0]["First_name"], response[0]["Last_name"], response[0]["email_address"]);
+    // Student new_student(response[0]["admission_number"], response[0]["user_name"], response[0]["First_name"], response[0]["Last_name"], response[0]["email_address"]);
+    Student new_student(response[0]["admission_number"]);
+    new_student = response;
     new_student.displayDetails();
     cout << "Enter module name to delete: ";
     getline(cin, mod_name);
@@ -83,19 +92,32 @@ void option6(){ // Lecturer: Assign grades
     string id, mod_name, grades;
     cin.clear();
     cin.sync();
+    conn.query("SELECT users.First_name, users.Last_name, users.admission_number, student.module, student.grade FROM users, student WHERE users.admission_number = student.admission_number");
+    conn.print();
     cout << "Enter student admission number: ";
     getline(cin, id);
     conn.query("SELECT * FROM users WHERE admission_number = '" + id + "' AND role = 'student'");
     response = conn.get_response();
-    Student new_student(response[0]["admission_number"], response[0]["user_name"], response[0]["First_name"], response[0]["Last_name"], response[0]["email_address"]);
+    Student new_student(response[0]["admission_number"]);
+    new_student = response;
+    // Student new_student(response[0]["admission_number"], response[0]["user_name"], response[0]["First_name"], response[0]["Last_name"], response[0]["email_address"]);
     new_student.displayDetails();
-    cout << "Enter module name to assign grades to: ";
-    getline(cin, mod_name);
-    cout << "Enter grade score (e.g. 75): ";
-    getline(cin, grades);
-    new_student.setGrades(mod_name, stoi(grades));
-    new_student.displayDetails();
+    if (new_student.getTakingModules() > 0){
+        cout << "Enter module name to assign grades to: ";
+        getline(cin, mod_name);
+        cout << "Enter grade score (e.g. 75): ";
+        getline(cin, grades);
+        new_student.setGrades(mod_name, stoi(grades));
+        new_student.displayDetails();
+    }  
 };
+
+void option7(){
+    // Admin : edit lecturers
+    conn.query("SELECT First_name, Last_name, admission_number, email_address, password FROM users WHERE role = 'lecturer'");
+    conn.print();
+    admin.edit_user<string>();
+}
 
 void endProgram() {
     std::cout << "Exiting program..." << std::endl;
@@ -140,9 +162,9 @@ int main(int argc, const char * argv[]) {
             adminMenu.addItem("Add students", &option0);
             adminMenu.addItem("Edit students", &option1);
             adminMenu.addItem("Add lecturers", &option2);
-            adminMenu.addItem("Edit lectuerers", &option1);
-            adminMenu.addItem("Add modules", &option3);
-            adminMenu.addItem("Remove modules", &option4);
+            adminMenu.addItem("Edit lectuerers", &option7);
+            adminMenu.addItem("Add modules to student", &option3);
+            adminMenu.addItem("Remove modules from student", &option4);
             adminMenu.addItem("Exit", &endProgram);
             adminMenu.printMenu();      
         }
