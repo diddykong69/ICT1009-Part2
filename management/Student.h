@@ -27,7 +27,7 @@ class Student : public Person{
         void setMatriCode(string& matri_code);
         string getMatriCode() const;
         void deleteModule(Module&);
-        void addModule(Module&);
+        int addModule(Module&);
         Module getModule(const int&);
         void setGrades(const string&, const int&);
         string getGrades(const string&);

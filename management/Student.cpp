@@ -66,8 +66,15 @@ void Student::deleteModule(Module& delete_module){
         }
     }
 };
-void Student::addModule(Module& new_module){
+int Student::addModule(Module& new_module){
+    for (auto mod : modules){
+        if (mod->getModuleName() == new_module.getModuleName()){
+            cout << "Student is already taking this module!" << endl;
+            return -1;
+        }
+    }
     modules.push_back(&new_module);
+    return 0;
 };
 void Student::setGrades(const string& module_name, const int& new_grades){
     for (auto module : modules){

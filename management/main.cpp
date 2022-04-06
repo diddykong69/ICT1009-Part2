@@ -52,10 +52,12 @@ void option3(){
     cout << "Enter new module name to add to student: ";
     getline(cin, mod_name);
     Module m(mod_name);
-    new_student.addModule(m);
-    conn.query("INSERT INTO student (admission_number, module, grade) VALUES ('" + new_student.getMatriCode() + "', '" + mod_name + "', '" + new_student.getGrades(mod_name) + "');");
-    cout << "Module has been added!" << endl;
-    new_student.displayDetails();
+    if (new_student.addModule(m) == 0){
+        conn.query("INSERT INTO student (admission_number, module, grade) VALUES ('" + new_student.getMatriCode() + "', '" + mod_name + "', '" + new_student.getGrades(mod_name) + "');");
+        cout << "Module has been added!" << endl;
+        new_student.displayDetails();
+    }
+    
 };
 
 void option4(){ 
