@@ -7,35 +7,28 @@
 #include <utility>
 #include "../sql/sqlDB.h"
 #include "../dependencies/Bcrypt/bcrypt.h"
+#include "fmt/core.h"
 
 using namespace std;
 
-class Authentication
-{
+class Authentication{
 private:
     sqlDB conn;
     string username;
     string password;
     string role;
-    string firstName;
-    string lastName;
+    string first_name;
+    string last_name;
     string email;
-    string matriCode;
+    string matri_code;
 public:
-    Authentication(string username, string password);
-
-    bool authenticate();
-
+    Authentication(string user, string password);
+    bool authenticate();    
     string getRole();
-
     string getUsername();
-
     string getFirstName();
-
     string getLastName();
-
     string getEmail();
-
     string getMatriCode();
 };
 

@@ -121,6 +121,31 @@ void option7(){
     admin.edit_user<string>();
 }
 
+void option8()
+{
+    programmes.createProgramme();
+}
+
+void option9()
+{
+    programmes.displayProgrammes();
+}
+
+void option10()
+{
+    programmes.updateProgramme();
+}
+
+void option11()
+{
+    programmes.addCurriculum();
+}
+
+void option12()
+{
+    programmes.removeCurriculum();
+}
+
 void endProgram() {
     std::cout << "Exiting program..." << std::endl;
     exit(1);
@@ -141,7 +166,7 @@ int main(int argc, const char * argv[]) {
         cin >> username;
         cout << "Please enter password: ";
         cin >> password;
-        Authentication test(username,password);
+        Authentication test(username, password);
         test.authenticate();
         classtype = "";
         classtype += test.getRole();
@@ -154,7 +179,7 @@ int main(int argc, const char * argv[]) {
     // After login success, create a database connection object
     Authentication test(username,password);
     test.authenticate();
-    cout << "Hello "<<username << endl;
+    cout << "Hello "<< username << endl;
 
     while(!program_exit){
         // Based on the connection object's classtype, perform different actions
@@ -164,24 +189,28 @@ int main(int argc, const char * argv[]) {
             adminMenu.addItem("Add students", &option0);
             adminMenu.addItem("Edit students", &option1);
             adminMenu.addItem("Add lecturers", &option2);
-            adminMenu.addItem("Edit lectuerers", &option7);
+            adminMenu.addItem("Edit lecturers", &option7);
             adminMenu.addItem("Add modules to student", &option3);
             adminMenu.addItem("Remove modules from student", &option4);
+            adminMenu.addItem("Create a programme", &option8);
+            adminMenu.addItem("View info about a programme", &option9);
+            adminMenu.addItem("Update existing programme", &option10);
+            adminMenu.addItem("Add 1 or more module(s) to a programme", &option11);
             adminMenu.addItem("Exit", &endProgram);
             adminMenu.printMenu();      
         }
         if (classtype == "student"){
             Student new_class(test.getMatriCode(),test.getUsername(),test.getFirstName(),test.getLastName(),test.getEmail());
-            new_class.displayDetails();  
+            new_class.displayDetails();
             program_exit = true;          
         }
         if (classtype == "lecturer"){
             Lecturer new_class(test.getMatriCode(), test.getUsername(), test.getFirstName(), test.getLastName(), test.getEmail());            
-            Menu lectuererMenu("Select an option");
-            lectuererMenu.addItem("View students", &option5);
-            lectuererMenu.addItem("Assign module grades to students", &option6);
-            lectuererMenu.addItem("Exit", &endProgram);
-            lectuererMenu.printMenu();            
+            Menu lecturerMenu("Select an option");
+            lecturerMenu.addItem("View students", &option5);
+            lecturerMenu.addItem("Assign module grades to students", &option6);
+            lecturerMenu.addItem("Exit", &endProgram);
+            lecturerMenu.printMenu();            
         }
     }
     
