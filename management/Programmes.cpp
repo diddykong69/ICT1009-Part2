@@ -684,7 +684,7 @@ bool Programmes::insufficientCredits(int selectedProgrammeID, int moduleCredit)
 
 /**
  * Continuation from addCurriculum()
- * @param selectedProgrammeID The programmme_id of the programme modules are to
+ * @param selectedProgrammeID The programme_id of the programme modules are to
  * be assigned to
  */
 void Programmes::addModulesToProgramme(int selectedProgrammeID)
@@ -1060,13 +1060,13 @@ void Programmes::removeCurriculum()
     }
 }
 
-int main()
-{
-    Programmes p1;
-//    p1.createProgramme();
-//    p1.displayProgrammes();
-//    p1.updateProgramme();
+//int main()
+//{
+//    Programmes p1;
+////    p1.createProgramme();
+////    p1.displayProgrammes();
+////    p1.updateProgramme();
 //    p1.addCurriculum();
-    p1.removeCurriculum();
-    return 0;
-}
+////    p1.removeCurriculum();
+//    return 0;
+//}

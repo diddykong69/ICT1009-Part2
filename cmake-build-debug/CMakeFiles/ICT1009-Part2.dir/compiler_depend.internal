@@ -4,7 +4,7 @@
 CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o
  /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Admin.cpp
  /usr/include/stdc-predef.h
- /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Admin.h
+ /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/admin.h
  /usr/include/c++/11/iostream
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h
@@ -1333,7 +1333,7 @@ CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o
 CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o
  /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Menu.cpp
  /usr/include/stdc-predef.h
- /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Menu.h
+ /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/menu.h
  /usr/include/c++/11/iostream
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h
@@ -2871,7 +2871,7 @@ CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o
  /usr/include/c++/11/istream
  /usr/include/c++/11/bits/istream.tcc
  /usr/include/c++/11/stdlib.h
- /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Menu.h
+ /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/menu.h
  /usr/include/c++/11/vector
  /usr/include/c++/11/bits/stl_uninitialized.h
  /usr/include/c++/11/bits/stl_vector.h
@@ -3018,7 +3018,7 @@ CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o
  /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Lecturer.h
  /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Authentication.h
  /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/dependencies/Bcrypt/bcrypt.h
- /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/Admin.h
+ /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/admin.h
 
 CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o
  /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/management/menu_item.cpp

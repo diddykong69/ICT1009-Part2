@@ -5,7 +5,7 @@
 #include <string> // npos
 #include <map>
 #include "../sql/sqlDB.h"
-#include "../sql/sqlDB.h"
+#include "../dependencies/Bcrypt/bcrypt.h"
 
 using namespace std;
 

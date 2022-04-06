@@ -3,7 +3,7 @@
 
 CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o: ../management/Admin.cpp \
   /usr/include/stdc-predef.h \
-  ../management/Admin.h \
+  ../management/admin.h \
   /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -1328,7 +1328,7 @@ CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o: ../management/Lecturer.c
 
 CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o: ../management/Menu.cpp \
   /usr/include/stdc-predef.h \
-  ../management/Menu.h \
+  ../management/menu.h \
   /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -2861,7 +2861,7 @@ CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o: ../management/main.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/stdlib.h \
-  ../management/Menu.h \
+  ../management/menu.h \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_vector.h \
@@ -3008,7 +3008,7 @@ CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o: ../management/main.cpp \
   ../management/Lecturer.h \
   ../management/Authentication.h \
   ../dependencies/Bcrypt/bcrypt.h \
-  ../management/Admin.h
+  ../management/admin.h
 
 CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o: ../management/menu_item.cpp \
   /usr/include/stdc-predef.h \
@@ -3506,6 +3506,8 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/c++/11/stdlib.h:
 
+../management/Menu.h:
+
 /usr/include/c++/11/bits/stl_multiset.h:
 
 /usr/include/c++/11/bits/stl_set.h:
@@ -3516,7 +3518,7 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 ../management/Programmes.cpp:
 
-../management/Menu.h:
+../management/menu.h:
 
 ../management/Menu.cpp:
 
@@ -3630,12 +3632,6 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
-/usr/include/c++/11/cstdlib:
-
-/usr/include/c++/11/bits/stl_iterator_base_types.h:
-
-/usr/include/c++/11/bit:
-
 /usr/include/c++/11/bits/ranges_uninitialized.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
@@ -3688,6 +3684,10 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
+/usr/include/locale.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/c++/11/bits/localefwd.h:
@@ -3720,12 +3720,6 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/c++/11/bits/atomic_wait.h:
 
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-/usr/include/c++/11/bits/ranges_algo.h:
-
-/usr/include/c++/11/bits/stl_iterator.h:
-
 /usr/include/c++/11/bits/stream_iterator.h:
 
 /usr/include/c++/11/bits/cpp_type_traits.h:
@@ -3755,10 +3749,6 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
 /usr/include/c++/11/string:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
@@ -3797,6 +3787,20 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 /usr/include/c++/11/bits/stl_function.h:
 
 /usr/include/c++/11/compare:
+
+/usr/include/c++/11/cstdlib:
+
+/usr/include/c++/11/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/11/bit:
+
+/usr/include/c++/11/bits/ranges_algo.h:
+
+/usr/include/c++/11/bits/stl_iterator.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+../management/admin.h:
 
 /usr/include/c++/11/bits/regex_executor.tcc:
 
@@ -3837,8 +3841,6 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 /usr/include/c++/11/ostream:
 
 /usr/include/c++/11/bits/unique_ptr.h:
-
-../management/Admin.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
@@ -3900,9 +3902,17 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
-/usr/include/c++/11/bits/shared_ptr_base.h:
+/usr/include/endian.h:
+
+/usr/include/c++/11/bits/ptr_traits.h:
+
+/usr/include/c++/11/bits/erase_if.h:
+
+/usr/include/stdint.h:
 
 /usr/include/c++/11/bits/basic_string.h:
+
+/usr/include/c++/11/bits/shared_ptr_base.h:
 
 /usr/include/linux/limits.h:
 
@@ -4149,14 +4159,6 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp \
 ../management/Student.cpp:
 
 /usr/include/c++/11/bits/hashtable_policy.h:
-
-/usr/include/endian.h:
-
-/usr/include/c++/11/bits/ptr_traits.h:
-
-/usr/include/stdint.h:
-
-/usr/include/c++/11/bits/erase_if.h:
 
 /usr/include/c++/11/vector:
 

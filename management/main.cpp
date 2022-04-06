@@ -1,12 +1,12 @@
 #include <iostream>
-#include <stdlib.h>
+#include <cstdlib>
 #include <string>
 #include "menu.h"
 #include "Student.h"
 #include "Lecturer.h"
 #include "Authentication.h"
 #include "admin.h"
-#include "..\sql\sqlDB.h"
+#include "../sql/sqlDB.h"
 
 using namespace std;
 
@@ -117,25 +117,25 @@ int main(int argc, const char * argv[]) {
         cin >> username;
         cout << "Please enter password: ";
         cin >> password;
-        Authenication test(username,password);
+        Authentication test(username,password);
         test.authenicate();
         classtype = "";
-        classtype += test.get_role();
+        classtype += test.getRole();
         if (classtype != ""){
-            login_success = true;            
+            login_success = true;
         }else{
             cout << "Wrong username/password" << endl;
         }
     }
     // After login success, create a database connection object
-    Authenication test(username,password);
+    Authentication test(username,password);
     test.authenicate();
     cout << "Hello "<<username << endl;
 
     while(!program_exit){
         // Based on the connection object's classtype, perform different actions
         if(classtype == "admin"){
-            Admin new_class(test.get_matri_code(), test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
+            Admin new_class(test.getMatriCode(), test.getUsername(),test.getFirstName(),test.getLastName(),test.getEmail());
             Menu adminMenu("Select an option");
             adminMenu.addItem("Add students", &option0);
             adminMenu.addItem("Edit students", &option1);
@@ -144,22 +144,22 @@ int main(int argc, const char * argv[]) {
             adminMenu.addItem("Add modules", &option3);
             adminMenu.addItem("Remove modules", &option4);
             adminMenu.addItem("Exit", &endProgram);
-            adminMenu.printMenu();      
+            adminMenu.printMenu();
         }
         if (classtype == "student"){
-            Student new_class(test.get_matri_code(),test.get_username(),test.get_first_name(),test.get_last_name(),test.get_email());
-            new_class.displayDetails();  
-            program_exit = true;          
+            Student new_class(test.getMatriCode(),test.getUsername(),test.getFirstName(),test.getLastName(),test.getEmail());
+            new_class.displayDetails();
+            program_exit = true;
         }
         if (classtype == "lecturer"){
-            Lecturer new_class(test.get_matri_code(), test.get_username(), test.get_first_name(), test.get_last_name(), test.get_email());            
+            Lecturer new_class(test.getMatriCode(), test.getUsername(), test.getFirstName(), test.getLastName(), test.getEmail());
             Menu lectuererMenu("Select an option");
             lectuererMenu.addItem("View students", &option5);
             lectuererMenu.addItem("Assign module grades to students", &option6);
             lectuererMenu.addItem("Exit", &endProgram);
-            lectuererMenu.printMenu();            
+            lectuererMenu.printMenu();
         }
     }
-    
+
  return 0;
  }
