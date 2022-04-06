@@ -71,44 +71,5 @@ int Admin::view_users(string role="%"){
     return (0);
 };
 
-template <typename T>int Admin::edit_user(){
-            string user, field;
-        T value;
-        cin.clear();
-        cin.sync();
-        cout << "Enter username to edit: ";
-        getline(cin, user);
-        cout << "Enter fieldname to modify: ";
-        getline(cin, field);
-        cout << "Enter new value: ";
-        getline(cin, value);
-
-        sql_query = conn.query("UPDATE users SET "+field+" = '"+value+"' WHERE user_name = '"+user+"'");
-        if(sql_query){
-            return (1);
-        }
-        return(0);
-}
-
-template <typename T>int Admin::edit_user(){
-        string admission_number, field;
-        T value;
-        cin.clear();
-        cin.sync();
-        cout << "Enter admission number to edit: ";
-        getline(cin, admission_number);
-        cout << "Enter fieldname to modify: ";
-        getline(cin, field);
-        cout << "Enter new value: ";
-        getline(cin, value);
-
-        sql_query = test.query("UPDATE users SET "+field+" = '"+value+"' WHERE admission_number = '"+admission_number+"'");
-        if(sql_query){
-            return (1);
-        }
-        return(0);
-    };
-
-
 
 #endif

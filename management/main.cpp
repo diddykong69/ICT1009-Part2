@@ -69,7 +69,6 @@ void option4(){
     getline(cin, id);
     conn.query("SELECT * FROM users WHERE admission_number = '" + id + "' AND role = 'student'");
     response = conn.get_response();
-    // Student new_student(response[0]["admission_number"], response[0]["user_name"], response[0]["First_name"], response[0]["Last_name"], response[0]["email_address"]);
     Student new_student(response[0]["admission_number"]);
     new_student = response;
     new_student.displayDetails();
@@ -100,7 +99,6 @@ void option6(){ // Lecturer: Assign grades
     response = conn.get_response();
     Student new_student(response[0]["admission_number"]);
     new_student = response;
-    // Student new_student(response[0]["admission_number"], response[0]["user_name"], response[0]["First_name"], response[0]["Last_name"], response[0]["email_address"]);
     new_student.displayDetails();
     if (new_student.getTakingModules() > 0){
         cout << "Enter module name to assign grades to: ";
