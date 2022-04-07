@@ -174,7 +174,7 @@ int main(int argc, const char * argv[]) {
             program_exit = true;          
         }
         if (classtype == "lecturer"){
-            Lecturer new_class(test.get_matri_code(), test.get_username(), test.get_first_name(), test.get_last_name(), test.get_email());            
+            Lecturer new_class(test.get_matri_code(), test.get_username(), test.get_first_name(), test.get_last_name(), test.get_email());       
             Menu lectuererMenu("Select an option");
             lectuererMenu.addItem("View students", &option5);
             lectuererMenu.addItem("Assign module grades to students", &option6);
