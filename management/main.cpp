@@ -189,7 +189,7 @@ int main(int argc, const char * argv[]) {
     }
     catch(int e)
     {
-         cout << e << endl;
+         cout <<"Error code:"<< e << endl;
     }
     
     
