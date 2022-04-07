@@ -2344,7 +2344,6 @@ CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o: management/main.cpp \
   /usr/include/c++/9/bits/ostream.tcc \
   /usr/include/c++/9/istream \
   /usr/include/c++/9/bits/istream.tcc \
-  /usr/include/c++/9/stdlib.h \
   management/menu.h \
   /usr/include/c++/9/vector \
   /usr/include/c++/9/bits/stl_uninitialized.h \
@@ -2941,8 +2940,6 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: sql/sqlDB.cpp \
 sql/sqlDB.cpp:
 
 management/menu_item.cpp:
-
-/usr/include/c++/9/stdlib.h:
 
 management/Student.cpp:
 

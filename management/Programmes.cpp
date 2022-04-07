@@ -1000,7 +1000,7 @@ void Programmes::removeModulesFromProgramme(int selectedProgrammeIndex)
             {
                 fmt::print(
                         "You cannot exceed the total credits set for the "
-                        "programme {}",
+                        "programme {}\n",
                         this->programmeName
                 );
 
@@ -1057,8 +1057,8 @@ void Programmes::removeCurriculum()
     while (true)
     {
         this->sqlQuery = this->database.query(
-                "SELECT programme_id, programme_name, programme_credits from "
-                "programmes where programme_id in "
+                "SELECT programme_id, programme_name, programme_credits FROM "
+                "programmes where programme_id IN "
                 "(select programme_id from curricula);"
         );
         if (this->sqlQuery != 0)
@@ -1094,7 +1094,11 @@ void Programmes::removeCurriculum()
                             selectedProgrammeIndex - 1
                     ]["programme_credits"]
             );
-            removeModulesFromProgramme(selectedProgrammeIndex);
+
+            removeModulesFromProgramme(
+                    std::stoi(curriculaResults[selectedProgrammeIndex - 1][
+                            "programme_id"])
+            );
         }
 
         if (selectedProgrammeIndex == curriculaResults.size() + 1)

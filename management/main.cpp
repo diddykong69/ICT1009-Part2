@@ -420,7 +420,7 @@ int main()
         }
 
         std::string role{user.getRole()};
-        std::ranges::transform(
+        std::transform(
                 role.begin(),
                 role.end(),
                 role.begin(),
