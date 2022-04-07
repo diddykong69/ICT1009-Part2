@@ -153,6 +153,8 @@ void endProgram() {
 
 
 int main(int argc, const char * argv[]) {
+        try
+    {
     string username;
     string password;
     string classtype;
@@ -213,6 +215,11 @@ int main(int argc, const char * argv[]) {
             lecturerMenu.printMenu();            
         }
     }
-    
+    }
+    catch(int e)
+    {
+         cout <<"Error code:"<< e << endl;
+    }
+
  return 0;
  }
