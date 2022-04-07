@@ -14,13 +14,13 @@
 using namespace std;
 
 class Student : public Person{
+    inline static const string TYPE = "Student"; 
     private:
         sqlDB conn;
         map<int,map<string,string>> response;
         string matri_code;
         vector <Module*> modules;
-        const string type = "Student";
-    public:        
+    public:       
         Student(string);
         Student(string matri_code,string username,string first_name, string last_name, string email);
         ~Student();
@@ -44,6 +44,7 @@ class Student : public Person{
             return *this;
         };
 };
+
 
 
 #endif

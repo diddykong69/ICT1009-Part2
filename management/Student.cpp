@@ -94,7 +94,7 @@ string Student::getGrades(const string& module_name){
 };
 
 string Student::getType() const{
-    return type;
+    return TYPE;
 };
 void Student::showModules() const{
     if (modules.empty()){
