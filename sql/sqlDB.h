@@ -13,6 +13,7 @@ static map<int,map<string,string>> mapping;
 
 class sqlDB{
     private:
+    string e;
     string DATABASE_NAME = "../sql/PMSDB.db";
     char* CHAR_DATABASE_NAME = &DATABASE_NAME[0];
     map<int,map<string,string>> response;

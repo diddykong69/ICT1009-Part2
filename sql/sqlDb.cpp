@@ -13,6 +13,7 @@ sqlDB::sqlDB()
     if (exit)
     {
         std::cerr << "Error open DB " << sqlite3_errmsg(db) << std::endl;
+        throw(404);
     }
     else
     {
@@ -34,7 +35,7 @@ int sqlDB::query(string sql)
         fprintf(stderr, "SQL error: %s\n", errMsg);
         //cerr << "Error: " << errMsg << endl;
         sqlite3_free(errMsg);
-        return 1;
+        throw(401);
     }
     else
     {
