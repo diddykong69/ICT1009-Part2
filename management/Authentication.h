@@ -22,6 +22,7 @@ private:
     string email;
     string matri_code;
 public:
+    Authentication();
     Authentication(string user, string password);
     bool authenticate();    
     string getRole();

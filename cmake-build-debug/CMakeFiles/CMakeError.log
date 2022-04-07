@@ -1,22 +1,22 @@
 Determining if the strtod_l exist failed with the following output:
-Change Dir: /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_4b1cf/fast && /usr/bin/make  -f CMakeFiles/cmTC_4b1cf.dir/build.make CMakeFiles/cmTC_4b1cf.dir/build
-make[1]: Entering directory '/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4b1cf.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_4b1cf.dir/CheckSymbolExists.c.o -c /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
-/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘strtod_l’ undeclared (first use in this function); did you mean ‘strtoull’?
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_73f3d/fast && /usr/bin/make  -f CMakeFiles/cmTC_73f3d.dir/build.make CMakeFiles/cmTC_73f3d.dir/build
+make[1]: Entering directory '/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_73f3d.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_73f3d.dir/CheckSymbolExists.c.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function 'main':
+/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: 'strtod_l' undeclared (first use in this function); did you mean 'strtoull'?
     8 |   return ((int*)(&strtod_l))[argc];
       |                   ^~~~~~~~
       |                   strtoull
-/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
-make[1]: *** [CMakeFiles/cmTC_4b1cf.dir/build.make:78: CMakeFiles/cmTC_4b1cf.dir/CheckSymbolExists.c.o] Error 1
-make[1]: Leaving directory '/mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp'
-make: *** [Makefile:127: cmTC_4b1cf/fast] Error 2
+/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/cmTC_73f3d.dir/build.make:78: CMakeFiles/cmTC_73f3d.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_73f3d/fast] Error 2
 
 
-File /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <stdlib.h>
 

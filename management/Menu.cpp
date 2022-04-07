@@ -57,12 +57,18 @@ void Menu::printMenu()
 
     // Enumerate in print options
     for (int i = 0; i < menuItems.size(); i++)
-        std::cout << i + 1 << ".) " << menuItems[i]->getTitle() << std::endl;
+        std::cout << i + 1 << ") " << menuItems[i]->getTitle() << std::endl;
 
 
     // Prompt user for selection
     std::cout << "\nSelect option: ";
     std::cin >> option;
+
+    std::cin.clear();
+    std::cin.ignore(
+            std::numeric_limits<std::streamsize>::max(),
+            '\n'
+    );
 
     // Check if selection is valid
     if (option < 0 && option >= menuItems.size())
@@ -70,8 +76,7 @@ void Menu::printMenu()
         // Print selection invalid and print menu again
         std::cout << "Not a valid selection.  Please try again." << std::endl;
         printMenu();
-    }
-    else
+    } else
     {
         // Call menu item's callback
         menuItems[option - 1]->performCallback();
@@ -79,7 +84,6 @@ void Menu::printMenu()
         // If global callback supplied, call that with index as parameter
         if (globalCallbackPtr != nullptr) globalCallbackPtr(option);
     }
-
 }
 
 /**
@@ -109,7 +113,7 @@ void Menu::displayProgrammesOrModulesMenu(
                 fmt::arg(
                         "value",
                         forModules ? fmt::format(
-                                "{code} {module_name} ({credit})",
+                                "{code} {module_name} ({credit} credit(s))",
                                 fmt::arg("code", results[i]["module_code"]),
                                 fmt::arg(
                                         "module_name", results[i]["module_name"]

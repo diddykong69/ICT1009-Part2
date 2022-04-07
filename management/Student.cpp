@@ -14,6 +14,7 @@ Student::Student(string matri_code)
 {
     setMatriCode(matri_code);
     int no_result = conn.query("SELECT * FROM student WHERE admission_number = '" + matri_code + "'");
+
     if (!no_result)
     {
         response = conn.get_response();
@@ -33,7 +34,7 @@ Student::Student(string matri_code, string username, string first_name, string l
     if (!no_result)
     {
         response = conn.get_response();
-        for (int i = 0; i < response.size(); i++)
+        for (auto i = 0; i < response.size(); i++)
         {
             Module *mod = new Module(response[i]["module"], response[i]["grade"]);
             modules.push_back(mod);
@@ -120,7 +121,7 @@ string Student::getGrades(const string &module_name)
 
 string Student::getType() const
 {
-    return type;
+    return TYPE;
 }
 
 void Student::showModules() const
@@ -135,7 +136,8 @@ void Student::showModules() const
         auto index = 1;
         for (auto module : modules)
         {
-            cout << index << ". " << module->getModuleName() << " Grades: " << module->getGrades() << endl;
+            cout << "- " << module->getModuleName() << " (Grade given: " <<
+            module->getGrades() << ")" << endl;
             index++;
         }
     }

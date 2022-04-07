@@ -32,6 +32,8 @@ sqlDB::sqlDB()
                 "Error opening database: {}\n",
                 sqlite3_errmsg(db)
         );
+
+        throw(404);
     }
 }
 
@@ -56,7 +58,7 @@ int sqlDB::query(const string &sql)
     {
         fprintf(stderr, "SQL error: %s\n", errMsg);
         sqlite3_free(errMsg);
-        return 1;
+        throw(401);
     }
 
     return 0;

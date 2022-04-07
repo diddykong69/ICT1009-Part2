@@ -16,14 +16,12 @@ using namespace std;
 
 class Lecturer : public Person
 {
+    inline static const string TYPE = "Lecturer";
 private:
     sqlDB conn;
     map<int, map<string, string>> response;
-    const string type = "Lecturer";
     vector<string> modules;
 public:
-    Lecturer();
-
     Lecturer(string admission_number, string username, string first_name,
              string last_name, string email);
 

@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o.d"
   "CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o"
   "CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o.d"
-  "CMakeFiles/ICT1009-Part2.dir/management/Classroom.cpp.o"
-  "CMakeFiles/ICT1009-Part2.dir/management/Classroom.cpp.o.d"
   "CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o"
   "CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o.d"
   "CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o"

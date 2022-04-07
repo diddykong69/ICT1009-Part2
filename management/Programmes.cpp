@@ -88,8 +88,7 @@ void Programmes::createProgramme()
                 "Please try again.\n",
                 this->programmeName
         );
-    }
-    else
+    } else
     {
         fmt::print("Programme successfully created!\n");
     }
@@ -143,8 +142,7 @@ void Programmes::setProgrammeProperties(const std::string &question,
             {
                 canBreak = true;
             }
-        }
-        else
+        } else
         {
             if constexpr (std::is_same_v<T, std::string>)
             {
@@ -227,7 +225,11 @@ void Programmes::setDegree(
 
         fmt::print("Degree selected: ");
         std::cin >> selectedDegreeIndex;
-        std::cin.ignore();
+        std::cin.clear();
+        std::cin.ignore(
+                std::numeric_limits<std::streamsize>::max(),
+                '\n'
+        );
 
         if (selectedDegreeIndex - 1 >= 0 &&
             selectedDegreeIndex <= degrees.size())
@@ -837,8 +839,7 @@ void Programmes::addModulesToProgramme(int selectedProgrammeID)
                         fg(fmt::color::red),
                         "Unable to add module(s). Please try again.\n"
                 );
-            }
-            else
+            } else
             {
                 fmt::print(
                         "The module {module} has been successfully assigned\n"
@@ -1025,8 +1026,7 @@ void Programmes::removeModulesFromProgramme(int selectedProgrammeIndex)
                         fg(fmt::color::red),
                         "Unable to remove module(s). Please try again.\n"
                 );
-            }
-            else
+            } else
             {
                 fmt::print(
                         "The module {module} has been successfully removed\n"

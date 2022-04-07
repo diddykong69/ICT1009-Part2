@@ -1,5 +1,5 @@
-C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug && /tmp/cmake-3.22.2/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2; exitcode=$?; sleep 0.001; (exit $exitcode)"
--- The C compiler identification is GNU 11.1.0
+C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug && /tmp/cmake-3.23.0/bin/cmake -DCMAKE_BUILD_TYPE=Debug '-DCMAKE_CXX_COMPILER=/usr/bin/g++-11' -G 'CodeBlocks - Unix Makefiles' /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2; exitcode=$?; sleep 0.001; (exit $exitcode)"
+-- The C compiler identification is GNU 9.4.0
 -- The CXX compiler identification is GNU 11.1.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
@@ -8,7 +8,7 @@ C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CL
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Check for working CXX compiler: /usr/bin/g++-11 - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Module support is disabled.
@@ -28,4 +28,4 @@ C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CL
 -- Looking for strtod_l - not found
 -- Configuring done
 -- Generating done
--- Build files have been written to: /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/cmake-build-debug
+-- Build files have been written to: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug

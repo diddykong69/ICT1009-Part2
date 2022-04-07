@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/coolm/Documents/Github/ICT1009-Part2/dependencies/fmt
+# Install script for directory: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/dependencies/fmt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
