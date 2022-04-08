@@ -7,6 +7,20 @@
 using namespace std;
 
 
+Lecturer::Lecturer(string admission_number){
+    setAdmissionNumber(admission_number);
+    int no_result = conn.query("SELECT * FROM lecturers WHERE admission_number = '"+admission_number+"'");
+    if (!no_result)
+    {
+        response = conn.get_response();
+        for(int i=0; i < response.size();i++){
+            auto mod = response[i]["modules"];
+            modules.push_back(mod);
+        }
+    }
+}
+
+
 Lecturer::Lecturer(string admission_number, string username, string first_name, string last_name, string email)
     : Person(admission_number, username, first_name, last_name, email)
 {
@@ -28,6 +42,17 @@ void Lecturer::showModules() const{
         index++;
     }
 };
+
+int Lecturer::addModule(string& mod_name){
+    for (auto mod : modules){
+        if (mod == mod_name){
+            cout << "Lecturer is already teaching this module" << endl;
+            return -1;
+        }
+        modules.push_back(mod_name);
+    }
+    return 0;
+}
 
 void Lecturer::setStudentGrades(){
     vector <Module> modules;

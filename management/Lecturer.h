@@ -22,11 +22,20 @@ class Lecturer : public Person{
         map<int,map<string,string>> response;
         vector <string> modules;
     public:
-        Lecturer();
+        Lecturer(string);
         Lecturer(string admission_number, string username, string first_name, string last_name, string email);
         void showModules() const;
+        int addModule(string&);
         void setStudentGrades(); // Able to assign new grades to students
         void displayDetails() const; // Display lecturer's details
+        Lecturer& operator=(map<int,map<string,string>> r){
+            setAdmissionNumber(r[0]["admission_number"]);
+            setUsername(r[0]["user_name"]);
+            setFirstName(r[0]["First_name"]);
+            setLastName(r[0]["Last_name"]);
+            setEmail(r[0]["email_address"]);
+            return *this;
+        };
 };
 
 

@@ -119,6 +119,32 @@ void option7(){
     admin.edit_user<string>();
 }
 
+void option8(){
+    // Admin: add module to lecturer
+    string id, mod_name;
+    cin.clear();
+    cin.sync();
+    conn.query("SELECT First_name, Last_name, admission_number FROM users WHERE role = 'lecturer'");
+    conn.print();
+    cout << "Enter lecturer admission number: ";
+    getline(cin, id);
+    conn.query("SELECT * FROM users WHERE admission_number = '" + id + "' AND role = 'lecturer'");
+    response = conn.get_response();
+    Lecturer new_lecturer(response[0]["admission_number"]);
+    new_lecturer = response;
+    cout << "Enter new module name to add to lecturer: ";
+    getline(cin, mod_name);
+    if (new_lecturer.addModule(mod_name) == 0){
+        conn.query("INSERT INTO lecturers (admission_number, modules) VALUES ('" + new_lecturer.getAdmissionNumber() + "', '" + mod_name + "');");
+        cout << "Module has been added!" << endl;        
+        new_lecturer.displayDetails();
+    }
+}
+
+void option9(){
+    
+}
+
 void endProgram() {
     std::cout << "Exiting program..." << std::endl;
     exit(1);
@@ -166,6 +192,8 @@ int main(int argc, const char * argv[]) {
             adminMenu.addItem("Edit students", &option1);
             adminMenu.addItem("Add lecturers", &option2);
             adminMenu.addItem("Edit lectuerers", &option7);
+            adminMenu.addItem("Add modules to lecturer", &option8);
+            adminMenu.addItem("Remove modules from lecturer", &option9);
             adminMenu.addItem("Add modules to student", &option3);
             adminMenu.addItem("Remove modules from student", &option4);
             adminMenu.addItem("Exit", &endProgram);
