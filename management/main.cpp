@@ -142,7 +142,24 @@ void option8(){
 }
 
 void option9(){
-    
+    // Admin: Remove modules to lecturer
+    string id, mod_name;
+    cin.clear();
+    cin.sync();
+    conn.query("SELECT First_name, Last_name, users.admission_number, modules FROM lecturers, users WHERE lecturers.admission_number = users.admission_number;");
+    conn.print();
+    cout << "Enter lecturer admission number: ";
+    getline(cin, id);
+    conn.query("SELECT * FROM users WHERE admission_number = '" + id + "' AND role = 'lecturer'");
+    response = conn.get_response();
+    Lecturer new_lecturer(response[0]["admission_number"]);
+    new_lecturer = response;
+    new_lecturer.displayDetails();
+    cout << "Enter module name to delete: ";
+    getline(cin, mod_name);
+    new_lecturer.deleteModule(mod_name);
+    conn.query("DELETE FROM lecturers WHERE admission_number = '" + new_lecturer.getAdmissionNumber() + "' AND modules = '" + mod_name + "'");
+    new_lecturer.displayDetails();
 }
 
 void endProgram() {

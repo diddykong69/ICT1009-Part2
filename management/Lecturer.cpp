@@ -43,6 +43,16 @@ void Lecturer::showModules() const{
     }
 };
 
+void Lecturer::deleteModule(string& mod_name){
+    auto iter = modules.begin();
+    for (auto mod : modules){
+        if (mod == mod_name){
+            modules.erase(iter);
+            cout << "Lecturer is no longer teaching " << mod_name << endl;
+        }
+        iter++;
+    }
+}
 int Lecturer::addModule(string& mod_name){
     for (auto mod : modules){
         if (mod == mod_name){

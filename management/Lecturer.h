@@ -26,6 +26,7 @@ class Lecturer : public Person{
         Lecturer(string admission_number, string username, string first_name, string last_name, string email);
         void showModules() const;
         int addModule(string&);
+        void deleteModule(string&);
         void setStudentGrades(); // Able to assign new grades to students
         void displayDetails() const; // Display lecturer's details
         Lecturer& operator=(map<int,map<string,string>> r){
