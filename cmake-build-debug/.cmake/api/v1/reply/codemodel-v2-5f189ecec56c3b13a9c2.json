@@ -76,7 +76,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ICT1009-Part2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ICT1009-Part2-Debug-e356a8f7f0bf5fd70126.json",
+					"jsonFile" : "target-ICT1009-Part2-Debug-21184ea4cd0ae78650ab.json",
 					"name" : "ICT1009-Part2",
 					"projectIndex" : 0
 				},
@@ -100,7 +100,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug",
+		"build" : "/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug",
 		"source" : "/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2"
 	},
 	"version" : 

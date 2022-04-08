@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ICT1009-Part2.dir/depend.make
@@ -70,9 +70,9 @@ include CMakeFiles/ICT1009-Part2.dir/progress.make
 include CMakeFiles/ICT1009-Part2.dir/flags.make
 
 CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: CMakeFiles/ICT1009-Part2.dir/flags.make
-CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: ../sql/sqlDB.cpp
+CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/sql/sqlDB.cpp
 CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o: CMakeFiles/ICT1009-Part2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o -MF CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o.d -o CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/sql/sqlDB.cpp
 
 CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.i: cmake_force
@@ -84,9 +84,9 @@ CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.s: cmake_force
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/sql/sqlDB.cpp -o CMakeFiles/ICT1009-Part2.dir/sql/sqlDB.cpp.s
 
 CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o: CMakeFiles/ICT1009-Part2.dir/flags.make
-CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o: ../management/main.cpp
+CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/main.cpp
 CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o: CMakeFiles/ICT1009-Part2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o -MF CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o.d -o CMakeFiles/ICT1009-Part2.dir/management/main.cpp.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/main.cpp
 
 CMakeFiles/ICT1009-Part2.dir/management/main.cpp.i: cmake_force
@@ -98,9 +98,9 @@ CMakeFiles/ICT1009-Part2.dir/management/main.cpp.s: cmake_force
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/main.cpp -o CMakeFiles/ICT1009-Part2.dir/management/main.cpp.s
 
 CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o: CMakeFiles/ICT1009-Part2.dir/flags.make
-CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o: ../management/Admin.cpp
+CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Admin.cpp
 CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o: CMakeFiles/ICT1009-Part2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o -MF CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o.d -o CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Admin.cpp
 
 CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.i: cmake_force
@@ -112,9 +112,9 @@ CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.s: cmake_force
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Admin.cpp -o CMakeFiles/ICT1009-Part2.dir/management/Admin.cpp.s
 
 CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o: CMakeFiles/ICT1009-Part2.dir/flags.make
-CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o: ../management/Authentication.cpp
+CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Authentication.cpp
 CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o: CMakeFiles/ICT1009-Part2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o -MF CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o.d -o CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Authentication.cpp
 
 CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.i: cmake_force
@@ -126,9 +126,9 @@ CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.s: cmake_force
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Authentication.cpp -o CMakeFiles/ICT1009-Part2.dir/management/Authentication.cpp.s
 
 CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o: CMakeFiles/ICT1009-Part2.dir/flags.make
-CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o: ../management/Lecturer.cpp
+CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Lecturer.cpp
 CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o: CMakeFiles/ICT1009-Part2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o -MF CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o.d -o CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Lecturer.cpp
 
 CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.i: cmake_force
@@ -140,9 +140,9 @@ CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.s: cmake_force
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Lecturer.cpp -o CMakeFiles/ICT1009-Part2.dir/management/Lecturer.cpp.s
 
 CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o: CMakeFiles/ICT1009-Part2.dir/flags.make
-CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o: ../management/Menu.cpp
+CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Menu.cpp
 CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o: CMakeFiles/ICT1009-Part2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o -MF CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o.d -o CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Menu.cpp
 
 CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.i: cmake_force
@@ -154,9 +154,9 @@ CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.s: cmake_force
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Menu.cpp -o CMakeFiles/ICT1009-Part2.dir/management/Menu.cpp.s
 
 CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o: CMakeFiles/ICT1009-Part2.dir/flags.make
-CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o: ../management/menu_item.cpp
+CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/menu_item.cpp
 CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o: CMakeFiles/ICT1009-Part2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o -MF CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o.d -o CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/menu_item.cpp
 
 CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.i: cmake_force
@@ -168,9 +168,9 @@ CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.s: cmake_force
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/menu_item.cpp -o CMakeFiles/ICT1009-Part2.dir/management/menu_item.cpp.s
 
 CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.o: CMakeFiles/ICT1009-Part2.dir/flags.make
-CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.o: ../management/Module.cpp
+CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.o: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Module.cpp
 CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.o: CMakeFiles/ICT1009-Part2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.o -MF CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.o.d -o CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Module.cpp
 
 CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.i: cmake_force
@@ -182,9 +182,9 @@ CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.s: cmake_force
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Module.cpp -o CMakeFiles/ICT1009-Part2.dir/management/Module.cpp.s
 
 CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o: CMakeFiles/ICT1009-Part2.dir/flags.make
-CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o: ../management/Person.cpp
+CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Person.cpp
 CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o: CMakeFiles/ICT1009-Part2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o -MF CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o.d -o CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Person.cpp
 
 CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.i: cmake_force
@@ -196,9 +196,9 @@ CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.s: cmake_force
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Person.cpp -o CMakeFiles/ICT1009-Part2.dir/management/Person.cpp.s
 
 CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o: CMakeFiles/ICT1009-Part2.dir/flags.make
-CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o: ../management/Student.cpp
+CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Student.cpp
 CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o: CMakeFiles/ICT1009-Part2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o -MF CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o.d -o CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Student.cpp
 
 CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.i: cmake_force
@@ -210,9 +210,9 @@ CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.s: cmake_force
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Student.cpp -o CMakeFiles/ICT1009-Part2.dir/management/Student.cpp.s
 
 CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o: CMakeFiles/ICT1009-Part2.dir/flags.make
-CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o: ../management/Programmes.cpp
+CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Programmes.cpp
 CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o: CMakeFiles/ICT1009-Part2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o -MF CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o.d -o CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.o -c /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/management/Programmes.cpp
 
 CMakeFiles/ICT1009-Part2.dir/management/Programmes.cpp.i: cmake_force
@@ -255,7 +255,7 @@ ICT1009-Part2: CMakeFiles/ICT1009-Part2.dir/build.make
 ICT1009-Part2: libbcrypt.a
 ICT1009-Part2: dependencies/fmt/libfmtd.a
 ICT1009-Part2: CMakeFiles/ICT1009-Part2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable ICT1009-Part2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable ICT1009-Part2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ICT1009-Part2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -267,6 +267,6 @@ CMakeFiles/ICT1009-Part2.dir/clean:
 .PHONY : CMakeFiles/ICT1009-Part2.dir/clean
 
 CMakeFiles/ICT1009-Part2.dir/depend:
-	cd /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2 /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2 /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/CMakeFiles/ICT1009-Part2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2 /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2 /mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug /mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug /mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles/ICT1009-Part2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ICT1009-Part2.dir/depend
 

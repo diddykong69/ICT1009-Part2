@@ -280,3 +280,50 @@ int main(int argc, char** argv)
   return 0;
 #endif
 }
+Performing C++ SOURCE FILE Test has_std_20_flag failed with the following output:
+Change Dir: /mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_463b5/fast && /usr/bin/make  -f CMakeFiles/cmTC_463b5.dir/build.make CMakeFiles/cmTC_463b5.dir/build
+make[1]: Entering directory '/mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_463b5.dir/src.cxx.o
+/usr/bin/c++ -Dhas_std_20_flag  -std=c++20 -std=gnu++2a -o CMakeFiles/cmTC_463b5.dir/src.cxx.o -c /mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-std=c++20'; did you mean '-std=c++2a'?
+make[1]: *** [CMakeFiles/cmTC_463b5.dir/build.make:78: CMakeFiles/cmTC_463b5.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_463b5/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Determining if the strtod_l exist failed with the following output:
+Change Dir: /mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_cab49/fast && /usr/bin/make  -f CMakeFiles/cmTC_cab49.dir/build.make CMakeFiles/cmTC_cab49.dir/build
+make[1]: Entering directory '/mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cab49.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_cab49.dir/CheckSymbolExists.c.o -c /mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function 'main':
+/mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: 'strtod_l' undeclared (first use in this function); did you mean 'strtoull'?
+    8 |   return ((int*)(&strtod_l))[argc];
+      |                   ^~~~~~~~
+      |                   strtoull
+/mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/cmTC_cab49.dir/build.make:78: CMakeFiles/cmTC_cab49.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_cab49/fast] Error 2
+
+
+File /mnt/c/users/dl/documents/github/ICT1009-Part2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtod_l
+  return ((int*)(&strtod_l))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

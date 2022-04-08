@@ -22,7 +22,7 @@ private:
     string matri_code;
     vector<Module *> modules;
 public:
-    Student(string);
+    explicit Student(string);
 
     Student(string matri_code, string username, string first_name,
             string last_name, string email);
@@ -31,25 +31,23 @@ public:
 
     void setMatriCode(string &matri_code);
 
-    string getMatriCode() const;
+    [[nodiscard]] string getMatriCode() const;
 
     void deleteModule(Module &);
 
     int addModule(Module &);
 
-    Module getModule(const int &);
-
     void setGrades(const string &, const int &);
 
     string getGrades(const string &);
 
-    string getType() const;
+    [[nodiscard]] static string getType() ;
 
-    int getTakingModules() const;
+    [[nodiscard]] int getTakingModules() const;
 
     void showModules() const;
 
-    void displayDetails() const;
+    void displayDetails() const override;
 
     Student &operator=(map<int, map<string, string>> r)
     {

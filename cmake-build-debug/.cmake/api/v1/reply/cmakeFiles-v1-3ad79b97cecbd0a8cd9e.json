@@ -16,7 +16,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.23.0/CMakeSystem.cmake"
+			"path" : "/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles/3.23.0/CMakeSystem.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -270,7 +270,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.23.0/CMakeCCompiler.cmake"
+			"path" : "/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles/3.23.0/CMakeCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -509,7 +509,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.23.0/CMakeCXXCompiler.cmake"
+			"path" : "/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles/3.23.0/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -648,7 +648,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.23.0/CMakeCCompiler.cmake"
+			"path" : "/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles/3.23.0/CMakeCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -742,7 +742,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.23.0/CMakeCXXCompiler.cmake"
+			"path" : "/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/CMakeFiles/3.23.0/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -834,7 +834,7 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug",
+		"build" : "/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug",
 		"source" : "/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2"
 	},
 	"version" : 

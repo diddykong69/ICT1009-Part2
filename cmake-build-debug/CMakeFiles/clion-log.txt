@@ -28,4 +28,4 @@ C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CL
 -- Looking for strtod_l - not found
 -- Configuring done
 -- Generating done
--- Build files have been written to: /mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug
+-- Build files have been written to: /mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug

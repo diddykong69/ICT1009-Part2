@@ -95,12 +95,12 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 3,
-			"id" : "bcrypt::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 4,
 			"id" : "fmt::@9964d956d591922f2692"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "bcrypt::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "ICT1009-Part2::@6890427a1f51a3e7e1df",

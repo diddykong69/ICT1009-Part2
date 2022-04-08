@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;CMake Files\dependencies\;CMake Files\dependencies\fmt\;CMake Files\dependencies\fmt\support\;CMake Files\dependencies\fmt\support\cmake\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\mnt\;CMake Files\..\..\..\..\..\..\..\mnt\c\;CMake Files\..\..\..\..\..\..\..\mnt\c\users\;CMake Files\..\..\..\..\..\..\..\mnt\c\users\dl\;CMake Files\..\..\..\..\..\..\..\mnt\c\users\dl\documents\;CMake Files\..\..\..\..\..\..\..\mnt\c\users\dl\documents\github\;CMake Files\..\..\..\..\..\..\..\mnt\c\users\dl\documents\github\ict1009-part2\;CMake Files\..\..\..\..\..\..\..\mnt\c\users\dl\documents\github\ict1009-part2\dependencies\;CMake Files\..\..\..\..\..\..\..\mnt\c\users\dl\documents\github\ict1009-part2\dependencies\fmt\;CMake Files\..\..\..\..\..\..\..\mnt\c\users\dl\documents\github\ict1009-part2\dependencies\fmt\build\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt"/>
+				<Option working_dir="/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="fmt">
-				<Option output="/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/libfmtd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt"/>
+				<Option output="/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/libfmtd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -35,15 +35,15 @@
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 fmt"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 fmt"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="fmt/fast">
-				<Option output="/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/libfmtd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt"/>
+				<Option output="/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/libfmtd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -59,10 +59,10 @@
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 fmt/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 fmt/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>

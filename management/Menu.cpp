@@ -113,7 +113,7 @@ void Menu::displayProgrammesOrModulesMenu(
                 fmt::arg(
                         "value",
                         forModules ? fmt::format(
-                                "{code} {module_name} ({credit} credit(s))",
+                                "{code}: {module_name} ({credit} credit(s))",
                                 fmt::arg("code", results[i]["module_code"]),
                                 fmt::arg(
                                         "module_name", results[i]["module_name"]

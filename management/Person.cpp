@@ -22,9 +22,9 @@ Person::Person(string admission_number, string username, string first_name,
     setEmail(email);
 }
 
-void Person::setAdmissionNumber(string &admission_number)
+void Person::setAdmissionNumber(string &admissionNumber)
 {
-    this->admission_number = admission_number;
+    this->admission_number = admissionNumber;
 }
 
 string Person::getAdmissionNumber() const
@@ -32,9 +32,9 @@ string Person::getAdmissionNumber() const
     return admission_number;
 }
 
-void Person::setUsername(string &username)
+void Person::setUsername(string &userName)
 {
-    this->username = username;
+    this->username = userName;
 }
 
 string Person::getUsername() const
@@ -42,9 +42,9 @@ string Person::getUsername() const
     return username;
 }
 
-void Person::setFirstName(string &first_name)
+void Person::setFirstName(string &firstName)
 {
-    this->first_name = first_name;
+    this->first_name = firstName;
 }
 
 string Person::getFirstName() const
@@ -52,9 +52,9 @@ string Person::getFirstName() const
     return first_name;
 }
 
-void Person::setLastName(string &last_name)
+void Person::setLastName(string &lastName)
 {
-    this->last_name = last_name;
+    this->last_name = lastName;
 }
 
 string Person::getLastName() const
@@ -62,9 +62,9 @@ string Person::getLastName() const
     return last_name;
 }
 
-void Person::setEmail(string &email)
+void Person::setEmail(string &emailAddress)
 {
-    this->email = email;
+    this->email = emailAddress;
 }
 
 string Person::getEmail() const

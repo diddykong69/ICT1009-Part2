@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug"
+			"value" : "/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -1483,7 +1483,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug/dependencies/fmt"
+			"value" : "/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug/dependencies/fmt"
 		},
 		{
 			"name" : "FMT_CUDA_TEST",
@@ -1687,7 +1687,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug"
+			"value" : "/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug"
 		},
 		{
 			"name" : "ICT1009-Part2_IS_TOP_LEVEL",

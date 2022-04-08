@@ -164,6 +164,7 @@ void adminOption5()
                 )
         );
 
+
         if (result != 0)
         {
             fmt::print(
@@ -323,9 +324,12 @@ void lecturerOption1()
 void lecturerOption2()
 {
     int result{};
+
     std::string admissionNum{};
     std::string moduleName{};
     std::string score{};
+
+    map<int, map<string, string>> studentInfo{};
 
     result = conn.query(
             "SELECT users.First_name, users.Last_name, users.admission_number, "
@@ -373,7 +377,9 @@ void lecturerOption2()
         );
     }
 
+    studentInfo = conn.response;
     Student studentToGrade(conn.response[0]["admission_number"]);
+    studentToGrade = studentInfo;
     studentToGrade.showModules();
 
     if (studentToGrade.getTakingModules() > 0)

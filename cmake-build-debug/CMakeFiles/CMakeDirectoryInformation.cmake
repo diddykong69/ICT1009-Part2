@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/mnt/c/Users/DL/Documents/GitHub/ICT1009-Part2/cmake-build-debug")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/mnt/c/users/dl/documents/github/ICT1009-Part2/cmake-build-debug")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

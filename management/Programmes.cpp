@@ -321,56 +321,53 @@ void Programmes::displayProgrammes()
 
         std::stringstream ss(this->userInput);
 
-        if (ss >> programmeIndex && ss.eof())
+        if (ss >> programmeIndex && ss.eof() && programmeIndex >= 1
+            && programmeIndex <= database.response.size())
         {
-            if (programmeIndex >= 1
-                && programmeIndex <= database.response.size())
-            {
-                fmt::print(
-                        fmt::emphasis::underline,
-                        "{}\n",
-                        this->database.response[programmeIndex - 1]
-                        ["programme_name"]
-                );
+            fmt::print(
+                    fmt::emphasis::underline,
+                    "{}\n",
+                    this->database.response[programmeIndex - 1]
+                    ["programme_name"]
+            );
 
-                fmt::print(
-                        "About:\n{about}\n\nTotal credits:\n{credits}\n\n"
-                        "Duration:\n{duration}\n\nDegree:\n{degree}\n\n"
-                        "Eligibility:\n{eligibility}\n\n",
-                        fmt::arg(
-                                "about",
-                                this->database.response
-                                [programmeIndex -
-                                 1]["programme_description"]
-                        ),
-                        fmt::arg(
-                                "credits",
-                                this->database.response
-                                [programmeIndex - 1]["programme_credits"]
-                        ),
-                        fmt::arg(
-                                "duration",
-                                monthToYearMonth(
-                                        std::stoi(
-                                                this->database.response
-                                                [programmeIndex - 1]
-                                                ["programme_duration"]
-                                        )
-                                )
-                        ),
-                        fmt::arg(
-                                "degree",
-                                this->database.response
-                                [programmeIndex - 1]["degree"]
-                        ),
-                        fmt::arg(
-                                "eligibility",
-                                this->database.response
-                                [programmeIndex -
-                                 1]["programme_eligibility"]
-                        )
-                );
-            }
+            fmt::print(
+                    "About:\n{about}\n\nTotal credits:\n{credits}\n\n"
+                    "Duration:\n{duration}\n\nDegree:\n{degree}\n\n"
+                    "Eligibility:\n{eligibility}\n\n",
+                    fmt::arg(
+                            "about",
+                            this->database.response
+                            [programmeIndex -
+                             1]["programme_description"]
+                    ),
+                    fmt::arg(
+                            "credits",
+                            this->database.response
+                            [programmeIndex - 1]["programme_credits"]
+                    ),
+                    fmt::arg(
+                            "duration",
+                            monthToYearMonth(
+                                    std::stoi(
+                                            this->database.response
+                                            [programmeIndex - 1]
+                                            ["programme_duration"]
+                                    )
+                            )
+                    ),
+                    fmt::arg(
+                            "degree",
+                            this->database.response
+                            [programmeIndex - 1]["degree"]
+                    ),
+                    fmt::arg(
+                            "eligibility",
+                            this->database.response
+                            [programmeIndex -
+                             1]["programme_eligibility"]
+                    )
+            );
         }
     }
 }
@@ -703,9 +700,9 @@ int Programmes::getCreditsLeft(int selectedProgrammeID)
  */
 bool Programmes::insufficientCredits(int selectedProgrammeID, int moduleCredit)
 {
-    int currCredits{getCreditsLeft(selectedProgrammeID)};
 
-    if (currCredits - moduleCredit < 0)
+    if (int currCredits{getCreditsLeft(selectedProgrammeID)};
+            currCredits - moduleCredit < 0)
     {
         fmt::print(
                 fg(fmt::color::red),
@@ -1097,7 +1094,7 @@ void Programmes::removeCurriculum()
 
             removeModulesFromProgramme(
                     std::stoi(curriculaResults[selectedProgrammeIndex - 1][
-                            "programme_id"])
+                                      "programme_id"])
             );
         }
 

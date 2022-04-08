@@ -11,10 +11,10 @@ using namespace std;
 
 class Admin: public Person{
     private:
-        sqlDB conn;
-        int sql_query;
-        string own_username;
-        
+        sqlDB conn{};
+        int sql_query{};
+        string own_username{};
+
     public:
     Admin();
     Admin(string admission_number, string username, string first_name, string last_name, string email);

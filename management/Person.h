@@ -22,27 +22,27 @@ public:
 
     void setAdmissionNumber(string &);
 
-    string getAdmissionNumber() const;
+    [[nodiscard]] string getAdmissionNumber() const;
 
     void setUsername(string &);
 
-    string getUsername() const;
+    [[nodiscard]] string getUsername() const;
 
     void setFirstName(string &);
 
-    string getFirstName() const;
+    [[nodiscard]] string getFirstName() const;
 
     void setLastName(string &);
 
-    string getLastName() const;
+    [[nodiscard]] string getLastName() const;
 
-    string getName() const;
+    [[nodiscard]] string getName() const;
 
     void setEmail(string &);
 
-    string getEmail() const;
+    [[nodiscard]] string getEmail() const;
 
-    void displayDetails() const;
+    virtual void displayDetails() const;
 };
 
 

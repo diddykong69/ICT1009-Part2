@@ -2,6 +2,7 @@
 #define MODULE_CPP
 
 #include <string>
+#include <utility>
 
 // header files
 #include "Module.h"
@@ -17,12 +18,12 @@ Module::Module(string module_name)
 Module::Module(string module_name, string grade)
 {
     setModuleName(module_name);
-    this->grades = grade;
+    this->grades = std::move(grade);
 }
 
-void Module::setModuleName(string &module_name)
+void Module::setModuleName(string &moduleName)
 {
-    this->module_name = module_name;
+    this->module_name = moduleName;
 }
 
 string Module::getModuleName() const
@@ -30,30 +31,30 @@ string Module::getModuleName() const
     return module_name;
 }
 
-void Module::setGrades(const int &grades)
+void Module::setGrades(const int &score)
 {
     string ret;
-    if (grades >= 80)
+    if (score >= 80)
     {
         ret = "A";
     }
-    else if (grades >= 70 && grades < 80)
+    else if (score >= 70 && score < 80)
     {
         ret = "B";
     }
-    else if (grades >= 60 && grades < 70)
+    else if (score >= 60 && score < 70)
     {
         ret = "C";
     }
-    else if (grades >= 50 && grades < 60)
+    else if (score >= 50 && score < 60)
     {
         ret = "D";
     }
-    else if (grades >= 40 && grades < 50)
+    else if (score >= 40 && score < 50)
     {
         ret = "E";
     }
-    else if (grades >= 0 && grades < 40)
+    else if (score >= 0 && score < 40)
     {
         ret = "F";
     }

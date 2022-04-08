@@ -1,13 +1,16 @@
 #ifndef ADMIN_CPP
 #define ADMIN_CPP
 
+#include <utility>
+
 #include "admin.h"
 
 Admin::Admin() = default;
 
 Admin::Admin(string admission_number, string username, string first_name,
              string last_name, string email)
-        : Person(admission_number, username, first_name, last_name, email)
+        : Person(std::move(admission_number), std::move(username),
+                 std::move(first_name), std::move(last_name), std::move(email))
 {
 }
 

@@ -6,12 +6,6 @@
 Authentication::Authentication()
 = default;
 
-Authentication::Authentication(string user, string pass)
-{
-    username = user;
-    password = pass;
-};
-
 bool Authentication::authenticate()
 {
     while (true)
