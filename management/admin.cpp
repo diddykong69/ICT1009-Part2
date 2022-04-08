@@ -26,9 +26,9 @@ int Admin::add_user(string role){
     getline(cin, first_name);
     cout << "Enter last name: ";
     getline(cin, last_name);
-    cout << "Enter admission number: ";
+    cout << "Enter admission number (e.g. P1234567): ";
     getline(cin, admission_number);
-    cout << "Enter email address: ";
+    cout << "Enter email address: (e.g. email@sit.singaporetech.edu.sg)";
     getline(cin, email_address);
     cout << "Enter password: ";
     getline(cin, pass);

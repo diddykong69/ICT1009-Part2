@@ -20,13 +20,13 @@ class Lecturer : public Person{
     private:
         sqlDB conn;
         map<int,map<string,string>> response;
-        vector <string> modules;
+        vector <Module*> modules;
     public:
         Lecturer(string);
         Lecturer(string admission_number, string username, string first_name, string last_name, string email);
         void showModules() const;
-        int addModule(string&);
-        void deleteModule(string&);
+        int addModule(Module&);
+        void deleteModule(Module&);
         void setStudentGrades(); // Able to assign new grades to students
         void displayDetails() const; // Display lecturer's details
         Lecturer& operator=(map<int,map<string,string>> r){

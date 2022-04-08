@@ -14,7 +14,7 @@ Lecturer::Lecturer(string admission_number){
     {
         response = conn.get_response();
         for(int i=0; i < response.size();i++){
-            auto mod = response[i]["modules"];
+            Module *mod = new Module(response[i]["modules"]);
             modules.push_back(mod);
         }
     }
@@ -29,7 +29,8 @@ Lecturer::Lecturer(string admission_number, string username, string first_name, 
     {
         response = conn.get_response();
         for(int i=0; i < response.size();i++){            
-            modules.push_back(response[i]["modules"]);
+            Module *mod = new Module(response[i]["modules"]);
+            modules.push_back(mod);
         }
     }
 };
@@ -38,28 +39,28 @@ Lecturer::Lecturer(string admission_number, string username, string first_name, 
 void Lecturer::showModules() const{    
     int index = 1;
     for (auto module : modules){
-        cout << index << ". " << module << endl;
+        cout << index << ". " << module->getModuleName() << endl;
         index++;
     }
 };
 
-void Lecturer::deleteModule(string& mod_name){
+void Lecturer::deleteModule(Module& mod_name){
     auto iter = modules.begin();
     for (auto mod : modules){
-        if (mod == mod_name){
+        if (mod->getModuleName() == mod_name.getModuleName()){
             modules.erase(iter);
-            cout << "Lecturer is no longer teaching " << mod_name << endl;
+            cout << "Lecturer is no longer teaching " << mod_name.getModuleName() << endl;
         }
         iter++;
     }
 }
-int Lecturer::addModule(string& mod_name){
+int Lecturer::addModule(Module& mod_name){
     for (auto mod : modules){
-        if (mod == mod_name){
+        if (mod->getModuleName() == mod_name.getModuleName()){
             cout << "Lecturer is already teaching this module" << endl;
             return -1;
         }
-        modules.push_back(mod_name);
+        modules.push_back(&mod_name);
     }
     return 0;
 }

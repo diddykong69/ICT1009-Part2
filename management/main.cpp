@@ -134,10 +134,11 @@ void option8(){
     new_lecturer = response;
     cout << "Enter new module name to add to lecturer: ";
     getline(cin, mod_name);
-    if (new_lecturer.addModule(mod_name) == 0){
+    Module m(mod_name);
+    if (new_lecturer.addModule(m) == 0){
         conn.query("INSERT INTO lecturers (admission_number, modules) VALUES ('" + new_lecturer.getAdmissionNumber() + "', '" + mod_name + "');");
-        cout << "Module has been added!" << endl;        
-        new_lecturer.displayDetails();
+        cout << "Module has been added!" << endl;    
+        new_lecturer.displayDetails();    
     }
 }
 
@@ -157,7 +158,8 @@ void option9(){
     new_lecturer.displayDetails();
     cout << "Enter module name to delete: ";
     getline(cin, mod_name);
-    new_lecturer.deleteModule(mod_name);
+    Module m(mod_name);
+    new_lecturer.deleteModule(m);
     conn.query("DELETE FROM lecturers WHERE admission_number = '" + new_lecturer.getAdmissionNumber() + "' AND modules = '" + mod_name + "'");
     new_lecturer.displayDetails();
 }
